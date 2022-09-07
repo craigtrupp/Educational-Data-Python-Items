@@ -8,6 +8,7 @@ Created on Mon Sep  5 12:12:42 2022
 import numpy as np
 import pandas as pd
 import seaborn as sns
+import matplotlib.pyplot as plt
 
 
 country_data = pd.read_csv('https://learn.sharpsightlabs.com/wp-content/datasets/pdm/country_data.csv', index_col = 'country_code')
@@ -159,9 +160,18 @@ print(np.reshape(npary, newshape=(2,3)))
 print(np.arange(start=0, stop=10, dtype=int).reshape((2,5)))
 
 print(country_data.head(10))
-sns.scatterplot(data=country_data.loc['USA':'CAN', :], x='country', y='gdp', hue='continent')
+
+# Run code in a block not individually!
+g = sns.scatterplot(data=country_data.loc['USA':'CAN', :], x='country', y='gdp', hue='continent')
+g.set_xticklabels(labels=country_data.loc['USA':'CAN', :].index, rotation=45)
+plt.show()
 
 
+g_2 = sns.barplot(x=["Asia", "Africa", "Antartica", "Europe"],y=[90, 30, 60, 10])
+g_2.set_xticklabels(
+    labels=["Asia", "Africa", "Antartica", "Europe"], rotation=30)
+# Show the plot
+plt.show()
 
 
 
