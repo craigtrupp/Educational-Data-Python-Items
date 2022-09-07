@@ -154,10 +154,23 @@ print(x)
 
 # =============================================================================
 # You have such an array [12, 56, 78, 65, 1, 5]. 
-# You need to use the right method in order to eventually get the following arrays a
-# rr_1 = [11, 56, 78, 0, 1, 5] arr_2 = [12, 56, 78, 65, 1, 5]. 
+# You need to use the right method in order to eventually get the following arrays
+# arr_1 = [11, 56, 78, 0, 1, 5] arr_2 = [12, 56, 78, 65, 1, 5]. 
 # For it you have to replace element 12 with 11, and element 65 with 0
 # =============================================================================
+
+
+arr_1 = np.array([12, 56, 78, 65, 1, 5])
+# Copying array
+arr_2 = arr_1.copy()
+
+# Replacing elements
+arr_1[0] = 11
+arr_1[np.where(arr_1 == 65)[0][0]] = 0
+
+print(arr_1)
+print(arr_2)
+
 
 
 
