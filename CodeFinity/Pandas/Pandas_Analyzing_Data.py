@@ -161,8 +161,20 @@ des_frame.dtypes
 des_frame['fixed acidity'].dtype
 
 
+# =============================================================================
+# Unique Values
+# unique() call for dataframe
+# =============================================================================
+dataset = {'country' : ['Thailand', 'Philippines', 'Monaco', 'Malta', 'Sweden', 'Paraguay', 'Latvia'], 'continent' : ['Asia', 'Asia', 'Europe', 'Europe', 'Europe', 'South America', 'Europe'], 'capital':['Bangkok', 'Manila', 'Monaco', 'Valletta', 'Stockholm', 'Asuncion', 'Riga']}
 
-
+countries = pd.DataFrame(dataset)
+unique_countries = countries['country'].unique()
+unique_continents = countries['continent'].unique()
+print(unique_countries)
+print(unique_continents)
+# method only available to Series object / not a DataFrame
+print(countries.unique())
+print(countries['continent'].unique(), len(countries['country'].unique()))
 
 
 
