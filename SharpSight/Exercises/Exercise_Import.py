@@ -157,7 +157,7 @@ npary = np.arange(start=0, stop=6, dtype=int)
 print(npary)
 print(np.reshape(npary, newshape=(2,3)))
 
-print(np.arange(start=0, stop=10, dtype=int).reshape((2,5)))
+print(np.arange(start=1, stop=11, dtype=int).reshape((2,5)))
 
 print(country_data.head(10))
 
