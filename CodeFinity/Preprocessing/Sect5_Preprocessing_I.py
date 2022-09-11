@@ -99,4 +99,79 @@ total_cab_null = data['Cabin'].isna().sum()
 len(data['Cabin']), data['Cabin'].shape
 f"The total null count of {total_cab_null} as a percentage against all Embarked known values, {len(data['Embarked'])} is {percent_null_cabin}%"
 
+# Unique categorical values and # of unique values
+print(data['Cabin'].unique(), data['Cabin'].nunique())
+# choose any other value except already presented in the Cabin column and replace all NaNs with it. (For example, it can be 'Z' or 'X').
+data['Cabin'].replace(np.nan, 'Z', inplace=True)
+data['Cabin'].isna().sum()
+
+# =============================================================================
+#  Check for any duplicates
+#  method drop_duplicates
+#  Method will return the dataframe with any duplicates removed, use inplace if wanting to change existing variable
+# =============================================================================
+df = pd.DataFrame({
+    'brand': ['Yum Yum', 'Yum Yum', 'Indomie', 'Indomie', 'Indomie'],
+    'style': ['cup', 'cup', 'cup', 'pack', 'pack'],
+    'rating': [4, 4, 3.5, 15, 5]
+})
+print(len(df), len(df.drop_duplicates()), f"Total duplicate rows : {len(df) - len(df.drop_duplicates())}")
+df.drop_duplicates(inplace=True)
+len(df)
+
+
+# Check titanic (or any dataframe), with your own function!
+def checkDFrameDuplicates(frame):
+    """
+    Parameters
+    ----------
+    frame : Dataframe.
+
+    Returns
+    -------
+    Total found duplicate rows in dataframe.
+    """
+    dframe_total_rows = len(frame)
+    found_duplicate_rows = dframe_total_rows - len(frame.drop_duplicates())
+    return f"Found duplicate rows : {found_duplicate_rows}" if found_duplicate_rows > 0 else "No duplicate rows!"
+    
+print(checkDFrameDuplicates(df)) 
+print(checkDFrameDuplicates(data))    
+
+
+
+# =============================================================================
+# Removing Outliers
+# Outliers are some extra values that do not fit the defined interval. 
+# These values can affect some metrics(like mean, mode, etc.) or model weights. 
+# 
+# There are some popular ways to define the allowable interval (limits of acceptable value for some distribution):
+# 
+# remove all the values that form the first and the last 1% of values (presented in ascending order).
+# Leave the values that fit the interval [q25 - 1.5*IQR; q75 + 1.5*IQR], where IQR = q75 - q25. IQR is Inter Quartile Range. Remove other values.
+# leave all data that fits the interval [mean - std; mean + std]. Remove other values.    
+# =============================================================================
+
+#Let's find all the data outside the range [mean - std; mean + std] and check how much is outside 
+age_central_stats = data.agg({'Age': ['min', 'max', 'mean', 'std', 'var']})
+age_central_stats.loc[age_central_stats.index == 'mean']
+age_mean, age_std = round(data['Age'].mean(), 0), round(data['Age'].std(), 0)
+
+age_mean_std_over = data['Age'] > (age_mean + age_std)
+age_mean_std_under = data['Age'] < (age_mean - age_std)
+print(age_mean_std_over.nunique())
+print(age_mean_std_under.unique())
+# Boolean index subsetting
+combined_outliers = data[age_mean_std_over|age_mean_std_under]
+within_range = data[~(data.index.isin(combined_outliers.index))]
+len(within_range)
+within_range.shape[0] + combined_outliers.shape[0]
+
+
+len(combined_outliers), len(within_range), len(data)
+combined_outliers['Age'].head(10)
+combined_outliers['Age'].value_counts(ascending=False)
+
+
+
 
