@@ -74,3 +74,64 @@ data['Embarked'][:5]
 [mapping[val] for val in data['Embarked'][:5]]
 data['Embarked_Numeric'] = [mapping[val] for val in data['Embarked']]
 data[['Embarked', 'Embarked_Numeric']].head(25)
+
+
+
+
+# One Hot Encoding 
+# =============================================================================
+# Label Encoding                 To Provide 1 and 0 Values - One Hot Encoder Matrix
+# Embarked|Label                     Embarked     C      S      Q
+# Q | 3                                 Q         0  |   0  |   1 
+# S | 2                                 S         0  |   1  |   0
+# S | 2                                 S         0  |   1  |   0
+# S | 2                                 S         0  |   1  |   0
+# C | 1                                 C         1  |   0  |   0
+# =============================================================================
+
+# =============================================================================
+# We will use OneHotEncoder to create new features for the categorical columns of our dataset.
+# 
+# OneHotEncoder cannot process NaNs, so you have to preprocess them first.
+# =============================================================================
+
+
+# =============================================================================
+# Load the dataset.
+# Process the NaNs: drop it for the Embarked, replace with mean value for Age.
+# Transform the Cabin data as in the previous chapter (apply the Label Encoding).
+# Create the variable cat_cols to store such a categorical features: Sex, Cabin, and Embarked.
+# Create OneHotEncoder and store the transformed data to the new_data.
+# Remove the cat_cols from the dataframe, but add the new_data.
+# Check the sample.
+# =============================================================================
+from sklearn.preprocessing import OneHotEncoder
+import numpy as np
+
+data = pd.read_csv('https://codefinity-content-media.s3.eu-west-1.amazonaws.com/10db3746-c8ff-4c55-9ac3-4affa0b65c16/titanic.csv')
+
+data.dropna(subset='Embarked', inplace = True)
+data['Age'].replace(np.nan, data['Age'].mean(), inplace=True)
+data.isna().sum()
+
+data['Cabin'] = data['Cabin'].apply(lambda x: 'Z' if pd.isna(x) else x[:1])
+data['Cabin'].value_counts(ascending=False)
+data.isna().sum()
+cat_cols = ['Sex', 'Cabin', 'Embarked']
+print([data[x].unique() for x in cat_cols], [(data[x].unique(), len(data[x].unique())) for x in cat_cols])
+print("The Three category columns have a total of 14 total unique values : This will be 13 with a zero index for the return with the encoder")
+encoder = OneHotEncoder()
+new_data = pd.DataFrame(encoder.fit_transform(data[cat_cols]).toarray())
+print(new_data, type(new_data))
+# New dataframe with copy of prev
+cols = data.columns.drop(cat_cols)
+# Now we have all columns that aren't categorical
+cols
+
+#ReAssign Data and joion to new dataframe from encoder function return
+print(len(data), len(new_data))
+data = data[cols].join(new_data)
+data
+data.head(1)
+# Here is a subset of the dataframe with the new_data frame returned from the encoder .fit_transform call 
+data.iloc[0:5, -15:]
