@@ -114,3 +114,52 @@ data['Normalized_Fare'] = data_scaled
 data[['Fare', 'Normalized_Fare']].head(10)
 # Notice difference here against outliers above
 data_fare_wo_outliers[['Fare', 'Normalized_Fare']].head(10)
+
+
+# Standardize
+# =============================================================================
+# Another approach to scale the data is to standardize it: transform in such a way that mean is equal to 0 and std
+# 
+# Xst = x - µ / o
+# 
+# + Xst : X standardized Result Value
+# + µ : mean (Mu)
+# + x : data obseravation
+# + σ : standard deviation
+# =============================================================================
+
+# Standardize the data in SibSp column by calculating mean and std values and use the formula above. 
+# Output some sample to see the modified data and check if the new values of mean and std are equal to 0 and 1 respectively.
+
+def standardize(col, x):
+    """
+    Parameters
+    ----------
+    col : Pandas Series
+        used for Standardization base formula.
+    x : Pandas Series Value
+        value to Transform/Standardize.
+
+    Returns
+    -------
+    Standardized Value assigned to new column for each row.
+    """
+    return round((x - col.mean()) / col.std(), 7)
+
+data_stdrz = pd.read_csv('https://codefinity-content-media.s3.eu-west-1.amazonaws.com/10db3746-c8ff-4c55-9ac3-4affa0b65c16/titanic.csv')
+print(data_stdrz['SibSp'].mean(), data_stdrz['SibSp'].std())
+data_stdrz['Stdz_Sbsp'] = data_stdrz['SibSp'].apply(lambda x: standardize(data_stdrz['SibSp'], x))
+print(data_stdrz['Stdz_Sbsp'].iloc[[264, 849, 890, 368, 435, 822]])
+# standardize the sibsp
+
+print(round(data_stdrz['Stdz_Sbsp'].mean(), 2), round(data_stdrz['Stdz_Sbsp'].std(), 2))
+# check the new values of mean and std make sure to round as they'll be close but not quite at 0 and 1 (about as close as you get though!)
+
+
+
+
+
+
+
+
+
