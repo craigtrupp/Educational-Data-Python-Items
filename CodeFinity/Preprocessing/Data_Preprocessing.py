@@ -66,4 +66,51 @@ print(qcut_data)
 
 
 
+# Data Normalization & Standardization
+# =============================================================================
+# Data Normalization & Standardization provides rescaling numerical data into the appropriate interval. 
+# For example, ML models usually process the values in the interval [0; 1]. 
+# It's much more convenient to process the finite data, and also the data that all scaled to the same interval. 
+# There are two approaches:
+# 
+# to normalize data: move it to the interval [0; 1]
+# to standartizate data.
+# =============================================================================
 
+# Normalize Fare column in titanic data
+# Let's make a new column and do ourselves first beofre using the sklearn library
+from sklearn.preprocessing import MinMaxScaler
+
+data = pd.read_csv('https://codefinity-content-media.s3.eu-west-1.amazonaws.com/10db3746-c8ff-4c55-9ac3-4affa0b65c16/titanic.csv')
+
+def normalize(column, value):
+    numerator = value - column.min()
+    denominator = column.max() - column.min()
+    normalized_1_value = round(numerator / denominator, 3)
+    return normalized_1_value
+
+data['Normalized_Fare'] = data['Fare'].apply(lambda x: normalize(data['Fare'], x))
+data[['Fare', 'Normalized_Fare']].head(5)
+data[['Fare', 'Normalized_Fare']].sort_values('Normalized_Fare', ascending=False).head(20)
+# Some really big fare values stretching the normalized_fare a ton
+print(round(data.iloc[27]['Fare'] / data.iloc[679]['Fare'], 3))
+data_fare_wo_outliers = data.copy()
+print(data_fare_wo_outliers.head(5))
+data_fare_wo_outliers = data_fare_wo_outliers.loc[data_fare_wo_outliers['Fare'] < 275]
+data_fare_wo_outliers['Normalized_Fare'] = data_fare_wo_outliers['Fare'].apply(lambda y: normalize(data_fare_wo_outliers['Fare'],y))
+print(data_fare_wo_outliers[['Fare', 'Normalized_Fare']].sort_values('Fare', ascending=False).head(25))
+
+
+# Using sklearn
+data = pd.read_csv('https://codefinity-content-media.s3.eu-west-1.amazonaws.com/10db3746-c8ff-4c55-9ac3-4affa0b65c16/titanic.csv')
+scaler = MinMaxScaler()
+# scaler's .fit_transform method call requires the values (not the Series!)
+fare_data = pd.DataFrame(data['Fare']).values
+data_scaled = scaler.fit_transform(fare_data)
+print(data_scaled[3])
+print(len(data_scaled), len(data), type(data_scaled), data_scaled.shape, type(data['Fare'].values))
+# Numpy (891,1) values can be assigned to new column 
+data['Normalized_Fare'] = data_scaled
+data[['Fare', 'Normalized_Fare']].head(10)
+# Notice difference here against outliers above
+data_fare_wo_outliers[['Fare', 'Normalized_Fare']].head(10)
