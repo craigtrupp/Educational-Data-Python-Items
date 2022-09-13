@@ -103,12 +103,12 @@ def wildcard(string, exp):
         a_ind = string.find(exp[0])
         any_char_count = exp.count('.')
         end_char = string[-1]
-        if string[a_ind + (any_char_count + 1)] == end_char and len(string[a_ind:]) > 4:
+        if string[a_ind + (any_char_count + 1)] == end_char and len(string[a_ind:]) > len(exp) + 1:
             end_char_index_inclusion = a_ind + (any_char_count + 1) + 1
             capturedexp.append(string[a_ind:end_char_index_inclusion])
             string = string[end_char_index_inclusion:]
             continue
-        elif string[a_ind + (any_char_count + 1)] == end_char and len(string[a_ind:]) < 4:
+        elif string[a_ind + (any_char_count + 1)] == end_char and len(string[a_ind:]) < len(exp) + 1:
             # End of String catch
             capturedexp.append(string[a_ind:])
             break
@@ -118,7 +118,8 @@ def wildcard(string, exp):
     return capturedexp
     
 
-print(wildcard(text, "a.c"))    
+print(wildcard(text, "a.c"))
+print(wildcard("caad cdcd cad ceed cfgrd cfad", "c..d"))    
 print('a.c'.count('.'))
 print(len("adc"))
 
