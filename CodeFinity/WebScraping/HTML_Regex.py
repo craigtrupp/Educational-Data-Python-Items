@@ -95,6 +95,7 @@ text = "abc a c abbc ac adc"
 print(text.split(" "))
 result = re.findall("a.c", text)
 print(result)
+# print(result) : ['abc', 'a c', 'adc']
 
 # Like function
 def wildcard(string, exp):
@@ -119,11 +120,13 @@ def wildcard(string, exp):
     
 
 print(wildcard(text, "a.c"))
-print(wildcard("caad cdcd cad ceed cfgrd cfad", "c..d"))    
+# ['abc', 'a c', 'adc']
+print(wildcard("caad cdcd cad ceed cfgrd cfad", "c..d"))
+# ['caad', 'cdcd', 'ceed', 'cfad']    
 print('a.c'.count('.'))
 print(len("adc"))
 
-
+# While loop basic for a little refreshing for above break/continue logic
 i = 0
 while i < 6:
     i += 1
@@ -131,4 +134,95 @@ while i < 6:
         continue
     print(i)
     
+
+# Back to the Lesson 
+# =============================================================================
+# The symbols .* are used to find expressions with any character repeated any number of times:
+# =============================================================================
+text_1 = "abc addc ac axc aOc"
+result_1 = re.findall("a.*c", text_1)
+print(result_1)
+
+
+
+# Search
+# =============================================================================
+# There is another method for finding matches - .search(). 
+# It is much more complicated than the function .findall() since it returns the answer as MatchObject. 
+# The object stores different groups of the data because the function .search() also finds matches inside other matches and returns them.
+# =============================================================================
+match = re.search("ab*c", "Axc ABc Ac", re.IGNORECASE)
+print(match.group())
+
+# Huh .. that's odd (oh wait that's how .group() prioritizes!)
+# =============================================================================
+# Just remember that the function .group() of this object will return the first and most appropriate result:
+# =============================================================================
+
+
+# Sub
+# =============================================================================
+# You can also substitute text you want. 
+# Use the function .sub() of the module re to replace text (the first argument) that matches your expression to the new one (the second argument) 
+# and the string in which we make a replacement (the third argument). For instance:
+# =============================================================================
+text = "I love <apples>."
+text = re.sub("<.*>", "dogs", text)
+print(text)
+
+text = "I replace <words> with the word <cats>."
+text = re.sub("<.*>", "CATS", text)
+print(text)
+
+# <.*?> All type catch
+# =============================================================================
+# What is going on with cats? Why, in the second example, weren’t both words replaced? 
+# If you use the regular expression <.*>, everything between the first < and the last > will be replaced (like in our example). 
+# It happens since regular expressions try to find the longest possible match. To avoid such mistakes, use the regular expression <.*?>. 
+# It works the same way but tries to find the shortest possible match:
+# =============================================================================
+text_1 = "I replace <words> with the word <cats> because we love <animals>."
+print(re.sub("<.*?>", "CATS", text_1))
+
+
+
+# HTML - RegEx!
+# =============================================================================
+# How to Extract Text from HTML Using Regular Expressions
+
+# Here we will get the content of title without tags and errors because of extra spaces since 
+# the regular expression .*? helps to extract data with any number of spaces.
+# always use the exp : *? in familiar situations. This symbol will match the smallest number of letters possible.
+# =============================================================================
+
+# Open the page
+url = "https://codefinity-content-media.s3.eu-west-1.amazonaws.com/18a4e428-1a0f-44c2-a8ad-244cd9c7985e/budda.html"
+page = urlopen(url)
+html = page.read().decode("utf-8")
+
+# Define the pattern and extract text
+pattern = "<h1.*?>.*?</h1.*?>"
+matches = re.search(pattern, html, re.IGNORECASE)
+h1 = matches.group()
+print(h1)
+# Remove tags
+h1_clean = re.sub("<.*?>", "", h1)
+
+# Print the result
+print(h1_clean)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
