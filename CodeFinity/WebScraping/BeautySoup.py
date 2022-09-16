@@ -63,7 +63,7 @@ print(ul[:29])
 new_lines = []
 for i in range(len(ul)):
     if ul[i] == '\n':
-        new_lines.append(i)
+        new_lines.append(ul[:i])
 print(new_lines)
 
 

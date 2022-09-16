@@ -74,9 +74,9 @@ print(title[0].extract())
 
 # Select all p tags
 p_tags = sel.xpath("//p")
-print(p_tags, len(p_tags))
-for ptag, pidx in enumerate(p_tags):
-    print(ptag, '\n', pidx)
+print(p_tags[0])
+for index, tag in enumerate(p_tags):
+    print(index, tag, tag.extract())
 print(p_tags[0], p_tags[3])
 
 # Print the fourth element of the list as the string 
@@ -158,11 +158,12 @@ soup = BeautifulSoup(html, "html.parser")
 
 # Select all a tags
 a_tags = soup.select("a")
-print(a_tags)
-
+print(a_tags, a_tags[0])
+print(a_tags[-1]['href'], type(a_tags[-1]))
 # Define and fill the list with links to the pages
 links = []
 for a in a_tags:
+    print(a['href'])
     links.append(a["href"])
 
     
@@ -190,10 +191,10 @@ for link in links:
 # =============================================================================
 
 xpath = "/html//div[2]/h1[@id= 'id0']"
-css_selector = "html div:nth-of-type(2) > h1#id0"
+css_selector = "html div:nth-of-type(1)"
 
-
-
+print(soup.select(css_selector))
+print(soup.prettify())
 
 
 

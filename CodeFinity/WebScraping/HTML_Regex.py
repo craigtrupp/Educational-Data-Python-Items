@@ -41,12 +41,13 @@ print(page.read().decode("utf-8"))
 # One of the ways to do it - use string methods. 
 # For example, function .find(). This method returns the index of the first appearance of the string you want to find.
 # =============================================================================
-print(html.find("<h1>"))
+print(html.find("<h1>"), html.find("</h1>"))
+print(html[475:485])
 
 # Find the first index of the tag
 print(html)
 index_first = html.find("<title>")
-print(index_first)
+print(index_first, html[index_first:html.find("</title>") + 8])
 
 # Find the last index of the tag
 index_last = html.find("</title>") + len("</title>")
@@ -81,12 +82,18 @@ print(re.findall("apple", "Apple is a fruit.", re.IGNORECASE))
 
 
 # Find all words in the variable text which start with 'a', end with 'c', and have zero or more instances of the character 'b'. Ignore the case.
-text = "ac abc Axc a c aC aBc AbBbBc ABBA"
-result = re.findall("ab*c", text, re.IGNORECASE) 
+text = "ac abc Axc a c aC aBc AbBbBc ABBA A c"
+result = re.findall("ab*c", text, re.IGNORECASE)
+result_2 = re.findall("a.*c", text, re.IGNORECASE) 
 
 # Print the result
 print(result)
+print(result_2)
+# ['ac abc Axc a c aC aBc AbBbBc']
+# Note here that result_2 has the match of just {a c} and {A c} in the string denote the match of zero or more spaces before they were seen 
+# at the beg/end of string can remove to just matches like below
 
+print([x for x in result_2[0].split(" ") if len(x) >= 2])
 # =============================================================================
 # The symbol . stands for any character in the regular expression. 
 # For instance, we want to find all parts of a string which start with 'a' and end with 'c' separated by a single character:
@@ -152,7 +159,8 @@ print(result_1)
 # The object stores different groups of the data because the function .search() also finds matches inside other matches and returns them.
 # =============================================================================
 match = re.search("ab*c", "Axc ABc Ac", re.IGNORECASE)
-print(match.group())
+print(match.group(), match)
+print(re.findall("ab*c", "Axc ABc Ac", re.IGNORECASE))
 
 # Huh .. that's odd (oh wait that's how .group() prioritizes!)
 # =============================================================================
@@ -170,7 +178,7 @@ text = "I love <apples>."
 text = re.sub("<.*>", "dogs", text)
 print(text)
 
-text = "I replace <words> with the word <cats>."
+text = "I replace <words> with the word <symbols>."
 text = re.sub("<.*>", "CATS", text)
 print(text)
 
