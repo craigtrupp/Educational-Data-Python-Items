@@ -134,6 +134,8 @@ else:
     
 #Use a method to remove the period at the end of this string.
 myquote = 'Slow is smooth, smooth is fast.'
+myquote[myquote.find('t'):]
+myquote[myquote.index('t'):]
 myquote.strip('.')
 myquote
 
@@ -174,7 +176,22 @@ g_2.set_xticklabels(
 plt.show()
 
 
+# Set country_code as row index for pandas dataframe
+idx_col = pd.read_csv('https://learn.sharpsightlabs.com/wp-content/datasets/pdm/country_data.csv', index_col = 'country_code')
+no_idx_col = pd.read_csv('https://learn.sharpsightlabs.com/wp-content/datasets/pdm/country_data.csv')
+print(idx_col.head(2), '\n\n', no_idx_col.head(2))
 
 
+car_list = ['Ferrari', 'Mazda', 'Toyota', 'Hyundai', 'Ferrari']
+# Remove all found instances of argument value passed to .remove
+car_list.remove('Ferrari')
+# Index only returning the first found instance
+car_list.remove(car_list[car_list.index('Ferrari')])
+car_list
 
+
+print(supercars.head())
+print(supercars.columns)
+print("hooray" if 'hp_per_ton' in supercars.columns else 'Not in there')
+supercars.assign(hp_per_ton = supercars['horsepower']/supercars.weight, inplace=True)
 

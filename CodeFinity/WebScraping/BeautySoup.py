@@ -82,21 +82,65 @@ print(soup.find_all("p"))
 print(soup.find("h9"))
 
 # Drill Down into class/id tags within the HTML body
-print(soup.find_all("p", id = "id2"))
+print(soup.prettify())
+print(soup.find_all("div", id = "id2"))
+print(soup.find_all(attrs = {"class" : "banner"}))
 print(soup.find_all(attrs = {"class":"afterbanner", "id": "id1"}))
 
 
+# Little more HTML real estate to work with
+url = "https://codefinity-content-media.s3.eu-west-1.amazonaws.com/18a4e428-1a0f-44c2-a8ad-244cd9c7985e/mother.html"
+page = urlopen(url)
+html = page.read().decode("utf-8")
+
+# Create the BeautifulSoup object
+soup = BeautifulSoup(html, "html.parser")
+
+# Print the first div tag
+print(soup.find("div"))
+
+# Print the tag p with the correct id
+print(soup.find_all("p", attrs={"id" : "id0"}))
+
+# Print the first div tag
+print(soup.find("div"))
+
+# Print the tag p with the correct id
+print(soup.find_all("p", attrs={"id" : "id0"}))
 
 
+import re
+
+# We can also use the function .find_all() to find not only one but multiple tags using a list.
+print(soup.find_all(['title', 'h1']))
+
+print(soup.prettify())
+def find_all_condition(tag):
+    return tag.string == "City: Kyiv"
+print(soup.find_all(find_all_condition))
+iterab = soup.find_all(["div", "h1", "title"])
+for i, idx in enumerate(range(len(iterab))):
+    print(iterab[i], idx)
 
 
+#W/Regex
+# =============================================================================
+# What to do if you want to get all of the tags h1-h8? To create eight element list? 
+# Such a way can be a bit painful and takes a lot of time. Here you can apply the symbols []. 
+# The regular expression will be h[1-8]. It means "match any number from 1 to 8 in combination with h".
+# =============================================================================
 
 
+tags = soup.find_all(re.compile("h[1-8]"))
+print(tags)
 
 
+# You can manipulate not only numbers but also characters! 
+# For example, the following code extracts all the dl and dt tags:
 
-
-
+# Here the regular expression means "match any the character l or t in combination with d".
+dl_dt = soup.find_all(re.compile("d[lt]"))
+print(dl_dt)
 
 
 
