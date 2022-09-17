@@ -100,6 +100,8 @@ def findKeys(x):
     return pd.DataFrame(single_df)
 
 
+
+
 # Test individual row of scraped dataframe
 print(findKeys(df_1.loc['Sydney Opera House', :]))
 dfmut_1, dfmut_2, dfmut_3, dfmut_4, dfmut_5 = findKeys(df_1.loc['Sydney Opera House', :]), findKeys(df_1.loc['Empire State Building', :]), findKeys(df_1.loc['Taj Mahal', :]),findKeys(df_1.loc['Hagia Sophia', :]), findKeys(df_1.loc['Eiffel Tower', :])
@@ -119,7 +121,7 @@ combined_mut
 
 
 
-# Alternate Solution (Not sure the value in this one on their platform)
+# Another stab at this from scratch
 # Import libraries
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
@@ -157,6 +159,53 @@ pd.set_option('display.max_columns', None)
 
 # Separate the text on page by columns
 print(df[0].str.split(r"\n", expand=True)) 
+
+
+# Use Similar logic above but need singular call to assign rows and not individual calls
+df_cf_test = df.copy()
+print(df_cf_test)
+
+def updateRow(x):
+    # Create default dataframe used later for stacking
+    new_df = pd.DataFrame({'Name':['1'], 'Country':['1'], 'City':['1'], 'Architectural style':['1']})
+    # Iterate over (column name, Series) pairs.
+    for name, val in x.iteritems():
+        # Empty object to fill with Key/Value pairs above in same mold as template dataframe above
+        stack_obj = {}
+        # Existing data (all in one column) is separated by a new line, split on this to iterate over
+        data = val.split("\n")
+        # Loop over new list containing each key/value pair now in one string (A few empty lines so conditionally catch those)
+        for item in data:
+            if item != '':
+                sep = item.find(':')
+                key = item[:sep]
+                value = item[sep + 2:]
+                # Must add singular value in a list to create DataFrame below
+                stack_obj[key] = [value]
+        # Created Dictionary with each series values (multi line string in {df} var rows singular column initially)
+        row_df = pd.DataFrame(stack_obj)
+        # Stack new dataframe ontop of default dataframe
+        new_df = pd.concat([new_df, row_df])
+    # Modfiy dataframe to remove default row (w/iloc after initially resetting), 
+    # then set index to name column and drop the index column (along the column and not default row axis)
+    new_df = new_df.reset_index().iloc[1:, :].set_index('Name').drop('index', axis=1)
+    return new_df
+
+
+# Test single row with function
+print(updateRow(df_cf_test.loc['Sydney Opera House', :]))
+
+# Pass web Scraped DF to updateRow function to clean up dataframe initially created Soup UL scraping
+for label, content in df_cf_test.items():
+    print(updateRow(content))
+
+
+
+
+
+
+
+
 
 
 
