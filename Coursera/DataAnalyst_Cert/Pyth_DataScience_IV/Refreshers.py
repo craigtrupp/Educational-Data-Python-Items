@@ -107,6 +107,95 @@ printDictionary(Country='Canada',Province='Ontario',City='Toronto')
 
 
 
+# =============================================================================
+# Exception Catching
+# Good Refershers
+# =============================================================================
+print(1/0) # Zero Division Error
+a = [1, 2, 3]
+a[10] # Index Error (list index out of range)
+
+
+# =============================================================================
+# # Try/Except
+# # A try except will allow you to execute code that might raise an exception 
+# # and in the case of any exception or a specific one we can handle or catch the exception and execute specific code. 
+# # This will allow us to continue the execution of our program even if there is an exception.
+# =============================================================================
+
+# Examples
+a = 1
+
+try:
+    b = int(input("Please enter a number to divide a"))
+    a = a/b
+    print("Success a=",a)
+except:
+    print("There was an error")
+    
+    
+
+a = 1
+
+try:
+    b = int(input("Please enter a number to divide a"))
+    a = a/b
+    print("Success a=",a)
+except ZeroDivisionError:
+    print("The number you provided cant divide 1 because it is 0")
+except ValueError:
+    print("You did not provide a number")
+except:
+    print("Something went wrong")
+    
+    
+# potential code before try catch
+
+try:
+    # code to try to execute
+except ZeroDivisionError:
+    # code to execute if there is a ZeroDivisionError
+except NameError:
+    # code to execute if there is a NameError
+except:
+    # code to execute if ther is any exception
+else:
+    # code to execute if there is no exception
+finally:
+    # code to execute at the end of the try except no matter what
+    
+    
+# potential code before try catch
+
+a = 1
+
+try:
+    b = int(input("Please enter a number to divide a"))
+    a = a/b
+except ZeroDivisionError:
+    print("The number you provided cant divide 1 because it is 0")
+except ValueError:
+    print("You did not provide a number")
+except:
+    print("Something went wrong")
+else:
+    print("success a=",a)
+finally:
+    print("Processing complete")
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
