@@ -180,12 +180,12 @@ def updateRow(x):
                 sep = item.find(':')
                 key = item[:sep]
                 value = item[sep + 2:]
-                # Must add singular value in a list to create DataFrame below
+                # Must add singular value in a list to create DataFrame below (Declaring new Columns for Row)
                 stack_obj[key] = [value]
-        # Created Dictionary with each series values (multi line string in {df} var rows singular column initially)
-        row_df = pd.DataFrame(stack_obj)
-        # Stack new dataframe ontop of default dataframe
-        new_df = pd.concat([new_df, row_df])
+        # Created Dictionary with each series values (multi line string in {df} var rows singular column initially into individual keys which will transform into a dataframe next)
+        rows_df = pd.DataFrame(stack_obj)
+        # Stack new dataframe from looped over data that created columns on each iteration on top of default dataframe
+        new_df = pd.concat([new_df, rows_df])
     # Modfiy dataframe to remove default row (w/iloc after initially resetting), 
     # then set index to name column and drop the index column (along the column and not default row axis)
     new_df = new_df.reset_index().iloc[1:, :].set_index('Name').drop('index', axis=1)

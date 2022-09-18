@@ -93,6 +93,7 @@ test.apply(np.vectorize(slicebs4))
 # For each value in the dataframe, the class 'bs4.element.Tag' type is passed to slicebs4 method and the value is set to the sliced string now available from the method
 df_test = df_test.apply(np.vectorize(slicebs4))
 df_test.head(2)
+df_test
 # Codefinity
 
 statue_dict_two = {}
