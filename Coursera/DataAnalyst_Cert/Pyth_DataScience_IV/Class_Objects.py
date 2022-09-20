@@ -27,7 +27,7 @@ class Circle(object):
         plt.show()  
 
     
-blu_3 = Circle() #Use default arguments
+blu_3 = Circle() #Use default arguments			
 blu_3.radius
 blu_3.drawCircle()
 # Methods of Object
