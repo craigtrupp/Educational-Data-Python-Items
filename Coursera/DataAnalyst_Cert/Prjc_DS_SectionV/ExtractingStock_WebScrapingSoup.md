@@ -60,88 +60,72 @@ Using beautiful soup we will extract historical share data from a web-page.
     
     Looking for: ['bs4==4.10.0']
     
-    pkgs/r/linux-64          [<=>                 ] (00m:00s) 
-    pkgs/r/linux-64          [=>                ] (00m:00s) 10 KB / ?? (65.52 KB/s)
-    pkgs/r/linux-64          [=>                ] (00m:00s) 10 KB / ?? (65.52 KB/s)
-    pkgs/r/noarch            [<=>                 ] (00m:00s) 
-    pkgs/r/linux-64          [=>                ] (00m:00s) 10 KB / ?? (65.52 KB/s)
-    pkgs/r/noarch            [=>               ] (00m:00s) 31 KB / ?? (204.28 KB/s)
-    pkgs/r/linux-64          [=>                ] (00m:00s) 10 KB / ?? (65.52 KB/s)
-    pkgs/r/noarch            [=>               ] (00m:00s) 31 KB / ?? (204.28 KB/s)
-    pkgs/main/linux-64       [<=>                 ] (00m:00s) 
-    pkgs/r/linux-64          [=>                ] (00m:00s) 10 KB / ?? (65.52 KB/s)
-    pkgs/r/noarch            [=>               ] (00m:00s) 31 KB / ?? (204.28 KB/s)
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
-    pkgs/r/linux-64          [=>                ] (00m:00s) 10 KB / ?? (65.52 KB/s)
-    pkgs/r/noarch            [=>               ] (00m:00s) 31 KB / ?? (204.28 KB/s)
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
     pkgs/main/noarch         [<=>                 ] (00m:00s) 
-    pkgs/r/linux-64          [=>                ] (00m:00s) 10 KB / ?? (65.52 KB/s)
-    pkgs/r/noarch            [=>               ] (00m:00s) 31 KB / ?? (204.28 KB/s)
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
-    pkgs/main/noarch         [=>                ] (00m:00s) 660 KB / ?? (2.14 MB/s)
-    pkgs/r/linux-64          [<=>               ] (00m:00s) 10 KB / ?? (65.52 KB/s)
-    pkgs/r/noarch            [=>               ] (00m:00s) 31 KB / ?? (204.28 KB/s)
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
-    pkgs/main/noarch         [=>                ] (00m:00s) 660 KB / ?? (2.14 MB/s)
-    pkgs/r/linux-64          [<=>               ] (00m:00s) 712 KB / ?? (2.30 MB/s)
-    pkgs/r/noarch            [=>               ] (00m:00s) 31 KB / ?? (204.28 KB/s)
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
-    pkgs/main/noarch         [=>                ] (00m:00s) 660 KB / ?? (2.14 MB/s)
-    pkgs/r/linux-64          [<=>               ] (00m:00s) 712 KB / ?? (2.30 MB/s)
-    pkgs/r/noarch            [<=>              ] (00m:00s) 31 KB / ?? (204.28 KB/s)
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
-    pkgs/main/noarch         [=>                ] (00m:00s) 660 KB / ?? (2.14 MB/s)
-    pkgs/r/linux-64          [<=>               ] (00m:00s) 712 KB / ?? (2.30 MB/s)
-    pkgs/r/noarch            [<=>               ] (00m:00s) 752 KB / ?? (2.43 MB/s)
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
-    pkgs/main/noarch         [=>                ] (00m:00s) 660 KB / ?? (2.14 MB/s)
-    pkgs/r/linux-64          [<=>               ] (00m:00s) 712 KB / ?? (2.30 MB/s)
-    pkgs/r/noarch            [<=>               ] (00m:00s) 752 KB / ?? (2.43 MB/s)
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
+    pkgs/main/noarch         [=>                ] (00m:00s) 472 KB / ?? (1.52 MB/s)
+    pkgs/main/noarch         [=>                ] (00m:00s) 472 KB / ?? (1.52 MB/s)
+    pkgs/r/linux-64          [<=>                 ] (00m:00s) 
+    pkgs/main/noarch         [=>                ] (00m:00s) 472 KB / ?? (1.52 MB/s)
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/main/noarch         [=>                ] (00m:00s) 472 KB / ?? (1.52 MB/s)
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/r/noarch            [<=>                 ] (00m:00s) 
+    pkgs/main/noarch         [=>                ] (00m:00s) 472 KB / ?? (1.52 MB/s)
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/r/noarch            [=>                ] (00m:00s) 408 KB / ?? (1.31 MB/s)
+    pkgs/main/noarch         [=>                ] (00m:00s) 472 KB / ?? (1.52 MB/s)
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/r/noarch            [=>                ] (00m:00s) 408 KB / ?? (1.31 MB/s)
+    pkgs/main/linux-64       [<=>                 ] (00m:00s) 
+    pkgs/main/noarch         [=>                ] (00m:00s) 472 KB / ?? (1.52 MB/s)
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/r/noarch            [=>                ] (00m:00s) 408 KB / ?? (1.31 MB/s)
+    pkgs/main/linux-64       [=>                ] (00m:00s) 504 KB / ?? (1.62 MB/s)
     pkgs/main/noarch         [<=>                 ] (00m:00s) Finalizing...
-    pkgs/r/linux-64          [<=>               ] (00m:00s) 712 KB / ?? (2.30 MB/s)
-    pkgs/r/noarch            [<=>               ] (00m:00s) 752 KB / ?? (2.43 MB/s)
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/r/noarch            [=>                ] (00m:00s) 408 KB / ?? (1.31 MB/s)
+    pkgs/main/linux-64       [=>                ] (00m:00s) 504 KB / ?? (1.62 MB/s)
     pkgs/main/noarch         [<=>                 ] (00m:00s) Done
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/r/noarch            [=>                ] (00m:00s) 408 KB / ?? (1.31 MB/s)
+    pkgs/main/linux-64       [=>                ] (00m:00s) 504 KB / ?? (1.62 MB/s)
     pkgs/main/noarch         [====================] (00m:00s) Done
-    pkgs/r/linux-64          [<=>               ] (00m:00s) 712 KB / ?? (2.30 MB/s)
-    pkgs/r/noarch            [<=>               ] (00m:00s) 752 KB / ?? (2.43 MB/s)
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
-    pkgs/r/linux-64          [<=>               ] (00m:00s) 712 KB / ?? (2.30 MB/s)
-    pkgs/r/noarch            [ <=>                ] (00m:00s) Finalizing...
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
-    pkgs/r/linux-64          [<=>               ] (00m:00s) 712 KB / ?? (2.30 MB/s)
-    pkgs/r/noarch            [ <=>                ] (00m:00s) Done
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/r/noarch            [=>                ] (00m:00s) 408 KB / ?? (1.31 MB/s)
+    pkgs/main/linux-64       [=>                ] (00m:00s) 504 KB / ?? (1.62 MB/s)
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/r/noarch            [<=>                 ] (00m:00s) Finalizing...
+    pkgs/main/linux-64       [=>                ] (00m:00s) 504 KB / ?? (1.62 MB/s)
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/r/noarch            [<=>                 ] (00m:00s) Done
+    pkgs/main/linux-64       [=>                ] (00m:00s) 504 KB / ?? (1.62 MB/s)
     pkgs/r/noarch            [====================] (00m:00s) Done
-    pkgs/r/linux-64          [<=>               ] (00m:00s) 712 KB / ?? (2.30 MB/s)
-    pkgs/main/linux-64       [=>                ] (00m:00s) 732 KB / ?? (2.37 MB/s)
-    pkgs/r/linux-64          [<=>               ] (00m:00s) 712 KB / ?? (2.30 MB/s)
-    pkgs/main/linux-64       [<=>               ] (00m:00s) 732 KB / ?? (2.37 MB/s)
-    pkgs/r/linux-64          [<=>               ] (00m:00s) 712 KB / ?? (2.30 MB/s)
-    pkgs/main/linux-64       [ <=>                ] (00m:00s) 1 MB / ?? (2.77 MB/s)
-    pkgs/r/linux-64          [ <=>              ] (00m:00s) 712 KB / ?? (2.30 MB/s)
-    pkgs/main/linux-64       [ <=>                ] (00m:00s) 1 MB / ?? (2.77 MB/s)
-    pkgs/r/linux-64          [  <=>               ] (00m:00s) 1 MB / ?? (2.63 MB/s)
-    pkgs/main/linux-64       [ <=>                ] (00m:00s) 1 MB / ?? (2.77 MB/s)
-    pkgs/r/linux-64          [  <=>               ] (00m:00s) Finalizing...
-    pkgs/main/linux-64       [ <=>                ] (00m:00s) 1 MB / ?? (2.77 MB/s)
-    pkgs/r/linux-64          [  <=>               ] (00m:00s) Done
-    pkgs/main/linux-64       [ <=>                ] (00m:00s) 1 MB / ?? (2.77 MB/s)
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/main/linux-64       [=>                ] (00m:00s) 504 KB / ?? (1.62 MB/s)
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/main/linux-64       [<=>               ] (00m:00s) 504 KB / ?? (1.62 MB/s)
+    pkgs/r/linux-64          [=>                ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/main/linux-64       [ <=>                ] (00m:00s) 1 MB / ?? (2.52 MB/s)
+    pkgs/r/linux-64          [<=>               ] (00m:00s) 476 KB / ?? (1.53 MB/s)
+    pkgs/main/linux-64       [ <=>                ] (00m:00s) 1 MB / ?? (2.52 MB/s)
+    pkgs/r/linux-64          [ <=>                ] (00m:00s) 1 MB / ?? (2.44 MB/s)
+    pkgs/main/linux-64       [ <=>                ] (00m:00s) 1 MB / ?? (2.52 MB/s)
+    pkgs/r/linux-64          [ <=>                ] (00m:00s) Finalizing...
+    pkgs/main/linux-64       [ <=>                ] (00m:00s) 1 MB / ?? (2.52 MB/s)
+    pkgs/r/linux-64          [ <=>                ] (00m:00s) Done
+    pkgs/main/linux-64       [ <=>                ] (00m:00s) 1 MB / ?? (2.52 MB/s)
     pkgs/r/linux-64          [====================] (00m:00s) Done
-    pkgs/main/linux-64       [ <=>                ] (00m:00s) 1 MB / ?? (2.77 MB/s)
-    pkgs/main/linux-64       [  <=>               ] (00m:00s) 1 MB / ?? (2.77 MB/s)
-    pkgs/main/linux-64       [  <=>               ] (00m:00s) 2 MB / ?? (3.67 MB/s)
-    pkgs/main/linux-64       [   <=>              ] (00m:00s) 2 MB / ?? (3.67 MB/s)
-    pkgs/main/linux-64       [   <=>              ] (00m:00s) 3 MB / ?? (3.77 MB/s)
-    pkgs/main/linux-64       [    <=>             ] (00m:00s) 3 MB / ?? (3.77 MB/s)
-    pkgs/main/linux-64       [    <=>             ] (00m:00s) 4 MB / ?? (4.02 MB/s)
-    pkgs/main/linux-64       [     <=>            ] (00m:00s) 4 MB / ?? (4.02 MB/s)
-    pkgs/main/linux-64       [     <=>            ] (00m:00s) 4 MB / ?? (4.16 MB/s)
+    pkgs/main/linux-64       [ <=>                ] (00m:00s) 1 MB / ?? (2.52 MB/s)
+    pkgs/main/linux-64       [  <=>               ] (00m:00s) 1 MB / ?? (2.52 MB/s)
+    pkgs/main/linux-64       [  <=>               ] (00m:00s) 2 MB / ?? (3.26 MB/s)
+    pkgs/main/linux-64       [   <=>              ] (00m:00s) 2 MB / ?? (3.26 MB/s)
+    pkgs/main/linux-64       [   <=>              ] (00m:00s) 3 MB / ?? (3.50 MB/s)
+    pkgs/main/linux-64       [    <=>             ] (00m:00s) 3 MB / ?? (3.50 MB/s)
+    pkgs/main/linux-64       [    <=>             ] (00m:00s) 3 MB / ?? (3.65 MB/s)
+    pkgs/main/linux-64       [     <=>            ] (00m:00s) 3 MB / ?? (3.65 MB/s)
+    pkgs/main/linux-64       [     <=>            ] (00m:00s) 4 MB / ?? (3.78 MB/s)
     pkgs/main/linux-64       [     <=>            ] (00m:00s) Finalizing...
-    pkgs/main/linux-64       [     <=>            ] (00m:00s) Done
-    pkgs/main/linux-64       [====================] (00m:00s) Done
+    pkgs/main/linux-64       [     <=>            ] (00m:01s) Done
+    pkgs/main/linux-64       [====================] (00m:01s) Done
     
     Pinned packages:
       - python 3.7.*
@@ -190,53 +174,53 @@ Using beautiful soup we will extract historical share data from a web-page.
     
     ──────────────────────────────────────────────────────────────────────────────
     
-    Downloading  [==>                                      ] (00m:00s)    1.03 MB/s
+    Downloading  [>                                        ] (00m:00s)   39.40 KB/s
     Extracting   [>                                                      ] (--:--) 
-    [2A[0KFinished certifi                              (00m:00s)             155 KB      1 MB/s
-    Downloading  [==>                                      ] (00m:00s)    1.03 MB/s
+    [2A[0KFinished bs4                                  (00m:00s)              10 KB     39 KB/s
+    Downloading  [>                                        ] (00m:00s)   39.40 KB/s
     Extracting   [>                                                      ] (--:--) 
-    Downloading  [==>                                      ] (00m:00s)    1.03 MB/s
+    Downloading  [>                                        ] (00m:00s)   39.40 KB/s
     Extracting   [>                                                      ] (--:--) 
-    Downloading  [==>                                      ] (00m:00s)    1.03 MB/s
+    Downloading  [>                                        ] (00m:00s)   39.40 KB/s
     Extracting   [>                                                      ] (--:--) 
-    Downloading  [==>                                      ] (00m:00s)    1.09 MB/s
+    Downloading  [=>                                       ] (00m:00s)  367.83 KB/s
     Extracting   [>                                                      ] (--:--) 
-    [2A[0KFinished bs4                                  (00m:00s)              10 KB     67 KB/s
-    Downloading  [==>                                      ] (00m:00s)    1.09 MB/s
+    [2A[0KFinished beautifulsoup4                       (00m:00s)              85 KB    329 KB/s
+    Downloading  [=>                                       ] (00m:00s)  367.83 KB/s
     Extracting   [>                                                      ] (--:--) 
-    Downloading  [==>                                      ] (00m:00s)    1.09 MB/s
+    Downloading  [=>                                       ] (00m:00s)  367.83 KB/s
     Extracting   [>                                                      ] (--:--) 
-    Downloading  [==>                                      ] (00m:00s)    1.48 MB/s
+    Downloading  [===>                                     ] (00m:00s)  969.29 KB/s
     Extracting   [>                                                      ] (--:--) 
-    Downloading  [==>                                      ] (00m:00s)    1.48 MB/s
-    Extracting   [>                                                      ] (--:--) 
-    Downloading  [==>                                      ] (00m:00s)    1.48 MB/s
+    Downloading  [===>                                     ] (00m:00s)  969.29 KB/s
     Extracting   [==========>                              ] (00m:00s)        1 / 4
-    Downloading  [==>                                      ] (00m:00s)    1.48 MB/s
+    Downloading  [===>                                     ] (00m:00s)  969.29 KB/s
     Extracting   [==========>                              ] (00m:00s)        1 / 4
-    Downloading  [==>                                      ] (00m:00s)    1.48 MB/s
+    [2A[0KFinished certifi                              (00m:00s)             155 KB    600 KB/s
+    Downloading  [===>                                     ] (00m:00s)  969.29 KB/s
+    Extracting   [==========>                              ] (00m:00s)        1 / 4
+    Downloading  [===>                                     ] (00m:00s)  969.29 KB/s
+    Extracting   [==========>                              ] (00m:00s)        1 / 4
+    Downloading  [===>                                     ] (00m:00s)  969.29 KB/s
     Extracting   [====================>                    ] (00m:00s)        2 / 4
-    Downloading  [=======================================> ] (00m:00s)   16.80 MB/s
+    Downloading  [===>                                     ] (00m:00s)  969.29 KB/s
     Extracting   [====================>                    ] (00m:00s)        2 / 4
-    Downloading  [=========================================] (00m:00s)   17.20 MB/s
-    Extracting   [====================>                    ] (00m:00s)        2 / 4
-    [2A[0KFinished beautifulsoup4                       (00m:00s)              85 KB    523 KB/s
-    Downloading  [=========================================] (00m:00s)   17.20 MB/s
-    Extracting   [====================>                    ] (00m:00s)        2 / 4
-    Downloading  [=========================================] (00m:00s)   17.20 MB/s
-    Extracting   [====================>                    ] (00m:00s)        2 / 4
-    Downloading  [=========================================] (00m:00s)   17.20 MB/s
-    Extracting   [====================>                    ] (00m:00s)        2 / 4
-    Downloading  [=========================================] (00m:00s)   17.20 MB/s
+    Downloading  [===>                                     ] (00m:00s)  969.29 KB/s
     Extracting   [==============================>          ] (00m:00s)        3 / 4
-    [2A[0KFinished openssl                              (00m:00s)               3 MB     16 MB/s
-    Downloading  [=========================================] (00m:00s)   17.20 MB/s
+    Downloading  [========================>                ] (00m:00s)    5.56 MB/s
     Extracting   [==============================>          ] (00m:00s)        3 / 4
-    Downloading  [=========================================] (00m:00s)   17.20 MB/s
+    Downloading  [========================>                ] (00m:00s)    5.56 MB/s
     Extracting   [==============================>          ] (00m:00s)        3 / 4
-    Downloading  [=========================================] (00m:00s)   17.20 MB/s
+    Downloading  [=========================================] (00m:00s)    6.82 MB/s
     Extracting   [==============================>          ] (00m:00s)        3 / 4
-    Downloading  [=========================================] (00m:00s)   17.20 MB/s
+    [2A[0KFinished openssl                              (00m:00s)               3 MB      6 MB/s
+    Downloading  [=========================================] (00m:00s)    6.82 MB/s
+    Extracting   [==============================>          ] (00m:00s)        3 / 4
+    Downloading  [=========================================] (00m:00s)    6.82 MB/s
+    Extracting   [==============================>          ] (00m:00s)        3 / 4
+    Downloading  [=========================================] (00m:00s)    6.82 MB/s
+    Extracting   [==============================>          ] (00m:00s)        3 / 4
+    Downloading  [=========================================] (00m:00s)    6.82 MB/s
     Extracting   [=========================================] (00m:00s)        4 / 4
     Preparing transaction: done
     Verifying transaction: done
@@ -304,34 +288,34 @@ Using beautiful soup we will extract historical share data from a web-page.
     
     ───────────────────────────────────────────────────────────────────────
     
-    Downloading  [=================================>       ] (00m:00s)  626.36 KB/s
+    Downloading  [======>                                  ] (00m:00s)   75.18 KB/s
     Extracting   [>                                                      ] (--:--) 
-    [2A[0KFinished html5lib                             (00m:00s)              91 KB    626 KB/s
-    Downloading  [=================================>       ] (00m:00s)  626.36 KB/s
-    Extracting   [>                                                      ] (--:--) 
-    Downloading  [=================================>       ] (00m:00s)  626.36 KB/s
-    Extracting   [>                                                      ] (--:--) 
-    Downloading  [=================================>       ] (00m:00s)  626.36 KB/s
-    Extracting   [>                                                      ] (--:--) 
-    Downloading  [=================================>       ] (00m:00s)  626.36 KB/s
-    Extracting   [====================>                    ] (00m:00s)        1 / 2
-    Downloading  [=========================================] (00m:00s)  432.74 KB/s
-    Extracting   [====================>                    ] (00m:00s)        1 / 2
     [2A[0KFinished webencodings                         (00m:00s)              19 KB     75 KB/s
-    Downloading  [=========================================] (00m:00s)  432.74 KB/s
+    Downloading  [======>                                  ] (00m:00s)   75.18 KB/s
+    Extracting   [>                                                      ] (--:--) 
+    Downloading  [======>                                  ] (00m:00s)   75.18 KB/s
+    Extracting   [>                                                      ] (--:--) 
+    Downloading  [======>                                  ] (00m:00s)   75.18 KB/s
+    Extracting   [>                                                      ] (--:--) 
+    Downloading  [=========================================] (00m:00s)  431.05 KB/s
+    Extracting   [>                                                      ] (--:--) 
+    [2A[0KFinished html5lib                             (00m:00s)              91 KB    356 KB/s
+    Downloading  [=========================================] (00m:00s)  431.05 KB/s
+    Extracting   [>                                                      ] (--:--) 
+    Downloading  [=========================================] (00m:00s)  431.05 KB/s
+    Extracting   [>                                                      ] (--:--) 
+    Downloading  [=========================================] (00m:00s)  431.05 KB/s
     Extracting   [====================>                    ] (00m:00s)        1 / 2
-    Downloading  [=========================================] (00m:00s)  432.74 KB/s
+    Downloading  [=========================================] (00m:00s)  431.05 KB/s
     Extracting   [====================>                    ] (00m:00s)        1 / 2
-    Downloading  [=========================================] (00m:00s)  432.74 KB/s
-    Extracting   [====================>                    ] (00m:00s)        1 / 2
-    Downloading  [=========================================] (00m:00s)  432.74 KB/s
+    Downloading  [=========================================] (00m:00s)  431.05 KB/s
     Extracting   [=========================================] (00m:00s)        2 / 2
     Preparing transaction: done
     Verifying transaction: done
     Executing transaction: done
     Collecting lxml==4.6.4
       Downloading lxml-4.6.4-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (6.3 MB)
-    [2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m6.3/6.3 MB[0m [31m79.2 MB/s[0m eta [36m0:00:00[0m:00:01[0m00:01[0m
+    [2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m6.3/6.3 MB[0m [31m87.2 MB/s[0m eta [36m0:00:00[0m:00:01[0m00:01[0m
     [?25hInstalling collected packages: lxml
       Attempting uninstall: lxml
         Found existing installation: lxml 4.9.1
@@ -700,7 +684,7 @@ Using beautiful soup extract the table with historical share prices and store it
 amazon_data = pd.DataFrame(columns=["Date", "Open", "High", "Low", "Close", "Volume"])
 
 # Deprecated use of append (see concat above for how you adjusted a similar task)
-for row in soup.find("tbody").find_all("tr"):
+for row in soup_stock.find("tbody").find_all("tr"):
     col = row.find_all("td")
     date = col[0].text
     Open = col[1].text
@@ -721,12 +705,12 @@ Print out the first five rows of the `amazon_data` dataframe you created.
 print(amazon_data.head())
 ```
 
-               Date    Open    High     Low   Close       Volume Adj Close
-    0  Jun 01, 2021  504.01  536.13  482.14  528.21   78,560,600    528.21
-    1  May 01, 2021  512.65  518.95  478.54  502.81   66,927,600    502.81
-    2  Apr 01, 2021  529.93  563.56  499.00  513.47  111,573,300    513.47
-    3  Mar 01, 2021  545.57  556.99  492.85  521.66   90,183,900    521.66
-    4  Feb 01, 2021  536.79  566.65  518.28  538.85   61,902,300    538.85
+               Date      Open      High       Low     Close       Volume Adj Close
+    0  Jan 01, 2021  3,270.00  3,363.89  3,086.00  3,206.20   71,528,900  3,206.20
+    1  Dec 01, 2020  3,188.50  3,350.65  3,072.82  3,256.93   77,556,200  3,256.93
+    2  Nov 01, 2020  3,061.74  3,366.80  2,950.12  3,168.04   90,810,500  3,168.04
+    3  Oct 01, 2020  3,208.00  3,496.24  3,019.00  3,036.15  116,226,100  3,036.15
+    4  Sep 01, 2020  3,489.58  3,552.25  2,871.00  3,148.73  115,899,300  3,148.73
 
 
 <b>Question 2</b> What is the name of the columns of the dataframe
@@ -739,7 +723,7 @@ print(amazon_data.index)
 ```
 
     Index(['Date', 'Open', 'High', 'Low', 'Close', 'Volume', 'Adj Close'], dtype='object')
-    RangeIndex(start=0, stop=70, step=1)
+    RangeIndex(start=0, stop=61, step=1)
 
 
 <b>Question 3</b> What is the `Open` of the last row of the amazon_data dataframe?
@@ -752,49 +736,51 @@ print(amazon_data[-1:]['Open'])
 print(amazon_data.tail(1))
 ```
 
-    69    109.35
+    60    656.29
     Name: Open, dtype: object
-                Date    Open    High    Low   Close       Volume Adj Close
-    69  Sep 01, 2015  109.35  111.24  93.55  103.26  497,401,200    103.26
+                Date    Open    High     Low   Close       Volume Adj Close
+    60  Jan 01, 2016  656.29  657.72  547.18  587.00  130,200,900    587.00
 
 
 
 ```python
 # Update close column to float to plot
 print(amazon_data.info())
+# Remove any comma in string to transform to a float
+amazon_data['Close'] = amazon_data['Close'].apply(lambda x : x.replace(',', ''))
 amazon_data['Close'] = amazon_data['Close'].astype('float')
 print(amazon_data.info())
 ```
 
     <class 'pandas.core.frame.DataFrame'>
-    RangeIndex: 70 entries, 0 to 69
+    RangeIndex: 61 entries, 0 to 60
     Data columns (total 7 columns):
      #   Column     Non-Null Count  Dtype 
     ---  ------     --------------  ----- 
-     0   Date       70 non-null     object
-     1   Open       70 non-null     object
-     2   High       70 non-null     object
-     3   Low        70 non-null     object
-     4   Close      70 non-null     object
-     5   Volume     70 non-null     object
-     6   Adj Close  70 non-null     object
+     0   Date       61 non-null     object
+     1   Open       61 non-null     object
+     2   High       61 non-null     object
+     3   Low        61 non-null     object
+     4   Close      61 non-null     object
+     5   Volume     61 non-null     object
+     6   Adj Close  61 non-null     object
     dtypes: object(7)
-    memory usage: 4.0+ KB
+    memory usage: 3.5+ KB
     None
     <class 'pandas.core.frame.DataFrame'>
-    RangeIndex: 70 entries, 0 to 69
+    RangeIndex: 61 entries, 0 to 60
     Data columns (total 7 columns):
      #   Column     Non-Null Count  Dtype  
     ---  ------     --------------  -----  
-     0   Date       70 non-null     object 
-     1   Open       70 non-null     object 
-     2   High       70 non-null     object 
-     3   Low        70 non-null     object 
-     4   Close      70 non-null     float64
-     5   Volume     70 non-null     object 
-     6   Adj Close  70 non-null     object 
+     0   Date       61 non-null     object 
+     1   Open       61 non-null     object 
+     2   High       61 non-null     object 
+     3   Low        61 non-null     object 
+     4   Close      61 non-null     float64
+     5   Volume     61 non-null     object 
+     6   Adj Close  61 non-null     object 
     dtypes: float64(1), object(6)
-    memory usage: 4.0+ KB
+    memory usage: 3.5+ KB
     None
 
 
