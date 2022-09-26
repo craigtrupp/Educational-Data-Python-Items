@@ -35,6 +35,18 @@ print(parking_spots.values())
 print({parking_spots.values(): parking_spots.keys()})
 switch = {parking_spots.values(): parking_spots.keys()}
 print(switch)
+# Del Key with known value but not key
+parking_spots[list(parking_spots.keys())]
+# indexing by order, must transform to list to use .index method
+key_list = list(parking_spots.keys())
+values_list = list(parking_spots.values())
+porsche = values_list.index('Porsche')
+print(f"porsche will have the index value : {porsche} to pass to the key_list which is ordered, so the key would be : {key_list[porsche]}")
+# Know we know the key for the value : 'Porsche' (Porsche is a numeric value that is ordered to access the key value to pass to the del statement)
+del parking_spots[key_list[porsche]]
+# No more Porsche
+print(parking_spots)
+
 myDict = {x: x**2 for x in [1,2,3,4,5]}
 print (myDict)
 sDict = {x.upper(): x*3 for x in'coding'}
@@ -120,7 +132,7 @@ print(np.arange(start=1, stop=11))
 print(np.arange(start=0, stop=11, dtype=int, step=2))
 
 #np linspace
-print(np.linspace(start=10, stop=40, num=4, dtype=int))
+print(np.linspace(start=10, stop=40, num=5, dtype=float))
 
 x = -3
 
@@ -190,8 +202,15 @@ car_list.remove(car_list[car_list.index('Ferrari')])
 car_list
 
 
-print(supercars.head())
+print(supercars.head(1))
 print(supercars.columns)
 print("hooray" if 'hp_per_ton' in supercars.columns else 'Not in there')
 supercars.assign(hp_per_ton = supercars['horsepower']/supercars.weight, inplace=True)
+
+# retrieve make variable defaults to column axis=1
+supercars.filter(['make'])
+print(supercars.filter(items=['make', 'model']).head())
+
+# supercars query
+supercars.query('horsepower > 300')
 
