@@ -104,7 +104,39 @@ print(df.columns)
 # The JointGrid ( aka JointGrid()) is a figure-level function, when the function is called a JointGrid() object is instantiated. 
 # The function creates a JointGrid object consisting of three axes objects but does not plot anything on it.
 # =============================================================================
+# Reading the file
+df_2 = pd.read_csv('https://codefinity-content-media.s3.eu-west-1.amazonaws.com/66ba0c8e-8422-413c-b7e1-74bd24c61656/penguins_upd.csv')
+ 
+# Set the 'ticks' style with the 'lightcyan' facecolor
+sns.set_style('ticks', {'figure.facecolor' : 'lightcyan'})
+# Create a JointGrid variable
+g_2 = sns.JointGrid(# Set the x
+                  x = 'bill_length_mm', 
+                  # Set the y
+                  y = 'bill_depth_mm', 
+                  # Set the hue
+                  hue = 'species',
+                  # Set the palette
+                  palette = 'viridis',
+                  # Set the data
+                  data = df_2)
+# Set the inside plot using the .plot_joint() function
+g_2.plot_joint(# Create a scatterplot
+             sns.scatterplot, 
+             # Set the alpha
+             alpha = 0.5, 
+             # Set the edgecolor
+             edgecolor = 'pink', 
+             # Set the linewidth
+             linewidth = 1)
+# Set the outside plot using the .plot_marginals() function
+g_2.plot_marginals(# Create the histplot
+                 sns.histplot, 
+                 # Set the kde
+                 kde = True)
 
+# Displaying the plot
+plt.show()
 
 
 
