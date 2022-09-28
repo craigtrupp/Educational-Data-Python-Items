@@ -62,6 +62,7 @@ plt.hist(x = bank.age)
 #================
 # SINGLE ROW GRID
 #================
+print(bank['education'].unique(), bank['education'].nunique())
 grid_layout = sns.FacetGrid(bank, col = 'education')
 grid_layout.map(plt.hist, 'age')
 
