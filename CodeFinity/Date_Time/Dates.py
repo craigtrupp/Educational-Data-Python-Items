@@ -18,6 +18,7 @@ from datetime import date, timedelta
 
 today = date.today()
 print(today)
+## 2022-09-28
 
 # =============================================================================
 # # Create Custome Date Object 
@@ -30,7 +31,7 @@ yesterday = date(day=27, month=9, year=2022)
 # Positionally
 future = date(2022,9,29)
 print([(x, type(x)) for x in [yesterday, future]])
-
+## [(datetime.date(2022, 9, 27), <class 'datetime.date'>), (datetime.date(2022, 9, 29), <class 'datetime.date'>)]
 
 # Attributes
 # =============================================================================
@@ -43,6 +44,7 @@ print([(x, type(x)) for x in [yesterday, future]])
 # Using datetime object variable above
 
 print(f"Today's date attributes are : 'day' : {today.day}, 'month' : {today.month}, 'year': {today.year}")
+## Today's date attributes are : 'day' : 28, 'month' : 9, 'year': 2022
 
 
 # Date Methods
@@ -54,23 +56,28 @@ print(f"Today's date attributes are : 'day' : {today.day}, 'month' : {today.mont
 # date.replace(year = ..., month = ..., day = ...) - replaces the specified arguments for given date object.
 # =============================================================================
 print(f"Today's weekday as a zero index : {today.weekday()} which is a ", today.strftime("%A"))
+## Today's weekday as a zero index : 2 which is a  Wednesday
 print(f"Todays weekday starting as a 1 index : {today.isoweekday()}, which is a : {today.strftime('%A')}")
+## Todays weekday starting as a 1 index : 3, which is a : Wednesday
 print(today.replace(2018, 4, 18), type(today.replace(2018, 4, 18)))
+## 2018-04-18 <class 'datetime.date'>
 # return's new string, doesn't mutate date object in place
-print(today)
+
 
 # Create date object
 halloween = date(2021, 10, 31)
 
 # Find the day of week of halloween
 print(halloween.weekday())
-
+## 6
 # Create variable halloween_next with 2022 year
 halloween_next = halloween.replace(year = 2022)
 
 # Find out day of week for halloween_next
 print(halloween_next.weekday())
+## 0
 
+# Makes sense here that we move from sunday to monday 6 to 0 for zero indexing
 
 
 def yesterday_tomorrow(day=date.today()):
@@ -106,13 +113,22 @@ deft = yesterday_tomorrow()
 # Date must have occurred in order for logic to work (maybe a time delta thing)
 halloween = date(2022, 10, 31).replace(year=2021)
 print(yesterday_tomorrow(halloween))
+# Confirming output from above print out of the returned function contents
+# =============================================================================
+# [('{"yesterday_date": {"day": 30, "month": 10, "year": 2021}, "yesterday_string": "Yesterday was Oct, 30 2021. This was a Saturday"}', 
+#  {'yesterday_date': {'day': 30, 'month': 10, 'year': 2021}, 'yesterday_string': 'Yesterday was Oct, 30 2021. This was a Saturday'}), 
+#  ('{"tomorrow_date": {"day": 1, "month": 11, "year": 2021}, "tomorrow_string": "Tomorrow is Nov, 30 2021. This was a Monday"}', 
+#  {'tomorrow_date': {'day': 1, 'month': 11, 'year': 2021}, 'tomorrow_string': 'Tomorrow is Nov, 30 2021. This was a Monday'})]
+# =============================================================================
+
 print(deft[0][1], type(deft[0][1]))
+## {'yesterday_date': {'day': 27, 'month': 9, 'year': 2022}, 'yesterday_string': 'Yesterday was Sep, 27 2022. This was a Tuesday'} <class 'dict'>
 print(type(deft[0]), type(deft[1]))
-for rtrn in deft:
-    for tup in rtrn:
-        print(tup)
-# Quick pull for each tuple type to confirm function return and class type (json_str) (json_dict)
+## <class 'tuple'> <class 'tuple'>
+
 print([(type(x[0]), type(x[1])) for x in deft])
+## [(<class 'str'>, <class 'dict'>), (<class 'str'>, <class 'dict'>)]
+
 # Strings passed to json load
 print([(x[0], type(x[0])) for x in deft])
 # =============================================================================
@@ -144,14 +160,16 @@ day = date(1998, 3, 11)
 # Format date into another format
 day_formatted = day.strftime("%d.%m.%y")
 print("Original date:", day)
+## Original date: 1998-03-11
 print("Formatted date:", day_formatted)
+## Formatted date: 11.03.98
 
 
 # Format date into another format
 day_formatted_deux = day.strftime("%A, %d of %B, %Y")
 print("Original date:", day)
 print("Formatted date:", day_formatted_deux)
-
+## Formatted date: Wednesday, 11 of March, 199
 
 
 # Date Difference
@@ -166,6 +184,7 @@ print("Formatted date:", day_formatted_deux)
 
 pandemic = date(2020, 3, 11)
 print(today - pandemic, "passed since COVID-19 became pandemic")
+## 931 days, 0:00:00 passed since COVID-19 became pandemic
 
 ## Create two date objects date1 and date2 with dates "14 January 2016" and "07 April 2019" respectively. Find the difference between these two dates.
 # Create date objects
@@ -174,7 +193,7 @@ date2 = date(2019, 4, 7)
 
 # Find the difference between date2 and date1
 print("The difference between date2 and date1:", date2 - date1)
-
+## The difference between date2 and date1: 1179 days, 0:00:00
 
 
 # Arithmetic Operations with timedelta Objects
@@ -191,19 +210,18 @@ print("The difference between date2 and date1:", date2 - date1)
 diff = today - pandemic
 # Default the days, hours:minutes:seconds detailed above
 print(diff) 
+## 931 days, 0:00:00
 # Count whole number of weeks: method 1 (Floor division so as to count)
 print(diff.days//7, "weeks passed since COVID-19 became pandemic")
+## 133 weeks passed since COVID-19 became pandemi
 print(diff.days/7, " weeks since COVID-19 became pandemic")
+## 133.0  weeks since COVID-19 became pandemic
 
 # Count whole number of weeks: method 2
 print(diff//timedelta(weeks = 1), "weeks passed since COVID-19 became pandemic")
+## 133 weeks passed since COVID-19 became pandemic
 
-937/7
-(932/7)
-# Get decimal percent to 1 to get total days
-(100/7)/100
-6/7
-# Function to Get days if diff maintains a remainder
+
 
 def get_weeks_days_difference(dt=date(2022,1,1)):
     """
@@ -242,19 +260,19 @@ def get_weeks_days_difference(dt=date(2022,1,1)):
 
 valerr = get_weeks_days_difference(today)
 print(valerr)
-# ValueError: Argument provided to find difference in duration is not prior to Today
+## ValueError: Argument provided to find difference in duration is not prior to Today
 
 two_weeks = get_weeks_days_difference(date(2022,9,14))
 print(two_weeks)
-# A total of 2 week(s) has passed
+## A total of 2 week(s) has passed
 
 ten_days = get_weeks_days_difference(date(2022,9,18))
 print(ten_days)
-# A total of 1 week(s) and 3 day(s) have passed
+## A total of 1 week(s) and 3 day(s) have passed
 
 five_days = get_weeks_days_difference(date(2022,9,23))
 print(five_days)
-# A total of 5 day(s) have passed
+## A total of 5 day(s) have passed
 
 # Time delta object
 # print(eight_days[0].__dict__.keys())
@@ -271,6 +289,8 @@ date_diff = date2 - date1
 
 # Use .days method
 print("There were", date_diff.days//7, "weeks between date1 and date2.")
+## There were 168 weeks between date1 and date2.
 
 # Use timedelta
 print("There were", date_diff//timedelta(weeks=1), "weeks between date1 and date2.")
+## There were 168 weeks between date1 and date2.

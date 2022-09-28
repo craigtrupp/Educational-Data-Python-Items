@@ -73,7 +73,7 @@ dt_m = datetime(1995, 12, 30, 23, 45, 37)
 
 # Extract day of week
 print(dt_m.isoweekday())
-
+# 6
 # Extract date and time objects
 print(f"Date: {dt_m.date()}")
 ## Date: 1995-12-30
@@ -135,6 +135,7 @@ arr = datetime(2021, 5, 26, 7, 40)
 
 # Calculate estimated trip duration
 print(f"Estimated trip duration: {arr - dep}")
+## Estimated trip duration: 13:20:00
 
 
 # Create departure datetime object
@@ -145,6 +146,7 @@ arr_2 = datetime(2022, 7, 23, 15, 0)
 
 # Calculate trip duration
 print(f"Duration of Railway route 'Sydney - Perth' is {arr_2-dep_2}")
+## Duration of Railway route 'Sydney - Perth' is 4 days, 0:00:00
 
 
 # Reading Date and Time from String - datetime.strptime(date string, pattern)
@@ -165,7 +167,9 @@ dt1 = datetime.strptime(d1, "%A, %B %d, %Y")
 dt2 = datetime.strptime(d2, "%m/%d/%y %I:%M %p")
 
 print(f"String '{d1}' converted to datetime: {dt1}")
+## String 'Monday, November 1, 2021' converted to datetime: 2021-11-01 00:00:00
 print(f"String '{d2}' converted to datetime: {dt2}")
+## String '05/23/19 1:23 PM' converted to datetime: 2019-05-23 13:23:00
 
 
 
