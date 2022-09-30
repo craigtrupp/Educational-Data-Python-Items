@@ -268,6 +268,7 @@ P_random_diabetes = P_heart * P_heart_diabetes + P_stomach * P_stomach_diabetes
 P_diabetes_belong_stomach = (P_stomach * P_stomach_diabetes)/P_random_diabetes
 
 print("The probability is", P_diabetes_belong_stomach)
+## The probability is 0.6464646464646464
 
 ### Given diabetes (the probability that event B occurred) what are the odds the individual has chronic stomache aches (probability of picking a stomach ache * percent that percon has diabetes)
 
