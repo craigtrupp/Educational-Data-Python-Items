@@ -103,7 +103,7 @@ print(dsn)
 print(type(dsn))
 ```
 
-    DRIVER={IBM DB2 ODBC DRIVER};DATABASE=bludb;HOSTNAME=1bbf73c5-d84a-4bb0-85b9-ab1a4348f4a4.c3n41cmd0nqnrk39u98g.databases.appdomain.cloud;PORT=32286;PROTOCOL=TCPIP;UID=cgv02624;PWD=qz04TCgIA7ZEaVQt;SECURITY=SSL;
+    DRIVER={IBM DB2 ODBC DRIVER};DATABASE=bludb;HOSTNAME=******;PORT=*****;PROTOCOL=TCPIP;UID=******;PWD=*******;SECURITY=SSL;
     <class 'str'>
 
 
