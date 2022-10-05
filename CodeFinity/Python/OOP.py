@@ -267,6 +267,27 @@ print(cat.age)
 # Consider that the value should be in the range [0, 50] cm.
 # =============================================================================
 
+class Cat:
+  def __init__(self, name='Kitty', length=0):
+    self.name = name
+    self.__tail_length = length
+  
+  @property
+  def tail_length(self):
+    return self.__tail_length
+
+  @tail_length.setter
+  def tail_length(self, length):
+    if isinstance(length, int) and (length >= 0 and length <= 50):
+      self.__tail_length = length
+    else:
+      print('Wrong value (out of range), or argument type')
+
+
+cat = Cat('Rosie', 8)
+cat.tail_length=100 # Wrong value
+cat.tail_length = 45
+print(cat.tail_length)
 
 
 
