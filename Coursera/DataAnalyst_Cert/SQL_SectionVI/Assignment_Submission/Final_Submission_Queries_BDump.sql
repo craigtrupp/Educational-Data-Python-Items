@@ -100,15 +100,16 @@ WHERE HARDSHIP_INDEX = (SELECT MAX(HARDSHIP_INDEX) FROM CENSUS_DATA);
 
 
 -- Use a sub-query to determine the Community Area Name with most number of crimes?
+-- -- Note here that running a count (agg type function won't work with a subquery column usage so count must occur in order by after groupby statement on single column)
 SELECT * FROM CHICAGO_CRIME_DATA LIMIT 1;
 
 SELECT COMMUNITY_AREA_NAME 
 FROM CENSUS_DATA
 WHERE COMMUNITY_AREA_NUMBER = (SELECT COMMUNITY_AREA_NUMBER 
-			FROM CHICAGO_CRIME_DATA 
-			GROUP BY COMMUNITY_AREA_NUMBER 
-			ORDER BY COUNT(COMMUNITY_AREA_NUMBER) DESC 
-			LIMIT 1
+        FROM CHICAGO_CRIME_DATA 
+        GROUP BY COMMUNITY_AREA_NUMBER 
+        ORDER BY COUNT(COMMUNITY_AREA_NUMBER) DESC 
+        LIMIT 1
 			); 
 
 
