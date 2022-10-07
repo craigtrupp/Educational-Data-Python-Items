@@ -325,6 +325,87 @@ print('Circle area:', c.area())
 
 
 
+# String Class Methods
+
+# Different Ouptut (Note output for memory - object/class)
+set1 = set() # empty set
+print(set1)
+
+set2 = set([1,2,3]) # non-empty set
+print(set2)
+
+class Alligator:
+  pass
+
+gator = Alligator()
+print(gator) # <__main__.Alligator object at 0x7f8808c26d00>
+print(str(gator)) # <__main__.Alligator object at 0x7f8808c26d00>
+
+# =============================================================================
+# the first line contains info about the object class
+# the second line contains the data stored in the variable (opposite to empty set set1)
+# the third line contains info about object class and memory address, which is something you may not expect.
+# =============================================================================
+# =============================================================================
+# That's because for any object the output will be as the third line by default, but for the set class, it was changed to be more informative 
+# (user expects content of the set, not the memory address.)
+# =============================================================================
+
+
+# In Python, there are special methods to represent an object as a string variable.
+
+
+# =============================================================================
+# Method str
+# 
+# __str__() is a special method where you can custom your objects output when str() function is applied to the object:
+# =============================================================================
+
+class Gator:
+  def __init__(self, name):
+    self.__name = name
+  def __str__(self):
+    return f'Gator with name {self.__name}.'
+
+chomp = Gator('Archie')
+print(chomp) # str() is called inside the print()
+# Gator with name Archie
+
+# This method returns the string which will be printed when you apply str() to the object.
+print(str(chomp)) 
+# Gator with name Archie.
+
+
+
+# =============================================================================
+# Method repr
+# 
+# __repr__ presents the object's formal string value. It is called when you apply repr(). 
+# Use __repr__ for the formal definition, but __str__ for users who require more obvious and intelligible info.
+# =============================================================================
+
+
+class Cat:
+  def __init__(self, name = 'Leo', age = 5):
+    self.__name = name 
+    self.__age = age
+
+  def __str__(self):
+    return f'Cat with name {self.__name} is {self.__age} yrs old.'
+
+  def __repr__(self):
+    return f'Cat({self.__name}, {self.__age})'
+
+littleCat = Cat('Bella', 2)
+bigCat = Cat('Charlie', 12)
+print('str():')
+print(littleCat)
+print(bigCat)
+print('repr():')
+print(repr(littleCat))
+print(repr(bigCat))
+
+
 
 
 
