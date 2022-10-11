@@ -12,6 +12,7 @@ Created on Thu Sep 29 16:21:37 2022
 # In situations when either one of the events should happen. 
 # Events should be absolutely independent.
 # P = P(quantity of desired outcomes (n) / the quantity of all outcomes (m))1 + P(n/m)2 + P(n/m)3 ...etc
+# Add Numerators for independent events (divide by total)
 # =============================================================================
 # =============================================================================
 # 
@@ -86,7 +87,9 @@ print(f"a {int(round(100*P_choc_cook,0))}% chance")
 # =============================================================================
 # Sometimes it is impossible to pick one event, hence, 
 # we should refer to the multiplication rule for independent events.
-# 
+
+# The key for the multiplication rule is "and". If you see the phrase the first and the second event you should use the multiplication rule.
+ 
 # Independent events mean that the occurrence of one event doesn't 
 # depend on another event like flipping two coins or rolling two dies.
 
@@ -191,6 +194,11 @@ P_orange = P_1 * P_1_orange + P_2 * P_2_orange +  P_3 * P_3_orange
 print("The probability is", P_orange, f"{round(100*P_orange, 3)}% chance of breaking off chocolate w/orange")
 ## The probability is 0.5555555555555556 55.556% chance of breaking off chocolate w/orange
 
+# Just to show how the individual multiplication are being performed first (probability of two events occuring : picking that bar out of x bars that has x amount of orange berries)
+P_orange_two = (P_1 * P_1_orange) + (P_2 * P_2_orange) +  (P_3 * P_3_orange)
+print("The probability is", P_orange_two, f"{round(100*P_orange_two, 3)}% chance of breaking off chocolate w/orange")
+# The probability is 0.5555555555555556 55.556% chance of breaking off chocolate w/orange
+
 
 
 ## Bayes Theorem
@@ -208,6 +216,7 @@ print("The probability is", P_orange, f"{round(100*P_orange, 3)}% chance of brea
 # Red Probability : 600/1500 = .4   || Green Probability : 900/1500 = .6   == Exhaustive Events 
 # Probability to pull a ball with a defect that's red (Red : .4 * .05 == Percent total for red ball times percent of possible defect)
 # Probability to pull a ball with a defect that's green (Green : .6 * .2 == Percent total for pulling green ball and possibility of defect'
+# Total Probability you pull a ball with defect (probability of pulling respective ball * defect_ball_chance) + all other balls (just two in this case)
 # (0.4 * 0.05 + 0.6 * 0.2 == 0.14)
 # 
 # Probability that a random ball w/a defect belongs to red ones:
@@ -216,7 +225,7 @@ print("The probability is", P_orange, f"{round(100*P_orange, 3)}% chance of brea
 # #Formula
 # P(A|B) = P(B|A) * P(A) / P(B)
 #     * P(A|B) = Probability that event A will occur if event B will occur 
-#     * P(B|A) = Probability that event B will occur if event A will occur
+#     * P(B|A) = Probability that event B will occur if event A will occur ( A Red ball will be pulled)
 #     * P(A) = Probability that event A will occur (Probability of red defect)
 #     * P(B) = Probability that event B will occur (Randomly pulled ball w/defect)
 # =============================================================================

@@ -5,7 +5,8 @@ Created on Fri Sep 30 13:43:04 2022
 
 @author: craigrupp
 """
-### Binom.pmf
+### Binom.pmf - Probability Mass Function for the values in R
+### In probability theory and statistics, the binomial distribution with parameters n and p is the discrete probability distribution of the number of successes in a sequence of n independent experiments,
 # =============================================================================
 ## Scenario
 # Imagine that we are working for a real estate agency, and we need to know how many positive answers 
@@ -61,7 +62,7 @@ print("The probability is", experiment, f"a {round(100*experiment,3)}% chance of
 # =============================================================================
 # Here, we should calculate the probability of getting 1000 or more positive answers.
 # =============================================================================
-## Binom.sf - Threshold
+## Binom.sf - Threshold Greater than Or Equal to K 
 # =============================================================================
 # In this experiment, we will work with the binom.sf(k, n, p) function. 
 # This function helps calculate the probability of receiving k or more successes 
@@ -97,8 +98,11 @@ print(cts_fve_more, f"or {round(cts_fve_more*100,3)}% chance of at least 5 or mo
 # we know that the probability for clients to continue working with the bank is 60%. 
 # Calculate the probability that 70 or fewer customers will stay with
 # =============================================================================
-bnk_retain = binom.cdf(k=70, n=200, p=0.6)
-print(bnk_retain)
+## 70 or less from 200 given any events has a 60% chance of success (60% of 200 == 120)
+print(binom.cdf(k=70, n=200, p=0.6))
+# Save to variable 
+bnk_retain_lthaneq_70 = binom.cdf(k=70, n=200, p=0.6)
+print(bnk_retain_lthaneq_70)
 ## 8.60372025984695e-13 == 8.60372025984695 * 10 raised to -13
 print(8.60372025984695 * (10 ** -4)) 
 # =============================================================================
@@ -106,6 +110,7 @@ print(8.60372025984695 * (10 ** -4))
 # 0.0000000000008603720259846951 : if it was e-13 
 
 ## Probability is extremely unlikely but never quite 0 (Read as chance of no more than 70 occurrences with 200 events and 60% chance of event occuring in any chance)
+
 
 # =============================================================================
 ## Indeed it is hard to get zero here because we need 70 or less(in this case)
@@ -122,7 +127,7 @@ print(1 - (binom.sf(k=70, n=200, p=0.6)))
 ## However, it's very close : 8.604228440844963e-13 ... compared to 8.60372025984695e-13
 
 
-## Another Example - or fewer a cood indication of cdf
+## Another Example - or fewer a good indication of cdf
 # =============================================================================
 # Our task here is to calculate the probability that 10 or fewer residents in a specific town 
 # with a population of 500 will answer yes to our question, "Do you have your housing?". 
@@ -138,21 +143,21 @@ print(twn_prb)
 
 ### Combine & Review
 
-## Binom.pmf == Exactly (k) Successes given sample size (n) and probability of success (p)
+## Binom.pmf == Exactly (k) Successes given sample size (n) and probability of success (p) == k(successes)
 # =============================================================================
 # binom.pmf(k, n, p) :
 #   - Calculate the probability to archive exactly k successes among n trials 
 #     with the probability of success p
 # =============================================================================
 
-## Binom.sf == (k) or more Successes given sample size (n) and probability of success (p)
+## Binom.sf == (k) or more Successes given sample size (n) and probability of success (p) >= k(successes)
 # =============================================================================
 # binom.sf(k, n, p) :
 #    - Calculate the probability to archive k or more successes among n trials 
 #    with the probability of success p
 # =============================================================================
 
-## Binom.cdf == (k) or less Successes given sample size (n) and prbability of success (p)
+## Binom.cdf == (k) or less Successes given sample size (n) and prbability of success (p) <= k(successes)
 # =============================================================================
 # binom.cdf(k, n, p) :
 #    - Calculate the probability to archive k or less successes among n trials 
