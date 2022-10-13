@@ -202,9 +202,9 @@ print(confidence_99) # [3607.4625 4870.125 ]
 
 # st.norm.interval(alpha=0.95, loc=np.mean(dist), scale=st.sem(dist))
 # 
-# alpha parameter corresponds to the level of confidence,
-# loc parameter corresponds to the mean value of the distribution, counted manually,
-# scale corresponds to the value of standard error of the mean, counted manually.
+# alpha : parameter corresponds to the level of confidence,
+# loc : parameter corresponds to the mean value of the distribution, counted manually,
+# scale : corresponds to the value of standard error of the mean, counted manually. (Looks like standard deviation works as well)
 # =============================================================================
 # Your task now is to calculate the confidence interval to define the mean of penguins' size using scipy.stats library (95% confidence interval of mean)
 
@@ -231,16 +231,116 @@ print(confidence) # calculating the 95% confidence interval of the mean (see how
 
 ## Check Manually like above calculation for 95% of total distribution
 print(np.percentile(list(mean_list), [2.5, 97.5])) # [3737.5, 4715.0 ]
-## Use Scipy.stats (aliased as st) ! Pretty close to our manual calculation
+## Use Scipy.stats (aliased as st) ! Pretty close to our manual calculation - This would be the confidence level of the full distribution I believe
 print(st.norm.interval(alpha=0.95, loc=np.mean(mean_list), scale=np.std(mean_list, ddof=1))) # (3704.54984, 4694.44765)
 
 
+# Confidence of 99%, is It Accurate? - (Confidence Interavl of Mean)
+# =============================================================================
+# Let's compare the interval for the mean size of the penguin with the level of confidence of 95% and 99%. 
+# For the first one, we had such results: (4193.492547812758, 4215.899952187242).
+# 
+# Would imagine this stretches out our levels a bit
+# =============================================================================
+
+# Find the confidence interval (Calculating Standard error of the mean per the detailing above)
+confidence = st.norm.interval(alpha = .99,
+                  loc = np.mean(mean_list),
+                  scale = np.std(mean_list) / np.sqrt(len(mean_list)))
+
+print(confidence)
+# print(confidence) : (4184.957365629527, 4214.0401343704725)
+
+# Using the equation for the standard error of the mean (see scale arg above) : close to the stats module output .. not bad
+
+
+confidence_mod = st.norm.interval(alpha = .99,
+                  loc = mean_list.mean(),
+                  scale = st.sem(mean_list))
+
+print(confidence_mod)
+#print(confidence_mod) : (4184.953728919611, 4214.043771080388)
+
+
+
+## Deal with Small Distribution
+# =============================================================================
+# The data is not always perfect; it usually requires preprocessing or other manipulations. 
+# Sometimes we deal with a small sample size of less than 30.
+# 
+# 
+# In such cases, we work with the Student's t-distribution; it is almost the same as a normal one but has fewer observations, usually less than 30.
+# It can be a part of a huge population; therefore, if we have data about the sample, not about the population, 
+# we do not know the standard deviation of the population (it is a sign to use Student's T distribution). 
+# It means that values are distributed normally, but look at the graph; it has heavier tails due to the size 
+# (the distribution of heights of first-graders in centimeters in one class):
+# =============================================================================
+# Ex 
+data = [104, 106, 106, 107, 107, 107, 108, 108, 108, 108, 108, 109, 109, 109, 110, 110, 111, 111, 112]
+# Creating the histplot
+plot = sns.histplot(data = data, kde = True, bins = 7)
+plot.set_title("Student's Heights")
+plot.set(xlabel = 'The Height', ylabel = 'The Quantity')
+plt.show()
+
+# =============================================================================
+# Here, we deal with the population sample; the amount of observation is 19. 
+# Let's assume that we already know that the population of first-graders distributed normally. 
+# We want to know the interval for the mean height value with the standard 95% of confidence.
+# 
+# We should figure out the term degrees of freedom to do it.
+
+# When we want to find the mean value, the degrees of freedom equal the sample size - 1 
+# (in this course, the formula for finding degrees of freedom always will be sample size - 1). 
+# Indeed, it defines the number of independent variables of the vector that is sufficient to find out the characteristics of the vector.
+# =============================================================================
+# =============================================================================
+# How to calculate confidence interval?
+# 
+# st.t.interval(alpha = 0.95, df = len(data)-1, loc = data.mean(), scale = st.sem(data))
+# 
+# From scipy.stats we should use the t.interval function for the Student's T distribution.
+# As it was before, alpha means the confidence level.
+# df corresponds to the degrees of freedom, counted manually.
+# loc defines the mean, counted manually.
+# sem means the standard error of the sample, counted manually.
+# =============================================================================
+# st.t.interval with degrees of freedom (len of data/sequence - 1) (looking for 95% interval for mean)
+confidence = st.t.interval(alpha = .95,
+                             df = len(data) - 1,
+                             loc = np.mean(data),
+                             scale = st.sem(data))
+
+print(confidence)
+print(sum(data), len(data))
 
 
 
 
+## Task
+# =============================================================================
+# Here in the Task Code, you have the sample of the kitten's height. 
+# This data describes the only sample and can not allow us to receive information about the whole population; it is the right time for Student's T distribution. 
+# Find the interval that includes the mean value of the mean size of the cat in centimeters
+# =============================================================================
 
+data = [17, 18, 19, 19, 20, 20, 20, 21, 21, 21, 21, 22, 22, 22, 22, 23, 23, 23, 23, 23, 24, 24, 24, 25, 25, 26, 26, 27, 28]
+# Calculate the confidence interval
+confidence = _ _ _(alpha = _ _ _,
+                  df = _ _ _,
+                  _ _ _,
+                  _ _ _)
 
+# Create the histplot
+plot = _ _ _.histplot(_ _ _)
+# Set the title
+_ _ _(_ _ _)
+plot.set(xlabel = 'The Size', ylabel = 'The Quantity')
+# Output the histplot
+plt._ _ _()
+
+# Output the interval
+print(_ _ _)
 
 
 
