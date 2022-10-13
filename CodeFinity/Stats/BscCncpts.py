@@ -233,3 +233,124 @@ print('Variance with numpy = ', var2)
 var1 == var2
 # True
 
+
+
+## Standard Deviation
+# =============================================================================
+# Like the variance, there is another concept to describe the spread called Standard Deviation. It is calculated as the square root from the variance.
+# 
+# The Standard Deviation gives similar info: the spread of data in the dataset. 
+# The advantage of using Standard Deviation instead of Variance is that the first one describes the general range of numbers in the given dataset
+# =============================================================================
+
+
+
+pages = np.array([10, 15, 20, 18, 12])
+std = pages.std()
+print('Standard Deviation =', std)
+# Standard Deviation = 3.687817782917155
+
+
+
+pages = [10, 15, 20, 18, 12] # NOTE: no numpy array
+std = np.std(pages)
+print('Standard Deviation =', std)
+# Standard Deviation = 3.687817782917155
+
+summer_temps = np.array([20, 23, 26, 22, 27, 28, 30, 23, 21, 25])
+year_temps = np.array([20, 27, 16, 12, 6, -2, -10, 3, 11, 15])
+
+summer_std = summer_temps.std()
+year_std = year_temps.std()
+print('Std in the Summer', summer_std)
+print('Std in Any Season', year_std)
+
+# Std in the Summer 3.0740852297878796
+# Std in Any Season 10.31309846748299
+
+
+
+
+
+## Use Each with a data set
+import pandas as pd
+# importing data to dataframe
+df = pd.read_csv('https://codefinity-content-media.s3.eu-west-1.amazonaws.com/a849660e-ddfa-4033-80a6-94a1b7772e23/titanic.csv')
+print(df['Age'].value_counts()) # Lots of counts in the 20s for ages 
+# =============================================================================
+# 24.00    30
+# 22.00    27
+# 18.00    26
+# 19.00    25
+# 28.00    25
+# =============================================================================
+print(df['Age'].isna().sum())
+# 177 ... looks like a lot of nulls
+data = df['Age'].dropna()
+print(data.isna().sum())
+# 0
+
+info = {}
+info['mean'] = data.mean()
+info['mode'] = stats.mode(data)
+info['median'] = np.median(data)
+
+info['var'] = np.var(data)
+info['std'] = np.std(data)
+#print the values
+print(info)
+print(stats.mode(data))
+# {'mean': 29.69911764705882, 'mode': 24.0, 'median': 28.0, 'var': 210.7235797536662, 'std': 14.516321150817317}
+
+
+## Estimators' Robustness
+# =============================================================================
+# Robust Statistics are resistant to messed data, primarily to outliers - non-typically big or small values. 
+# It means that values out of range do not affect the Statistics, so it is still a good estimator.
+# =============================================================================
+# =============================================================================
+# Robust Values
+# Median: since this is the middle value in the sorted dataset, the first and last values which are usually outliers do not affect.
+
+# Non-Robust Estimators
+# Arithmetic Mean: since it depends on the sum of all elements, the critical values may change the Mean value significantly.
+# Variance: this metrics is actually the sum of squares, so huge values will affect it even more than the Arithmetic Mean value.
+# Standard Deviation: since it is a square root out of Variance.
+
+
+# The Mode can be or not be robust for different datasets and Data Distributions.
+# =============================================================================
+
+## Generate and mutate distribution of data
+
+# generate the dataset of size 1000
+np.random.seed(19)
+data = np.random.normal(2, 12, 1000)
+# calculate the values for dataset without outliers
+mean = data.mean()
+var = np.var(data)
+median = np.median(data)
+print(mean, var, median)
+
+# add some huge outliers to the dataset
+data = np.append(data, [100]*5)
+
+# calculate new values
+mean = data.mean()
+var = np.var(data)
+median = np.median(data)
+print(mean, var, median)
+
+
+print(np.median([5, 3, 9, 9, 11, 1, 12, 8, 1]))
+
+
+
+
+
+
+
+
+
+
+
