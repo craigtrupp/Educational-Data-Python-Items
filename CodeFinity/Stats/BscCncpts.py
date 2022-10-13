@@ -106,11 +106,16 @@ a_mean = np.sum(prices) / prices.size
 n = prices.size
 # geometric mean
 g_mean = np.prod(prices) ** (1/n)
+# Let's try our own equation without numpy (multiply each number in a list by the product of a previous iteration : lambda & reduce)
+# https://www.geeksforgeeks.org/python-multiply-numbers-list-3-different-ways/
+from functools import reduce
+print(reduce((lambda x, y: x * y), prices) ** (1 / n))
 # harmonic mean
 # To find the reverse elements of the list prices, write 1/prices.
 print(1/prices)
 h_mean = n / np.sum(1/prices)
-
+# Harmonic mean equation
+print(len(prices)/ sum([1/x for x in prices]))
 print('Arithmetic mean:', a_mean)
 print('Geometric mean:', g_mean)
 print('Harmonic mean:', h_mean)
@@ -299,13 +304,13 @@ info['var'] = np.var(data)
 info['std'] = np.std(data)
 #print the values
 print(info)
-print(stats.mode(data))
 # {'mean': 29.69911764705882, 'mode': 24.0, 'median': 28.0, 'var': 210.7235797536662, 'std': 14.516321150817317}
-
+print(stats.mode(data))
+# 100
 
 ## Estimators' Robustness
 # =============================================================================
-# Robust Statistics are resistant to messed data, primarily to outliers - non-typically big or small values. 
+# Robust Statistics are resistant to messy data, primarily to outliers - non-typically big or small values. 
 # It means that values out of range do not affect the Statistics, so it is still a good estimator.
 # =============================================================================
 # =============================================================================
