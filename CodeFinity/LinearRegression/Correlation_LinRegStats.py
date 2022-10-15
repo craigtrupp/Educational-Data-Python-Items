@@ -119,8 +119,10 @@ def on_height(y):
    return 0.99 * y + 4.7 
 
 # Define lines 
-height_on_weight = list(map(on_weight, x)) 
+height_on_weight = list(map(on_weight, x)) # [3.47, 5.33, 4.5859999999999985, 3.842000000000001, 4.493, 4.958, 3.47, 5.516, 4.679, 4.772, 5.237, 4.120999999999999]
+print(height_on_weight) 
 weight_on_height = list(map(on_height, y)) 
+print(weight_on_height) # [8.264, 10.046, 9.452, 8.561, 8.858, 9.847999999999999, 8.165, 10.145, 9.056000000000001, 9.353000000000002, 9.748999999999999, 8.363]
 
 # Add titles to axes 
 ax = plt.gca() 
@@ -153,7 +155,7 @@ from scipy import stats
 x = [1.8, 2.24, 11.2, 7, 4.2, 9.3, 10.3, 6.3, 1.4, 5.8, 1.1, 4.3]
 y = [111, 130, 450, 320, 195, 360, 402, 272, 85, 263, 105, 237]
 
-# Get the linear regression parameters 
+# Get the linear regression parameters (slope, intercept, coefficient)
 slope, intercept, r, p, std_err = stats.linregress(x, y)
 
 # The line shows the dependence of the number of calories on cats' weight 
@@ -427,12 +429,12 @@ y = [3.6, 5.4, 4.8, 3.9, 4.2, 5.2, 3.5, 5.5, 4.4, 4.7, 5.1, 3.7]
 # Find and print the correlation coefficient with np.arrays
 np_x = np.array(x)
 np_y = np.array(y)
-print(np.corrcoef(np_x, np_y)[0,1])
+print(np.corrcoef(np_x, np_y)[0,1]) # 0.9572668724970023
 
 # Find and print the correlation coefficient with pd.Series 
 pd_x = pd.Series(x)
 pd_y = pd.Series(y)
-print(pd_x.corr(pd_y))
+print(pd_x.corr(pd_y)) # 0.9572668724970023
 
 
 
@@ -461,6 +463,11 @@ slope, intercept, r, p, std_err = stats.linregress(x, y)
 print(f"Correlation coefficient of : {r}")
 print(f"Slope of : {slope}")
 print(f"Intercept of : {intercept}")
+# =============================================================================
+# Correlation coefficient of : 0.9920678941446083
+# Slope of : 34.5488358097112
+# Intercept of : 57.19988354311289
+# =============================================================================
 
 # Find the line
 built_line = list(map(line, x))
