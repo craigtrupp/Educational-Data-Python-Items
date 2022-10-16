@@ -27,6 +27,8 @@ Created on Fri Oct 14 14:35:30 2022
 # To find the correct answer, we need to use a learning model - linear regression. 
 # Let's find out the meaning of this method. Linear regression is an approach for modelling the relationship between variables that you operate in research, 
 # finding mathematically the straight line to your data (if we are talking about two-dimensional graphs) to predict future values.
+
+# https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
 # =============================================================================
 
 
