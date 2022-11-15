@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv('https://codefinity-content-media.s3.eu-west-1.amazonaws.com/46bdcecb-8503-44fc-bd22-3ece9d6e026e/df_5', index_col=0)
 print(df['Year'].describe())
+print(df.head())
 # Delete 10% from the left tail and 1% from the right one
 q10, q50, q99 = df['Year'].quantile(q=[0.1, 0.5, 0.99])
 q10_1, q25_1, q50_1, q75_1, q99_1 = df['Year'].quantile(q = [0.1, 0.25, 0.5, 0.75, 0.99])
@@ -40,7 +41,8 @@ import matplotlib.pyplot as plt
 
 df_1 = pd.read_csv('https://codefinity-content-media.s3.eu-west-1.amazonaws.com/46bdcecb-8503-44fc-bd22-3ece9d6e026e/df_5', index_col=0)
 df_2 = pd.read_csv('https://codefinity-content-media.s3.eu-west-1.amazonaws.com/46bdcecb-8503-44fc-bd22-3ece9d6e026e/df_6', index_col=0)
-
+print(df_1.head())
+print(df_2.head())
 # Find mean value for the column 'Year' in the df_1 dataset
 mean_1 = df_1['Year'].mean()
 # Find mean value for the column 'Year' in the df_2 dataset
