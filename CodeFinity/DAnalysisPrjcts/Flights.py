@@ -101,6 +101,7 @@ flights["day_of_week"].value_counts()[days].plot(kind = 'bar')
 # =============================================================================
 
 print(flights[['DEPARTURE_TIME', 'WHEELS_OFF']].head())
+
 # =============================================================================
 #          DEPARTURE_TIME  WHEELS_OFF
 # 2464670          1621.0      1631.0
@@ -202,7 +203,7 @@ print(flights['DEPARTURE_TIME'].head(5))
 
 
 
-# Convert columns into datetime format (transformed value above for both columns still an object)
+# Convert columns into datetime format (transformed value above for both columns still an object : 24 Hour )
 flights['DEPARTURE_TIME'] = pd.to_datetime(flights['DEPARTURE_TIME'], format = '%Y-%m-%d %H:%M')
 flights['WHEELS_OFF'] = pd.to_datetime(flights['WHEELS_OFF'], format = '%Y-%m-%d %H:%M')
 
