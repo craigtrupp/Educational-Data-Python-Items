@@ -56,8 +56,8 @@ print(p2.graph())
 
 
 # graph becomes a class variable that is bound to a function/method object. p1.graph() is evaluated by:
-# looking up p1 and finding that it’s an instance of Point
-# looking for an instance variable called graph in p1, but not finding one
-# looking for a class variable called graph in p1’s class, the Point class; it finds a function/method object
-# Because of the () after the word graph, it invokes the function/method object, with the parameter self bound to the object p1 points to.
+#   looking up p1 and finding that it’s an instance of Point
+#   looking for an instance variable called graph in p1, but not finding one
+#   looking for a class variable called graph in p1’s class, the Point class; it finds a function/method object
+#   Because of the () after the word graph, it invokes the function/method object, with the parameter self bound to the object p1 points to.
 
