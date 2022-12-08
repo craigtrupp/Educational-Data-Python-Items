@@ -157,7 +157,7 @@ ax_5.bar_label(bar2, padding = 5)
 plt.legend()
 plt.show()
 
-
+new_delhi.loc[new_delhi['Month'] == 'OCT']
 
 # =============================================================================
 # Histograms
