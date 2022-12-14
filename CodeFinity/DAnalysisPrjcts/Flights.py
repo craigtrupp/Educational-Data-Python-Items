@@ -211,6 +211,115 @@ flights['WHEELS_OFF'] = pd.to_datetime(flights['WHEELS_OFF'], format = '%Y-%m-%d
 ((flights['WHEELS_OFF'] - flights['DEPARTURE_TIME']).dt.total_seconds()/60).hist()
 
 
+# Correcting Negative Taxi Times
+print(flights['WHEELS_OFF'].dtype)
+
+# Define function
+def date_corr(x):
+    # Compare the number of seconds with 0
+    if (x["WHEELS_OFF"] - x["DEPARTURE_TIME"]).total_seconds() < 0:
+        return x['WHEELS_OFF'] + pd.Timedelta('1 day')
+    else:
+        return x['WHEELS_OFF']
+
+# Apply function to column
+flights['WHEELS_OFF'] = flights.apply(lambda x: date_corr(x), axis = 1)
+
+# Build the histogram for time durations
+((flights['WHEELS_OFF'] - flights['DEPARTURE_TIME']).dt.total_seconds()/60).hist()
+
+
+
+## Calculating Arrival Time
+# =============================================================================
+# Now let's calculate the actual arrival times. We can do it by using 'WHEELS_OFF', 'AIR_TIME', and 'TAXI_IN' columns. 
+# There we need to add to the datetime column 'WHEELS_OFF' rest of the columns as timedelta.
+# =============================================================================
+
+# Calculate the arrival time
+flights['ARRIVAL_TIME'] = flights['WHEELS_OFF'] + pd.to_timedelta(flights['AIR_TIME'], unit = 'm') + pd.to_timedelta(flights['TAXI_IN'], unit = 'm')
+        
+# Print the last 5 arrival times
+print(flights['ARRIVAL_TIME'].tail(5))
+
+
+## Arrival Times
+
+# Create column for arrival delays
+flights['ARRIVAL_DELAY'] = flights['ARRIVAL_TIME'] - flights['SCHEDULED_ARRIVAL']
+
+# Build the histogram
+(flights['ARRIVAL_DELAY'].dt.total_seconds()/60).hist()
+
+
+# Fix Outliers
+# Define function
+def date_corr_two(x):
+   if (x["ARRIVAL_TIME"] - x["SCHEDULED_ARRIVAL"]).total_seconds()/60 > 1000:
+        return x['ARRIVAL_TIME'] - pd.Timedelta('1 day')
+   elif (x["ARRIVAL_TIME"] - x["SCHEDULED_ARRIVAL"]).total_seconds()/60 < -1000:
+        return x['ARRIVAL_TIME'] + pd.Timedelta('1 day')
+   else:
+        return x['ARRIVAL_TIME']
+
+# Apply function to column
+flights['ARRIVAL_TIME'] = flights.apply(lambda x: date_corr_two(x), axis = 1)
+
+# Build the histogram
+((flights['ARRIVAL_TIME'] - flights['SCHEDULED_ARRIVAL']).dt.total_seconds()/60).hist()
+
+
+# Create Figure and Axes objects
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+
+# Build scatter plot
+ax.scatter(x = flights['DISTANCE'], y = flights['ARRIVAL_DELAY'])
+
+# Customize the plot
+ax.set(xlabel = 'Distance', ylabel = 'Delay')
+
+# Display the plot
+plt.show()
+
+
+# Create Figure and Axes objects
+fig, ax = plt.subplots()
+
+# Filter to only delays columns
+delays = flights[['AIR_SYSTEM_DELAY', 'SECURITY_DELAY', 'AIRLINE_DELAY', 'LATE_AIRCRAFT_DELAY', 'WEATHER_DELAY']]
+
+# Build bar chart
+for i in delays.columns:
+    ind = (flights[i].isna() == False) & (flights[i] != 0)
+    y = flights.loc[ind][i].sum()/len(flights.loc[ind][i])
+    ax.bar(x = i.replace('_DELAY', ""), height = y)
+
+# Customize and display the plot
+ax.set(xlabel = 'Delay reason', ylabel = 'Average delay (minutes)')
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
