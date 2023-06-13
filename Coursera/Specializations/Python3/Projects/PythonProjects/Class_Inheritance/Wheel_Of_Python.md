@@ -143,8 +143,8 @@ These should be characters that are in LETTERS ('ABCDEFGHIJKLMNOPQRSTUVWXYZ') bu
 
 <br>
 
-### Wrap/Conclusion
-* Please see the implemented version of the game 
+### Script
+* Please see the implemented version of the game at https://github.com/craigtrupp/Online_Data_Python/blob/main/Coursera/Specializations/Python3/Projects/PythonProjects/Class_Inheritance/WOP.py
 
 
 
