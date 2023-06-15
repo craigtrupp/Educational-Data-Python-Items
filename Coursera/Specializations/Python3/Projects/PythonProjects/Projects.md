@@ -47,4 +47,24 @@ As Python is king in the data world, it's critical to get first hand experience 
     * Impute and Handle Missing Data
     * Exploratory Analysis prior to model building 
     * `Ridge` Model and `Polynomial` Feature
-* 
+* https://github.com/craigtrupp/Online_Data_Python/blob/main/Coursera/Specializations/Python3/Projects/PythonProjects/Data%20Analysis/Notebooks/House_Sales_in_King_County.ipynb
+
+<br>
+
+### **Data Analysis - Confidence Intervals**
+* What contributes to the success of Disney Movies?
+* In the following notebook, the following items are evaluated to gain a better perspective
+
+
+<br>
+
+### **Data Viz - Plotly (Callback/HTML)**
+* This project uses `Dash` and `Plotly` (dash application) to vizualize in a **tree-like** visualization for the grouped by choices from the two drop-down buttons
+* The project shows 
+    * Pandas / Python methods for data generation
+    * HTML / Dash (App) callback elements
+    * Plotly (express) method calls
+* https://github.com/craigtrupp/Online_Data_Python/blob/main/Coursera/Specializations/Python3/Projects/PythonProjects/Plotly_Viz/US_Domestic_Flights_Plotly.py
+
+
+
