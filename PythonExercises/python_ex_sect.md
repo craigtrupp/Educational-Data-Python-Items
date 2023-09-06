@@ -1,4 +1,4 @@
-### **Python Challenges - Section Review** 🏃‍♂️
+## **Python Challenges - Section Review** 🏃‍♂️
 * This section serves predominantly as the home for Exercises and Challenges w/Python, please see below for details on the existing sections and techniques used and introduction to topics covered
 * **Sections** 📚
     - `Notebooks Section` : [Python Notebooks](/PythonExercises/Notebooks)

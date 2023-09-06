@@ -23,6 +23,14 @@
         - [Basics](/PythonExercises/PythonScripts/Python_Basics)
 
 ### **`Repository Section`**
-* [Python Exercises](/PythonExercises/)
+* [Python Exercises Section Review](/PythonExercises/python_ex_sect.md)
 
 ---
+
+## **CodeFinity**
+* One of my favorite platforms for succinct and quality lessons/challenges for utilizing Python in the world of Data Analysis
+* Review of the Sections and Files in this Repository's particular section
+    - Object Oriented Programming, Inheritance, Polymorphism 💻
+    - Numpy 🥧
+    - Pandas 🐼
+    - Matplotlib 📊
