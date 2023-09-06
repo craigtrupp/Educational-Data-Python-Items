@@ -34,3 +34,17 @@
     - Numpy 🥧
     - Pandas 🐼
     - Matplotlib 📊
+    - Seaborn 🌊
+        * Useful image section here detailing the type of plots commonly used, ex [catplot, pointplot, regplot, facetgrid, boxenplot ... etc]
+    - WebScraping :plate_with_cutlery:
+    - Data Preprocessing 🧹
+    - DateTime 📅
+    - Intro Data Analysis 🕵️
+    - Statistics 🧰
+    - Probability 🎴
+    - Linear Regression :chart_with_downwards_trend:
+
+### **`Repository Section`**
+* [Codefinity Section Review](/CodeFinity/cdfinity_sect_sumry.md)
+
+---
