@@ -1,7 +1,7 @@
 ## **IBM Professional Data Analysis Certificate**
 Below is a referential link to captured items throughout the program for github. Earlier sections in the course related to Excel, Intro to Data Analytics are outside of the scope for this repository and live within my personal google drive.
 
-<br>
+---
 
 ### `Sections` 🗄️
 #### **Python for Data Science, AI & Development** 🐍
@@ -32,7 +32,7 @@ Below is a referential link to captured items throughout the program for github.
     - [Basic Pandas](/Coursera/DataAnalyst_Cert/Prjc_DS_SectionV/IBM_Watson_Initial.ipynb)
     - [Extracting Stock Data - Web Scraping](/Coursera/DataAnalyst_Cert/Prjc_DS_SectionV/ExtractingStock_WebScrapingSoup.md)
     - [YFinance API](/Coursera/DataAnalyst_Cert/Prjc_DS_SectionV/YFinanceAPI.md)
-    - [Stock Assignments](/Coursera/DataAnalyst_Cert/Prjc_DS_SectionV/Final_Stock_YFI_Assignment.ipynb)
+    - [Stock Assignment](/Coursera/DataAnalyst_Cert/Prjc_DS_SectionV/Final_Stock_YFI_Assignment.ipynb)
 #### **Databases and SQL for Data Science w/Python** 📔
 * Analyze data within a database using SQL and Python
 * Create relational database on clouse and work w/tables
@@ -58,5 +58,47 @@ Below is a referential link to captured items throughout the program for github.
         - Data Imported through Db2 in multiple flat files to complete assignment
         - [Assignment](/Coursera/DataAnalyst_Cert/SQL_SectionVI/Assignment_Submission/Ntb_Fnl_Assgnment.md)
         - [Assignment SQL Queries](/Coursera/DataAnalyst_Cert/SQL_SectionVI/Assignment_Submission/Final_Submission_Queries_BDump.sql)
-
-
+#### **Data Analysis w/Python** 🕵️
+* Develop Python code for cleaning and preparing data for analysis (missing values, formatting, normalizing and binning data)
+* Exploratory data analysis and analytical techniques to real-word datasets using libraries such as Pandas, Numpy, and SciPy
+* Manipulate datau using dataframes, summarize data, understand data distribution, perform correlation and create data pipelines
+* Buil and evaluate regression models using machine learning scikit-learn library and use the for prediction and decision making
+- **Captured Files**
+    - [Correlation & ANOVA](/Coursera/DataAnalyst_Cert/DataAnalysis_SectionVII/Corr_ANova_Groupby.jupyterlite.ipynb)
+    - [Basic Data Insights](/Coursera/DataAnalyst_Cert/DataAnalysis_SectionVII/DFrame-Review-Introduction.jupyterlite.ipynb)
+    - [Model Development, Linear & Ridge Regression, Train_test_split](/Coursera/DataAnalyst_Cert/DataAnalysis_SectionVII/House_Sales_in_King_Count_USA.ipynb)
+    - [Wrangle - Scale, Correct Data Format, Missing Values, Standardize & Normalize](/Coursera/DataAnalyst_Cert/DataAnalysis_SectionVII/Review-Data-Wrangling.jupyterlite.ipynb)
+    - [Visualize - Various Models](/Coursera/DataAnalyst_Cert/DataAnalysis_SectionVII/Review-Model-Development_Fit.jupyterlite.ipynb)
+    - [Model Refinement - Overfitting, Parameter GridSearch, Cross-Validation](/Coursera/DataAnalyst_Cert/DataAnalysis_SectionVII/Review-Model-Evaluation-and-Refinement.jupyterlite.ipynb)
+#### **Data Visualization w/Python** :chart:
+* Data Viz Technique and plots using Python libraries, Matplotlib, Seaborn, and Folium
+* Different Chart Types : [Line, Area, Histogram, Bar, Pie, Box, Scatter, Bubble]
+* Adv Visualizations : [Waffle Chart, Word Clouds, Regression Plots, Choropleth]
+* Interactive Dashboards w/Dash framework and Plotly Library
+- **Captured Files**
+    - [Matplotlib - Pie, Box, Scatter, Bubble](/Coursera/DataAnalyst_Cert/DataViz_Section8/Exercise-Pie-Charts-Box-Plots-Scatter-Plots-and-Bubble-Plots.jupyterlite.ipynb)
+    - [Prep Data & Visualize - Area, Histogram, Bar](/Coursera/DataAnalyst_Cert/DataViz_Section8/Exercise-Area-Plots-Histograms-and-Bar-Charts.jupyterlite.ipynb)
+    - [Pandas to Visualizations](/Coursera/DataAnalyst_Cert/DataViz_Section8/Mtplb_Pandas_Dtypes.jupyterlite.ipynb)
+    - [Adv Plots - Waffle, Word Clouds, Regression](/Coursera/DataAnalyst_Cert/DataViz_Section8/WaffleChart_Regression.ipynb)
+    - [Geospatial Data](/Coursera/DataAnalyst_Cert/DataViz_Section8/Folium_Choropleth.ipynb)
+    - [Plotly Basics](/Coursera/DataAnalyst_Cert/DataViz_Section8/4.3_Plotly_Basics.jupyterlite.ipynb)
+    - Dash Items
+        - [Into Dash](/Coursera/DataAnalyst_Cert/DataViz_Section8/dash_basics.py)
+        - [Dash Auto](/Coursera/DataAnalyst_Cert/DataViz_Section8/Dash_AutoBoard.py)
+        - [Resulting Dash Auto PNG](/Coursera/DataAnalyst_Cert/DataViz_Section8/Dash_Auto.png)
+        - [Dash Interactivity](/Coursera/DataAnalyst_Cert/DataViz_Section8/dash_interactivity.py)
+        - [Flight Delay Short Project - Dash](/Coursera/DataAnalyst_Cert/DataViz_Section8/FlightDelayDash.py)
+    - Section Project
+        - [US Domestic Flights Plotly](/Coursera/DataAnalyst_Cert/DataViz_Section8/FinalProject/US_Domestic_Flights_Plotly.py)
+        - [Plotly Dropdown Dynamic Options Code](/Coursera/DataAnalyst_Cert/DataViz_Section8/FinalProject/Working_PlotlyDropdowns.py)
+        - [Dropdown Troubleshooting Reference Py file](/Coursera/DataAnalyst_Cert/DataViz_Section8/FinalProject/Trblshooot_Dropdown.py)
+        - [Resulting Code Images](/Coursera/DataAnalyst_Cert/DataViz_Section8/FinalProject/Images/Title_US_Domestic.png)
+### **Capstone** 🏁
+- Apply different techniques to collect and wrangle data
+- Showcase your Data Analysis and Visualization skills 
+- Create a data analysis report and a compelling presentation
+- Demonstrate proficiency with various Python Libraries
+- Repository Location
+    - This capstone item resides with two accredited projects completed for DataCamp Certification
+    - For more detail on this Capstone project as well as the DataCamp projects and how the platoforms officially certifices applicants, please visit the repository below
+    - [Data Analysis Repository w/Capstone](https://github.com/craigtrupp/data_analysis_projects)
