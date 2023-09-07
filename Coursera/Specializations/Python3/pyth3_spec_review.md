@@ -32,6 +32,21 @@ As a note, the sections detail items I captured and don't follow to a T the layo
 #### **Python Challenges/Projects** :classical_building:
 * This section does contain items from other items outside of the UMich specialization as well
 * `Short Projects`
-    - Please visit this repository for more detail on projects within this folder
-    - Most notable from this specialization was the challenging final modules to receive the specialization on using pillow, tesseract, and open cv as a cumulative test for students looking to combine items into a working script 
+    - Please visit this repository for more detail on projects completed from this specialization
+        - Projects Include : [PIL Image Library, PyTesseract, Classes/Inheritance]
+    - Most notable from this specialization was the challenging final modules to receive the specialization on using pillow, tesseract, and open cv as a cumulative test for students looking to combine items into working scripts
     - [Projects Repository](https://github.com/craigtrupp/Python_Samples#pil-image-library--contact-sheet-%EF%B8%8F)
+* **Sentiment Analysis Spec - Project**
+    * Your task is to build a sentiment classifier, which will detect how positive or negative each tweet is. 
+        - You will create a csv file, which contains columns for the Number of Retweets, Number of Replies, Positive Score (which is how many happy words are in the tweet), Negative Score (which is how many angry words are in the tweet), and the Net Score for each tweet. At the end, you upload the csv file to Excel or Google Sheets, and produce a graph of the Net Score vs Number of Retweets
+    * **Files**
+        - [Classifier Script](/Coursera/Specializations/Python3/Projects/SentimentAnlys_FileReading_Output/SntmClassfr.py)
+        - [Resulting CSV Data File - Classified Tweets](/Coursera/Specializations/Python3/Projects/SentimentAnlys_FileReading_Output/resulting_data.csv)
+        - [Seaborn Graph](/Coursera/Specializations/Python3/Projects/SentimentAnlys_FileReading_Output/SentimentAnalysis.png)
+
+#### **Final Modules/Project** 🏁
+* As some of the items here are also in the Python Project references separate repository above, there will be just a brief description and links to some of the items I elected to keep in here as well
+* Education / Lecture Items
+    - [Lecture Materials](/Coursera/Specializations/Python3/FinalModules/)
+* Final Project - HTML Viz File
+    - [OCR - Bounding Boxes](/Coursera/Specializations/Python3/FinalProject/)
