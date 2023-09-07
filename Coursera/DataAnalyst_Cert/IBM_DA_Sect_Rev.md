@@ -31,4 +31,5 @@ Below is a referential link to captured items throughout the program for github.
 - **Captured Files**
     - [Basic Pandas](/Coursera/DataAnalyst_Cert/Prjc_DS_SectionV/IBM_Watson_Initial.ipynb)
     - [Extracting Stock Data - Web Scraping](/Coursera/DataAnalyst_Cert/Prjc_DS_SectionV/ExtractingStock_WebScrapingSoup.md)
-    - []
+    - [YFinance API](/Coursera/DataAnalyst_Cert/Prjc_DS_SectionV/YFinanceAPI.md)
+    - [Stock Assignments](/Coursera/DataAnalyst_Cert/Prjc_DS_SectionV/Final_Stock_YFI_Assignment.ipynb)
