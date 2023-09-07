@@ -1,5 +1,5 @@
-# Python 🐍, Data Analysis 🔬 ....
-
+# Python 🐍, Data Analysis 🔬 , Data Visualization 💹 & Statistics 🎴
+This repository houses projects, exercises and challenges related to the aformentioned title above. Below is a summary of the different sections within the repository with a sectional referential link to the markdown file with further contextual detail and links to the individual items!
 
 ## **50 Days of Python - Challenges, Python Exercise Notebooks & Scripts**
 ### `50 Days of Python`
@@ -30,13 +30,24 @@
 ## **Coursera - IBM, University of Michigan**
 ### `IBM : Data Analysis Professional Certificate`
 * IBM's comprehensive professional certificate program on Coursera offers students the opportunity to learn, practice, and package deliverables for completed data analysis.
-    - [Verified Certificate](https://coursera.org/share/6054c553286922a6d725b75612fae96d)
-* Items / Subject Learned
+    - [IBM - Verified Certificate](https://coursera.org/share/6054c553286922a6d725b75612fae96d)
+* Items / Subject Learned 🏫
     - Practical skills and tolls data analysts use in daily tasks and wider projects
     - Working knowledge of Python for analyzing data using libraries such as **Pandas** and **Numpy** as well as for use in invoking APIs and Web Services/Scraping
     - Visualize data and present finds using various charts in Excel spreadsheets and BIT tools like IBM Cognos Analytics & Tableau
     - Data extraction and SQL's pivotal role in organizing, filtering, and leveraging captured data
 * [IBM Data Analyst Section Review](/Coursera/DataAnalyst_Cert/IBM_DA_Sect_Rev.md)
+
+### `Michigan : Python 3 Programming Specialization`
+* The University of Michigan offers a tremendous five course series for Python 3 Programming covering the following topics
+    - [Python/Mich - Verified Certificate](https://coursera.org/share/be045ad4edd808c18b8519284c7cb116)
+* Specialization Topics 📜
+    - Python Basics 🐍
+    - Python Functions, Files, and Dictionaries 🏗️
+    - Data Collection & Processing w/Python 🪜
+    - Python Classes & Inheritance 👪
+    - Python Projects: pillow, tesseract, & opencv 📰
+* [Python 3 Programming Specialization Section Review]()
 
 ---
 
