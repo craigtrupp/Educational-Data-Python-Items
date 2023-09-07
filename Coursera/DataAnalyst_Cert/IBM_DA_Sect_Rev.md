@@ -12,4 +12,4 @@ Below is a referential link to captured items throughout the program for github.
     - Web Data : APIs invocation and web scraping from Python in Jupyter Notebooks
 - **Captured Files**
     - Python Items
-        * [Basics](/Pyth_DataScience_IV/Refreshers.py)
+        * [Basics](/DataAnalyst_Cert/Pyth_DataScience_IV/Refreshers.py)
