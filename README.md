@@ -27,6 +27,19 @@
 
 ---
 
+## **Coursera - IBM, University of Michigan**
+### `IBM : Data Analysis Professional Certificate`
+* IBM's comprehensive professional certificate program on Coursera offers students the opportunity to learn, practice, and package deliverables for completed data analysis.
+    - [Verified Certificate](https://coursera.org/share/6054c553286922a6d725b75612fae96d)
+* Items / Subject Learned
+    - Practical skills and tolls data analysts use in daily tasks and wider projects
+    - Working knowledge of Python for analyzing data using libraries such as **Pandas** and **Numpy** as well as for use in invoking APIs and Web Services/Scraping
+    - Visualize data and present finds using various charts in Excel spreadsheets and BIT tools like IBM Cognos Analytics & Tableau
+    - Data extraction and SQL's pivotal role in organizing, filtering, and leveraging captured data
+* [IBM Data Analyst Section Review](/Coursera/DataAnalyst_Cert/IBM_DA_Sect_Rev.md)
+
+---
+
 ## **CodeFinity**
 * One of my favorite platforms for succinct and quality lessons/challenges for utilizing Python in the world of Data Analysis
 * Review of the Sections and Files in this Repository's particular section
@@ -43,6 +56,8 @@
     - Statistics 🧰
     - Probability 🎴
     - Linear Regression :chart_with_downwards_trend:
+    - A_B Testing 🆎
+    - Data Analysis Brief Projects 📁
 
 ### **`Repository Section`**
 * [Codefinity Section Review](/CodeFinity/cdfinity_sect_sumry.md)

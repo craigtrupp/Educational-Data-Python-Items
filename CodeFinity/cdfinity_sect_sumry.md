@@ -62,3 +62,11 @@
     - [Model Training & Evaluation](/CodeFinity/LinearRegression/Model_Train_Evaluate.py)
     - [Multi Variate](/CodeFinity/LinearRegression/Multi_Variate_LReg.py)
     - [Related Images - Understanding](/CodeFinity/LinearRegression/Images/)
+* **AB Testing**
+    - [AB Criterion](/CodeFinity/A_BTest/A_B_Criterion_Test.py)
+    - [AB Secondary](/CodeFinity/A_BTest/A_B_Secondary_Test.py)
+    - [Processes Detailed](/CodeFinity/A_BTest/Images/)
+* **Data Analysis Process - Sample Challenges**
+    - [Flight Detail - TimeDate](/CodeFinity/DAnalysisPrjcts/Flights.py)
+    - [Used Cars - Data Conversion](/CodeFinity/DAnalysisPrjcts/Used_Cars.py)
+    - [Walmart - Data Transformation](/CodeFinity/DAnalysisPrjcts/Walmart.py)
