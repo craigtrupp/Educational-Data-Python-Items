@@ -47,8 +47,15 @@ This repository houses projects, exercises and challenges related to the aformen
     - Data Collection & Processing w/Python 🪜
     - Python Classes & Inheritance 👪
     - Python Projects: pillow, tesseract, & opencv 📰
-* [Python 3 Programming Specialization Section Review]()
+* [Python 3 Programming Specialization Section Review](/Coursera/Specializations/Python3/pyth3_spec_review.md)
 
+### `Michigan : Statistics with Python Specialization`
+* In a follow-up series, the institution also offers a deep dive into Python w/Statistics to cover the core principles of statistical analysis w/Python.
+* Specialization Topics 📜
+    - Understanding and Visualizing Data w/Python 📊
+    - Inferential Statistical Analysis w/Python 🔢
+    - Fitting Statistical Models to Data w/Python 🧮
+* [Statistics w/Python Specialization Section Review](/Coursera/Specializations/Stats/Stats_Sec_Rev.md)
 ---
 
 ## **CodeFinity**
