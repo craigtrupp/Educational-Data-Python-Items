@@ -50,7 +50,7 @@
     - [Hypothesis Testing Assessment](/Coursera/Specializations/Stats/InferentialStatisticalAnalysis/HypothesisTesting/Hypothesis_Assesment.ipynb)
 
 #### **Fitting Statistical Models to Data** :abacus:
-* **Overview, Intro, & Considerations for Stats Modeling**
+* **Overview, Intro, & Considerations for Statistical Data Modeling**
     - [Python LIbraries - StatsModel Intro](/Coursera/Specializations/Stats/Fitting_Stats_Models_toData/Overview_Considerations/notebooks/python_libraries.ipynb)
     - [Data Preprocessing & Model Consdierations](/Coursera/Specializations/Stats/Fitting_Stats_Models_toData/Overview_Considerations/notebooks/Modeling_CorrelationMatrices.ipynb)
 * **Fitting Models to Independent Data - Linear/Log Regression**
