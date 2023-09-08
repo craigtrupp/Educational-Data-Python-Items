@@ -95,3 +95,15 @@ This repository houses projects, exercises and challenges related to the aformen
         - [Data Analyst Professional](https://www.datacamp.com/certificate/DA0020911615127)
         - [Data Scientist Professional](https://www.datacamp.com/certificate/DS0025350472090)
 * [DataCamp Contents Section Review](/DataCamp/DataCamp_SectRev.md)
+
+### `SharpSight`
+* Another favorite of mine here and a good review section which helped me for my certification tests and practical usage. 
+* Takes some common best practices from DataScience work into a modular fashion for common operations
+* Items Covered 📚
+    - Base Python 🐍
+    - Numpy 🥧
+    - Pandas 🐼
+    - Seaborn 🌊
+    - Chain Usage for Python (Similar to SQL CTE) ⛓️
+    - Data Analysis 🔬
+* [Sharp Sight Section Review]
