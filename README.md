@@ -51,6 +51,7 @@ This repository houses projects, exercises and challenges related to the aformen
 
 ### `Michigan : Statistics with Python Specialization`
 * In a follow-up series, the institution also offers a deep dive into Python w/Statistics to cover the core principles of statistical analysis w/Python.
+    - [Statistics w/Python - Verified Certificate](https://coursera.org/share/fc3a77df2060c991c5d1b9bf1a6076e8)
 * Specialization Topics 📜
     - Understanding and Visualizing Data w/Python 📊
     - Inferential Statistical Analysis w/Python 🔢
