@@ -1,10 +1,10 @@
-# DataCamp Certification Projects
+# DataCamp Certification Projects 🚀
 
 Following completion of learning tracks on the platform, different levels of certification are presented to users to apply learned data skills on a sample business problem. To date, I've completed the platform's two professional level certifications **Data Analyst Professional** and **Data Scientist Professional**. 
 
 <br>
 
-## Certification Overview Process
+## **Certification Overview Process** 🎡
 DataCamp Certification is an official recognition that you've achieved the required skill level as either a Data Scientist or Data Analyst. We measure your abilities through timed exams and a practical exam based on scenarios you're likely to find in the workplace. Our Certifications have been developed with the help of data experts representing a variety of industries, organizations, and roles.
 
 ---
@@ -12,7 +12,7 @@ DataCamp Certification is an official recognition that you've achieved the requi
 <br>
 
 ### `Certification Flow`
-#### **Timed Exams**
+#### **Timed Exams** 🕥
 The following exams for each professional certificate were passed prior to advancing to the practical exam submission. Prefixed `DA` exams were for **Data Analyst Professional** and `DS` exams were for **Data Scientist Professional**. Each assessment was completed with **Python** when presented with an option with either **R** or **Python**.
 
 * `DA101` is a 45-minute exam that assesses your proficiency in **data management**, **exploratory analysis**, and **statistical experimentation using SQL.** This exam consisted of the following topics
@@ -59,7 +59,7 @@ The following exams for each professional certificate were passed prior to advan
 
 <br>
 
-#### **Practical Exam**
+#### **Practical Exam** 🧪
 The final step in this certification is a practical exam. The practical exam assesses your skills in data visualization and communication. You'll review a business problem, select and create appropriate visualizations, and give a relevant summary of what you have found to the defined audience. You'll need to record your presentation and submit it via the certification portal. 
 
 To pass the practical exam, you'll need to
@@ -72,19 +72,26 @@ To pass the practical exam, you'll need to
 
 <br>
 
-### My Submissions & Certificate Links
+### **My Submissions & Certificate Links** 🎊
 Please see below for a link to the submitted practical exams as well as the certificates issued by the platform. Also within the available resources below is a pdf document containing one of the sample practical exam tasks (sample business request) as well as one of the completed presentations (powerpoint exported to pdf) highlighting the results of the analysis.
 
 
-* Data Analysis Professional Items
-    * `Certificate` : https://www.datacamp.com/certificate/DA0020911615127
-    * `Practical Exam Submission - Notebook` : https://github.com/craigtrupp/Online_Data_Python/blob/main/DataCamp/Project_Workspaces/Certificate_Projects/DAnalyst_Professional_ProductSales.ipynb
-    * `Presentation Slides` : https://github.com/craigtrupp/Online_Data_Python/blob/main/DataCamp/Project_Workspaces/Certificate_Projects/Projects/Pens%20%26%20Printers%20Customer%20Sales%20Analysis.pdf
+* **`Data Analysis Professional Items`**
+    * `Certificate`
+        - [Platform Verified Certificate](https://www.datacamp.com/certificate/DA0020911615127)
+    * `Practical Exam Submission - Notebook`  
+        * [Notebook Submission - Performed Analysis](/DataCamp/Project_Workspaces/Certificate_Projects/Projects/DAnalyst_Professional_ProductSales.ipynb)
+    * `Presentation Slides for Data Presentation`
+        * [Mock Business Presentation](/DataCamp/Project_Workspaces/Certificate_Projects/Projects/Pens%20%26%20Printers%20Customer%20Sales%20Analysis.pdf)
 
 <br>
 
-* Data Science Professional Items
-    * `Certificate` : https://www.datacamp.com/certificate/DS0025350472090
-    * `Practical Exam Submission - Notebook` : https://github.com/craigtrupp/Online_Data_Python/blob/main/DataCamp/Project_Workspaces/Certificate_Projects/Projects/Recipe_Classifier_DScienceProfessionalProject.ipynb
-    * `Businnes Request - Practical Exam` : https://github.com/craigtrupp/Online_Data_Python/blob/main/DataCamp/Project_Workspaces/Certificate_Projects/Projects/RecipeClassifier_BusinessRequest.pdf
+* **`Data Science Professional Items`**
+    * `Certificate` : 
+        * [Platform Verified Certificate](https://www.datacamp.com/certificate/DS0025350472090)
+    * `Practical Exam Submission - Notebook`
+        * [Notebook Submission - Model Development](/DataCamp/Project_Workspaces/Certificate_Projects/Projects/Recipe_Classifier_DScienceProfessionalProject.ipynb)
+    * `Businnes Request - Practical Exam`
+        * This mocks a request for the provided work on creating a model for picking successful recipes to show to users
+        * [Business Request - Recipe Classifier](/DataCamp/Project_Workspaces/Certificate_Projects/Projects/RecipeClassifier_BusinessRequest.pdf)
 

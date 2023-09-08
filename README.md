@@ -82,3 +82,16 @@ This repository houses projects, exercises and challenges related to the aformen
 * [Codefinity Section Review](/CodeFinity/cdfinity_sect_sumry.md)
 
 ---
+
+## **Further Data Practice & Reference Resources** 
+### `DataCamp`
+* This platform offers curious data minds a chance to pick particular tracks and courses to prepare them for varying levels of certification review from the platform
+* **DataCamp Certification** 
+    - An official recognition that you've achieved the required skill level as either a Data Scientist or Data Analyst. 
+    - We measure your abilities through timed exams and a practical exam based on scenarios you're likely to find in the workplace. 
+    - Our Certifications have been developed with the help of data experts representing a variety of industries, organizations, and roles.
+    - [Certification FAQ](https://app.datacamp.com/certification/resource-center/faq)
+    - **My Achieved Certificates**
+        - [Data Analyst Professional](https://www.datacamp.com/certificate/DA0020911615127)
+        - [Data Scientist Professional](https://www.datacamp.com/certificate/DS0025350472090)
+* [DataCamp Contents Section Review](/DataCamp/DataCamp_SectRev.md)
