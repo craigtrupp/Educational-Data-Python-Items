@@ -132,4 +132,14 @@ Below is a guide to the items within the repository for quick lookup. The course
 * **`Script`**
     * [Pd Method Chaining & Techniques](/SharpSight/Chain_Syntax_Usage/scripts/pandas-method-chaining-and-techniques.py)
 
+### **Data Ananlysis** 🔬
+* **Lecture PDFs**
+    * [Defining Analytical Objectives](/SharpSight/DataAnalysis/Lecture_PDF/data-analysis_ask-questions_clarify-objectives.pdf)
+    * [Data Preparation Process](/SharpSight/DataAnalysis/Lecture_PDF/data-preparation-process.pdf)
+    * [Data Analysis Process](/SharpSight/DataAnalysis/Lecture_PDF/data-analysis-process.pdf)
+* **Scripts**
+    - [Import/Export](/SharpSight/DataAnalysis/Exercise_Import.py)
+    - [Data Preparation](/SharpSight/DataAnalysis/1_data-preparation_supercar-data.py)
+    - [Supercars Analysis](/SharpSight/DataAnalysis/supercars-analysis.py)
+
 
