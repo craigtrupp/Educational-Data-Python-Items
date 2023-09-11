@@ -1,5 +1,5 @@
 ## **SharpSight**
-Below is a guide to the items within the repository for quick lookup. The course also used **anki** flashcards for  
+Below is a guide to the items within the repository for quick lookup. The course also used **anki** flashcards for syntax reminders and testing
 
 ### **Python** 🐍
 #### **`Base Python I`**
@@ -89,8 +89,47 @@ Below is a guide to the items within the repository for quick lookup. The course
         * [Rename - Columns](/SharpSight/Pandas/Scripts/Basic_Manip_I/rename.py)
         * [Sort Values](/SharpSight/Pandas/Scripts/Basic_Manip_I/sort-values.py)
     - `Manipulation II`
-        
+        * [Agg - Summary Stats Functions](/SharpSight/Pandas/Scripts/Manipulation_II/agg.py)
+        * [Concat - Dframe Stacking](/SharpSight/Pandas/Scripts/Manipulation_II/concat.py)
+        * [GroupBy - Categorical Column grouping](/SharpSight/Pandas/DManip_II/pandas-groupby.pdf)
+        * [Melt - Reshape "Wide to Long"](/SharpSight/Pandas/Scripts/Manipulation_II/melt.py)
+        * [Merge - Join](/SharpSight/Pandas/Scripts/Manipulation_II/merge.py)
+        * [Pivot - MultiLayer Agg Stats](/SharpSight/Pandas/Scripts/Manipulation_II/pivot.py)
+        * [ResetIndex - Idx val to Column](/SharpSight/Pandas/Scripts/Manipulation_II/reset_index.py)
+        * [SetIndex - Col val to Idx](/SharpSight/Pandas/Scripts/Manipulation_II/set_index.py)
 
+### **Seaborn** 🌊
+#### **`Seaborn I`**
+* **Lecture PDFs**
+    * [Bar plot](/SharpSight/Seaborn/Seaborn_I/pdf/seaborn-barplot.pdf)
+    * [Box plot](/SharpSight/Seaborn/Seaborn_I/pdf/seaborn-boxplot.pdf)
+    * [Count plot](/SharpSight/Seaborn/Seaborn_I/pdf/seaborn-countplot.pdf)
+    * [Line plot](/SharpSight/Seaborn/Seaborn_I/pdf/seaborn-lineplot.pdf)
+    * [Scatter plot](/SharpSight/Seaborn/Seaborn_I/pdf/seaborn-scatterplot.pdf)
+* **Scripts**
+    * [Bar plot](/SharpSight/Seaborn/Seaborn_I/Scripts/seaborn-barplot.py)
+    * [Bar & Countplot](/SharpSight/Seaborn/Seaborn_I/Scripts/seaborn-bar-countplot.py)
+    * [Box Plot](/SharpSight/Seaborn/Seaborn_I/Scripts/seaborn-box-plot.py)
+    * [Lineplot](/SharpSight/Seaborn/Seaborn_I/Scripts/seaborn-lineplot.py)
+    * [Scatterplot](/SharpSight/Seaborn/Seaborn_I/Scripts/seaborn-scatterplot.py)
+#### **`Seaborn II`**
+* **Lecture PDFs**
+    * [Distribution Plot](/SharpSight/Seaborn/Seaborn_II/pdf/seaborn-distplot.pdf)
+    * [Facet Grid - MultiLayer Viz](/SharpSight/Seaborn/Seaborn_II/pdf/seaborn-FacetGrid.pdf)
+    * [Heatmap](/SharpSight/Seaborn/Seaborn_II/pdf/seaborn-heatmap.pdf)
+    * [Density Kernel Viz](/SharpSight/Seaborn/Seaborn_II/pdf/seaborn-kdeplot.pdf)
+* **Scripts**
+    * [Distribution Plot](/SharpSight/Seaborn/Seaborn_II/Scripts/seaborn-distplot.py)
+    * [Facet Grid](/SharpSight/Seaborn/Seaborn_II/Scripts/seaborn-facetgrid.py)
+    * [Heat Map](/SharpSight/Seaborn/Seaborn_II/Scripts/seaborn-heatmap.py)
+    * [Histogram](/SharpSight/Seaborn/Seaborn_II/Scripts/seaborn-histplot.py)
+    * [KDE - Density Plot](/SharpSight/Seaborn/Seaborn_II/Scripts/seaborn-kdeplot.py)
 
+### **Chain Pandas Syntax** ⛓️
+* Common to manipulate dataframe and make subsequent calls with methods for chaining methods to a mutating dataframe
+* **`PDF`**
+    * [Pandas Method Chainging](/SharpSight/Chain_Syntax_Usage/pdf/pandas_method_chaining.pdf)
+* **`Script`**
+    * [Pd Method Chaining & Techniques](/SharpSight/Chain_Syntax_Usage/scripts/pandas-method-chaining-and-techniques.py)
 
 

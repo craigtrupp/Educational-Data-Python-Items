@@ -106,4 +106,4 @@ This repository houses projects, exercises and challenges related to the aformen
     - Seaborn 🌊
     - Chain Usage for Python (Similar to SQL CTE) ⛓️
     - Data Analysis 🔬
-* [Sharp Sight Section Review]
+* [Sharp Sight Section Review](/SharpSight/ssight_sect_rev.md)
