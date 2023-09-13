@@ -107,3 +107,8 @@ This repository houses projects, exercises and challenges related to the aformen
     - Chain Usage for Python (Similar to SQL CTE) ⛓️
     - Data Analysis 🔬
 * [Sharp Sight Section Review](/SharpSight/ssight_sect_rev.md)
+
+### `HackerRank`
+* Starting some Challenges on another platform to keep sharp
+* See Section Markdown for sections covered and reference to further individual python scripts for answers to posed questions on platform.
+* [HackerRank Section](/HackerRank/Hacker_Pyth_Practice.md)
