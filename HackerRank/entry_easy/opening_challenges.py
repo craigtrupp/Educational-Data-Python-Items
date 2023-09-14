@@ -49,3 +49,25 @@ permutations = [[a, b, c] for a in range(x + 1) for b in range(y + 1) for c in r
 ## which don't sum to the value of n or our last argument
 permutations_not_sum_n = [x for x in permutations if sum(x) != n]
 print(permutations_not_sum_n)
+
+
+### Find The Runner Up Score
+# Given the participants' score sheet for your University Sports Day, you are required to 
+# find the runner-up score. You are given "n" scores. Store them in a list and find the score of 
+# the runner-up.
+## Constraints : 
+#   2 <= n <= 10 (number of scores must be between 2 and 10)
+#   -100 <= A[i] <= 100 (each score in defined -100 to 100 range)
+if __name__ == '__main__':
+    n = int(input()) # n == 5
+    arr = map(int, input().split()) # list(arr) == [2, 3, 6, 6, 5] but as a map object (transform to arr)
+
+ranks = list(arr) # transform map object for second constraint check
+constraint_1 = 2 <= n <= 10
+constraint_2 = all([True for x in ranks if x >= -100 and x <= 100])
+if constraint_1 and constraint_2:
+    unique_ranks = list(set(ranks))
+    ranked_scores = sorted(unique_ranks, reverse=True)
+    runner_up_score = ranked_scores[1]
+print(runner_up_score)
+
