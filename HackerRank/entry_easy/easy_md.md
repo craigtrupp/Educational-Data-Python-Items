@@ -7,8 +7,7 @@
 ### **Challenges** ⛰️
 
 * **`List Comprehensions`**
-
-![List Comp Question](/Online_Data_Python/Data_Python_SQL/HackerRank/entry_easy/images/l_comprehension_coords.png)
+![List Comp Question](images/l_comprehension_coords.png)
 * So trick here is using multiple for loops in the comprehension which are **`nested loops`**
 ```python
 # Let's say for instance we have the values for our input
