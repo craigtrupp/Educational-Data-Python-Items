@@ -7,6 +7,7 @@
 ### **Challenges** ⛰️
 
 * **`List Comprehensions`**
+
 ![List Comp Question](images/l_comprehension_coords.png)
 * So trick here is using multiple for loops in the comprehension which are **`nested loops`**
 ```python
