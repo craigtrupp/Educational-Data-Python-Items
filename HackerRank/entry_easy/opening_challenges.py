@@ -20,3 +20,32 @@ def is_leap(year):
 
 year = int(input())
 print(is_leap(year))
+
+
+# The included code stub will read an integer, , from STDIN.
+# Without using any string methods, try to print the following:
+# Note that "" represents the consecutive values in between.
+# Example
+# Print the string 12345
+
+if __name__ == '__main__':
+    n = int(input())
+if n >= 1 and n <= 150:
+    num_str = ''
+    for x in range(1, n+1):
+        num_str += str(x)
+print(num_str)
+
+
+## See The List Comprehension for the problem defined and explanation of the output and generation of permutations
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+
+permutations = [[a, b, c] for a in range(x + 1) for b in range(y + 1) for c in range(z + 1)]
+## We have all the permutations now and we need to print the permutations
+## which don't sum to the value of n or our last argument
+permutations_not_sum_n = [x for x in permutations if sum(x) != n]
+print(permutations_not_sum_n)
