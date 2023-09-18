@@ -71,3 +71,60 @@ if constraint_1 and constraint_2:
     runner_up_score = ranked_scores[1]
 print(runner_up_score)
 
+
+### Nested Lists
+# Given the names and grades for each student in a class of N students, store them in a 
+# nested list and print the name(s) of any student(s) having the second lowest grade.
+
+# Note: If there are multiple students with the second lowest grade, order their names alphabetically and print each name on a new line.
+# Input Format
+
+# The first line contains an integer, , the number of students.
+# The  subsequent lines describe each student over  lines.
+# - The first line contains a student's name.
+# - The second line contains their grade.
+
+# Constraints
+# * 2 <= n <= 5
+# * There will always be one or more students having the second lowest grade.
+# Provided Input 
+# 5
+# Harry
+# 37.21
+# Berry
+# 37.21
+# Tina
+# 37.2
+# Akriti
+# 41
+# Harsh
+# 39
+
+from collections import Counter
+if __name__ == '__main__':
+    names, scores = [], []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        names.append(name)
+        scores.append(score)
+# Will create a list first and use zip to create a list of tuples
+records = list(zip(names, scores))
+records = [list(x) for x in records]
+scores_sorted = sorted(records, key=lambda x: x[1])
+#print(scores_sorted) # [['Tina', 37.2], ['Harry', 37.21], ['Berry', 37.21], ['Harsh', 39.0], ['Akriti', 41.0]]
+second_lowest_score = 0
+for i, student in enumerate(scores_sorted):
+    # Check here that there aren't two/multiple scores at the lowest level
+    if scores_sorted[i][1] == scores_sorted[i+1][1]:
+        continue
+    else:
+        second_lowest_score = scores_sorted[i+1][1]
+        break
+# print(second_lowest_score) 37.21
+# we can filter off the second_lowest_score now for the students
+students_w_second_lowest = list(filter(lambda x: x[1] == second_lowest_score, scores_sorted))
+alpha_second_sorted = sorted(students_w_second_lowest, key=lambda x: x[0]) # name is first value in array
+#print(students_w_second_lowest, alpha_second_sorted) # [['Harry', 37.21], ['Berry', 37.21]] [['Berry', 37.21], ['Harry', 37.21]]
+for student_details in alpha_second_sorted:
+    print(student_details[0])
