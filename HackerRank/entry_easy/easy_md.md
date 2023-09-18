@@ -5,7 +5,7 @@
 ---
 
 ### **`File Details: Quick Summaries of Challenges`** 🗄️
-* [**`Opening Challenges`**](/entry_easy/opening_challenges.py)
+* [**`Opening Challenges`**](/HackerRank/entry_easy/opening_challenges.py)
     * Leap Year Modulus Boolean Setting
     * Str building for input numeric value with range for loop
     * `List Comprehension` for permutation building - Further Details below for Challenge section capture
