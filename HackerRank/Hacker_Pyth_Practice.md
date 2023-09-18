@@ -23,5 +23,5 @@
     * Debugging 🐛
 
 #### **Files Locations** 📁
-* `Entry/Easy` Python Files
-    * [Opening Challenges](/HackerRank/entry_easy/opening_challenges.py)
+* `Entry/Easy` Markdown File
+    * **[Opening Challenges](/HackerRank/entry_easy/easy_md.md)**

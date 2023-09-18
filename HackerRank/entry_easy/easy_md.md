@@ -1,10 +1,23 @@
 ## HackerRank 🧑‍💻 for Python 🐍
-* So sometimes the challenges are gonna be good to write in a markdown file as the detail isn't going to be the easiest comment for a straight python file
+* So sometimes the challenges are gonna be good to write in a markdown file as the detail isn't going to be the easiest comment for a straight python file in some scenarios
 * Now ... to some challenges 
 * Am also noting some challenges here for greater understanding of how the code working not just in a python script (see below!)
 ---
 
-### **Challenges** ⛰️
+### **`File Details: Quick Summaries of Challenges`** 🗄️
+* [**`Opening Challenges`**](/entry_easy/opening_challenges.py)
+    * Leap Year Modulus Boolean Setting
+    * Str building for input numeric value with range for loop
+    * `List Comprehension` for permutation building - Further Details below for Challenge section capture
+        * Good reminder on nested loop functionality in list comprehensions
+    * `Runner Up Score` - use of all() for Boolean condition, sorted unique ranks with method chaining and **sorted** reverse argument to capture higher ranks
+    * Formatting numeric string value for a rounded 2 digit float value
+    * Math pows
+    * list methods for mutating list commands and update over While loop
+
+---
+
+### **Challenges Breakdown Selections** ⛰️
 
 * **`List Comprehensions`**
 
