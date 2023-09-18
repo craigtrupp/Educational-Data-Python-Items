@@ -128,3 +128,125 @@ alpha_second_sorted = sorted(students_w_second_lowest, key=lambda x: x[0]) # nam
 #print(students_w_second_lowest, alpha_second_sorted) # [['Harry', 37.21], ['Berry', 37.21]] [['Berry', 37.21], ['Harry', 37.21]]
 for student_details in alpha_second_sorted:
     print(student_details[0])
+
+
+## Finding the Percentage
+# The provided code stub will read in a dictionary containing key/value pairs of 
+# name:[marks] for a list of students. Print the average of the marks array for the 
+# student name provided, showing 2 places after the decimal.
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+
+## Now to the logic
+query_student_score = round(sum(student_marks[query_name])/len(student_marks[query_name]), 2)
+print('{0:.2f}'.format(query_student_score)) # need to pad so just format the string after rounding to two places
+
+
+
+## Power - Mod Power
+# So far, we have only heard of Python's powers. Now, we will witness them!
+
+# Powers or exponents in Python can be calculated using the built-in power function. Call the power function  as shown below:
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a, b, c = int(input()), int(input()), int(input())
+print(pow(a, b))
+print(pow(a, b, c))
+
+
+
+## Integers Come in All Sizes
+# Integers in Python can be as big as the bytes in your machine's memory.
+# There is no limit in size as there is:  (c++ int) or  (C++ long long int).
+
+# As we know, the result of  grows really fast with increasing .
+
+# Let's do some calculations on very large integers.
+
+# Task
+# Read four numbers, a, b, c, and d, and print the result of a^b + c^d.
+
+# Input Format
+# Integers a, b, c, and d are given on four separate lines, respectively.
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a, b, c, d = int(input()), int(input()), int(input()), int(input())
+print((a ** b) + (c ** d))
+
+
+
+## Lists
+# Consider a list (list = []). You can perform the following commands:
+
+# insert i e: Insert integer  at position .
+# print: Print the list.
+# remove e: Delete the first occurrence of integer .
+# append e: Insert integer  at the end of the list.
+# sort: Sort the list.
+# pop: Pop the last element from the list.
+# reverse: Reverse the list.
+# Initialize your list and read in the value of  followed by  lines of commands where each command will be of the  types listed above. 
+# Iterate through each command in order and perform the corresponding operation on your list.
+
+## Sample Input
+# 12
+# insert 0 5
+# insert 1 10
+# insert 0 6
+# print
+# remove 6
+# append 9
+# append 1
+# sort
+# print
+# pop
+# reverse
+# print
+
+## Sample Output
+# [6, 5, 10]
+# [1, 5, 9, 10]
+# [9, 5, 1]
+
+if __name__ == '__main__':
+    N = int(input())
+# so we want to iterate for N and capture input which will be a method
+counter = 0
+# We can make these list method calls directly on the list to mutate in place
+mutating_list = []
+commands = []
+while counter < N:
+    new_command = input().lower()
+    commands.append(new_command) # reading in values which provides a command
+    counter += 1 # increment counter, then capture condition (go first before caught condition)
+    if 'insert' in new_command:
+        insert_items = new_command.split() # default split on whitespace (mutate str values to int)
+        mutating_list.insert(int(insert_items[1]), int(insert_items[-1]))
+    elif 'print' in new_command:
+        print(mutating_list)
+    elif 'remove' in new_command:
+        remove_value = new_command.split()[-1] # grabs integer at end of string 
+        mutating_list.remove(int(remove_value))
+    elif 'append' in new_command:
+        append_value = new_command.split()[-1] # same integer grabbing
+        mutating_list.append(int(append_value))
+    elif 'sort' in new_command:
+        mutating_list.sort()
+    elif 'pop' in new_command:
+        mutating_list.pop()
+    elif 'reverse' in new_command:
+        mutating_list.reverse()
+
+
+#print(commands) # just for some context
+# ['insert 0 5', 'insert 1 10', 'insert 0 6', 'print', 'remove 6', 'append 9', 'append 1', 'sort', 'print', 'pop', 'reverse', 'print']
+
+## My Output
+[6, 5, 10]
+[1, 5, 9, 10]
+[9, 5, 1]
