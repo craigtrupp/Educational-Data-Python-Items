@@ -129,3 +129,139 @@ if __name__ == '__main__':
     print(result)
 
 
+
+#### **What's Your Name - Challenge** ####
+# You are given the firstname and lastname of a person on two different lines. Your task is to read them and print the following:
+
+# Hello firstname lastname! You just delved into python.
+
+# Function Description
+
+# Complete the print_full_name function in the editor below.
+
+# print_full_name has the following parameters:
+
+# string first: the first name
+# string last: the last name
+# Prints
+
+# string: 'Hello firstname lastname! You just delved into python
+#
+# Complete the 'print_full_name' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts following parameters:
+#  1. STRING first
+#  2. STRING last
+#
+
+# Return statement by itself didn't work
+def print_full_name(first, last):
+    # Write your code here
+    print(f'Hello {first} {last}! You just delved into python.')
+    return f'Hello {first} {last}! You just delved into python.'
+
+if __name__ == '__main__':
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
+
+
+
+#### **Strings - Mutations** ####
+# We have seen that lists are mutable (they can be changed), and tuples are immutable (they cannot be changed).
+
+# Let's try to understand this with an example.
+
+# You are given an immutable string, and you want to make changes to it.
+# Example
+
+# >>> string = "abracadabra"
+# You can access an index by:
+
+# >>> print string[5]
+# a
+# What if you would like to assign a value?
+
+# >>> string[5] = 'k' 
+# Traceback (most recent call last):
+#   File "<stdin>", line 1, in <module>
+# TypeError: 'str' object does not support item assignment
+
+
+## Approaches
+# Example
+
+# >>> string = "abracadabra"
+# >>> l = list(string)
+# >>> l[5] = 'k'
+# >>> string = ''.join(l)
+# >>> print string
+# abrackdabra
+# Another approach is to slice the string and join it back.
+# Example
+
+# >>> string = string[:5] + "k" + string[6:]
+# >>> print string
+# abrackdabra
+
+## Task ##
+# Read a given string, change the character at a given index and then print the modified string.
+# Function Description
+
+# Complete the mutate_string function in the editor below.
+
+# mutate_string has the following parameters:
+
+# string string: the string to change
+# int position: the index to insert the character at
+# string character: the character to insert
+def mutate_string(string, position, character):
+    return string[:position] + character + string[position+1:]
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+
+
+
+#### **Find a String** ####
+# In this challenge, the user enters a string and a substring. You have to print the number of times that the substring 
+# occurs in the given string. String traversal will take place from left to right, not from right to left.
+
+# NOTE: String letters are case-sensitive.
+
+# Input Format
+
+# The first line of input contains the original string. The next line contains the substring.
+
+# Sample Input
+
+# ABCDCDC
+# CDC
+# Sample Output
+
+# 2
+def count_substring(string, sub_string):
+    # So we need to loop through the string but at each index 
+    # then loop through the length of the sub_string as recurring characters are allowed to generate the pattern
+    # so we would only want to loop through the base_str for as long as a sub_str value could be
+    # ABCDCDC - 7, CDC - 3 = So we only want to loop up to 3 characters from the end of the original string
+    total_str_len = len(string)
+    sub_str_len = len(sub_string)
+    # range leaves us one short so samp_str[:4] wouldn't get the second c (:upuntilvalue)
+    # This is all done so we don't get an index out of range error
+    sub_str_count = 0
+    for char_idx in range((total_str_len - sub_str_len) + 1):
+        if string[char_idx:(char_idx+sub_str_len)] == sub_string:
+            sub_str_count += 1
+    return sub_str_count
+
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
