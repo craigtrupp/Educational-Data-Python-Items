@@ -17,6 +17,7 @@
 * [**`Second Set`**](/HackerRank/entry_easy/second_set.py)
     * Tuple generation from input and use of built_in hash method 
     * Collections OrderedDict - Receive input and iterate over total of N times - split input str by item/price and append or add to Ordered Dict
+    * Swap Values - isalpha check with lower/upper check to swap values if character is alpha then join strings
 
 ---
 

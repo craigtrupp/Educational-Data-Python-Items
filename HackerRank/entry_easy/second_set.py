@@ -1,4 +1,4 @@
-## Tuples - Challenge
+#### **Tuples - Challenge** ####
 # Task
 # Given an integer, n, and n space-separated integers as input, create a tuple, t, of those n integers. Then compute and print the result of hash(t).
 
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     print(hash(integer_list))
 
 
-## Collections - OrderedDict Challenge
+#### **Collections - OrderedDict Challenge** ####
 # collections.OrderedDict
 # An OrderedDict is a dictionary that remembers the order of the keys that were inserted first. 
 # If a new entry overwrites an existing entry, the original insertion position is left unchanged.
@@ -62,3 +62,70 @@ for x in range(item_count):
 # Now that we have received input and set our ordered_dict items we can loop through and print out the item and total price 
 for key, value in ordered_dictionary.items():
     print(f'{key} {value}')
+
+
+
+#### **SwapCase - Challenge** ####
+# You are given a string and your task is to swap cases. In other words, convert all 
+# lowercase letters to uppercase letters and vice versa.
+# Function Description
+
+# Complete the swap_case function in the editor below.
+
+# swap_case has the following parameters:
+
+# string s: the string to modify
+# Returns
+
+# string: the modified string
+# Input Format
+
+# A single line containing a string s.
+def swap_case(s):
+    swap_values = []
+    for char in s:
+        if char.isalpha():
+            if char.islower():
+                swap_values.append(char.upper())
+            else:
+                swap_values.append(char.lower())
+        else:
+            swap_values.append(char)
+    return (s, swap_values, ''.join(swap_values))
+
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)
+
+## Output for above - Simple need to return the join statement for the test cases to pass
+# ('HackerRank.com presents "Pythonist 2".', 
+# ['h', 'A', 'C', 'K', 'E', 'R', 'r', 'A', 'N', 'K', '.', 'C', 'O', 'M', ' ', 'P', 'R', 'E', 'S', 'E', 'N', 'T', 'S', ' ', '"', 'p', 'Y', 'T', 'H', 'O', 'N', 'I', 'S', 'T', ' ', '2', '"', '.'], 
+# 'hACKERrANK.COM PRESENTS "pYTHONIST 2".')
+
+
+#### **String Split and Join - Challenge** ####
+# In Python, a string can be split on a delimiter.
+
+# Example:
+
+# >>> a = "this is a string"
+# >>> a = a.split(" ") # a is converted to a list of strings. 
+# >>> print a
+# ['this', 'is', 'a', 'string']
+# Joining a string is simple:
+
+# >>> a = "-".join(a)
+# >>> print a
+# this-is-a-string 
+def split_and_join(line):
+    # write your code here (join method can use a separator to join the different indexes in the list item passed to it)
+    # default to split on the white
+    return '-'.join(line.split())
+
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
+
+
