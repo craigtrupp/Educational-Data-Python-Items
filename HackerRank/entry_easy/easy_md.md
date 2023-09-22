@@ -19,6 +19,9 @@
     * Collections OrderedDict - Receive input and iterate over total of N times - split input str by item/price and append or add to Ordered Dict
     * Swap Values - isalpha check with lower/upper check to swap values if character is alpha then join strings
     * String operations - substr search, string mutation through slicing, split and join 
+    * String Operations in OrderedDict for string check for any True characters in string based on provided string methods
+        - Good reminder here of how to chain a method from an object (in this case a str) and pass a character to that object method call to evaluate
+        - Also had tripped up on a test case here and using the Submissions part for the challenge allowed me to see the test case which failed and debug - I foolish put the same str method twice for two keys which was tripping me up
 
 ---
 

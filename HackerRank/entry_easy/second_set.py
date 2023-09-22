@@ -360,12 +360,12 @@ if __name__ == '__main__':
         'alpha_num': (str.isalnum, []), 
         'is_alpha': (str.isalpha, []),
         'is_digit': (str.isdigit, []),
-        'is_lower': (str.isdigit, []),
+        'is_lower': (str.islower, []),
         'upper' : (str.isupper, [])
     })
     for key, value in str_methods.items():
         for char in s:
-            if value[0](char) == True:
+            if value[0](char) == True: # This line uses the first value in the tuple (method and invokes with a char in the string or input)
                 value[1].append((char, True))
                 break 
             else:
@@ -377,7 +377,7 @@ if __name__ == '__main__':
         method_results = [x[1] for x in value[1]]
         #print(method_results) # call any on list of captured True/False value which is in orderd w/OrderedDict for output format
         print(any(method_results))
-
+            
 ## Output ## 
 # True
 # True
