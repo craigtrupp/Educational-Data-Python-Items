@@ -385,3 +385,62 @@ if __name__ == '__main__':
 # True
 # True
 
+
+#### **Text Wrap** ####
+# You are given a string S and width w.
+# Your task is to wrap the string into a paragraph of width .
+
+# Function Description
+
+# Complete the wrap function in the editor below.
+
+# wrap has the following parameters:
+
+# string string: a long string
+# int max_width: the width to wrap to
+# Returns
+
+# string: a single string with newline characters ('\n') where the breaks should be
+
+
+## Sample Input
+# ABCDEFGHIJKLIMNOQRSTUVWXYZ
+# 4
+
+## Sample Output
+# ABCD
+# EFGH
+# IJKL
+# IMNO
+# QRST
+# UVWX
+# YZ
+import textwrap
+import math
+
+def wrap(string, max_width):
+    # use math.ceil to make sure we capture all amount of loops to iterate through if there is a remainder in our division (26/4 = 6.5 and we want 7 lines)
+    max_width_check = math.floor(len(string)/max_width) # remember we start at 0 and range goes one shorter than expected
+    stop_value = 1 # Will increment this up for each iteration to set a stop index when slicing the string
+    for i in range(math.ceil(len(string)/max_width)): 
+        if i != max_width_check:
+            print(i, string[(i * max_width):(stop_value * max_width)])
+            stop_value += 1
+        else:
+            print(i, string[(i * max_width):])
+    
+
+if __name__ == '__main__':
+    string, max_width = input(), int(input())
+    result = wrap(string, max_width)
+    print(result)
+
+## Output - Not Quite what the Want but on Track ## (we need to format a string)
+# 0 ABCD
+# 1 EFGH
+# 2 IJKL
+# 3 IMNO
+# 4 QRST
+# 5 UVWX
+# 6 YZ
+# None
