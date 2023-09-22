@@ -444,3 +444,38 @@ if __name__ == '__main__':
 # 5 UVWX
 # 6 YZ
 # None
+
+
+import textwrap
+import math
+
+def wrap(string, max_width):
+    # use math.ceil to make sure we capture all amount of loops to iterate through if there is a remainder in our division (26/4 = 6.5 and we want 7 lines)
+    max_width_check = math.floor(len(string)/max_width) # remember we start at 0 and range goes one shorter than expected
+    stop_value = 1 # Will increment this up for each iteration to set a stop index when slicing the string
+    # Also if even (no remainder) - the range won't be hit (28/4 == 7 for ceil or floor and range would just go to 6)
+    rtrn_str_list = []
+    for i in range(math.ceil(len(string)/max_width)): 
+        if i != max_width_check:
+            rtrn_str_list.append(string[(i * max_width):(stop_value * max_width)])
+            stop_value += 1
+        else:
+            rtrn_str_list.append(string[(i * max_width):])
+    return_string = '''{}'''.format('\n'.join(rtrn_str_list)) # Convert list to a multi-line string
+    print(rtrn_str_list, return_string, sep='\n')
+    
+
+if __name__ == '__main__':
+    string, max_width = input(), int(input())
+    result = wrap(string, max_width)
+    print(result)
+
+# ['ABCD', 'EFGH', 'IJKL', 'IMNO', 'QRST', 'UVWX', 'YZ']
+# ABCD
+# EFGH
+# IJKL
+# IMNO
+# QRST
+# UVWX
+# YZ
+# None # didn't return anything above but will for the challenge submission (more here for us and what we're doing logically)

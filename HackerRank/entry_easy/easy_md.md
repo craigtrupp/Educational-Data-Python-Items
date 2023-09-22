@@ -22,6 +22,9 @@
     * String Operations in OrderedDict for string check for any True characters in string based on provided string methods
         - Good reminder here of how to chain a method from an object (in this case a str) and pass a character to that object method call to evaluate
         - Also had tripped up on a test case here and using the Submissions part for the challenge allowed me to see the test case which failed and debug - I foolish put the same str method twice for two keys which was tripping me up
+    * Last Challenge for this growing file is the text wrap: We are slicing through a string to print a new line of characters for a particular width to the end of the string. Good use of mutating iterator values against stop indexes for the slice as well as use of `math.ceil` and `math.floor` for conditionally checking how long the loop should run prior to printing out the remaining characters of the string
+        - Also converting list items to a multiline string for the requested output 
+
 
 ---
 
