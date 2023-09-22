@@ -265,3 +265,123 @@ if __name__ == '__main__':
     
     count = count_substring(string, sub_string)
     print(count)
+
+
+
+#### **String Validators** #### 
+# Python has built-in string validation methods for basic data. It can check if a string is composed of alphabetical characters, alphanumeric characters, digits, etc.
+
+# str.isalnum()
+# This method checks if all the characters of a string are alphanumeric (a-z, A-Z and 0-9).
+
+# str.isalpha()
+# This method checks if all the characters of a string are alphabetical (a-z and A-Z).
+
+# str.isdigit()
+# This method checks if all the characters of a string are digits (0-9).
+
+# str.islower()
+# This method checks if all the characters of a string are lowercase characters (a-z).
+
+# str.isupper()
+# This method checks if all the characters of a string are uppercase characters (A-Z).
+
+
+# **Task**
+
+# You are given a string S.
+# Your task is to find out if the string  contains: alphanumeric characters, alphabetical characters, digits, lowercase and uppercase characters.
+
+# Output Format
+
+# In the first line, print True if S has any alphanumeric characters. Otherwise, print False.
+# In the second line, print True if S has any alphabetical characters. Otherwise, print False.
+# In the third line, print True if S has any digits. Otherwise, print False.
+# In the fourth line, print True if S has any lowercase characters. Otherwise, print False.
+# In the fifth line, print True if S has any uppercase characters. Otherwise, print False.
+
+## For a little reference
+from collections import OrderedDict
+if __name__ == '__main__':
+    s = input()
+    str_methods = OrderedDict({
+        'alpha_num': (str.isalnum, []), 
+        'is_alpha': (str.isalpha, []),
+        'is_digit': (str.isdigit, []),
+        'is_lower': (str.isdigit, []),
+        'upper' : (str.isupper, [])
+    })
+    for key, value in str_methods.items():
+        for char in s:
+            print(char, type(value), key, value, value(char))
+
+# input = qA2
+
+# q <class 'method_descriptor'> upper <method 'isupper' of 'str' objects> False
+# A <class 'method_descriptor'> upper <method 'isupper' of 'str' objects> True
+# 2 <class 'method_descriptor'> upper <method 'isupper' of 'str' objects> False
+
+## So we can pass a character and receive 
+
+from collections import OrderedDict
+if __name__ == '__main__':
+    s = input()
+    str_methods = OrderedDict({
+        'alpha_num': (str.isalnum, []), 
+        'is_alpha': (str.isalpha, []),
+        'is_digit': (str.isdigit, []),
+        'is_lower': (str.isdigit, []),
+        'upper' : (str.isupper, [])
+    })
+    for key, value in str_methods.items():
+        for char in s:
+            if value[0](char) == True:
+                value[1].append((char, True))
+                break 
+            else:
+                value[1].append((char, False))
+                continue
+    for key, value in str_methods.items():
+        print(key, value)
+
+## Output ## - Just for our sake so we can see how the the value for our OrderedDict can then be used for their input and what each result was for every iteration
+### Also we see that the break here saves us from iterating over the entire input string if any char meets a condition in which case we break to the next method in question
+# alpha_num (<method 'isalnum' of 'str' objects>, [('q', True)])
+# is_alpha (<method 'isalpha' of 'str' objects>, [('q', True)])
+# is_digit (<method 'isdigit' of 'str' objects>, [('q', False), ('A', False), ('2', True)])
+# is_lower (<method 'isdigit' of 'str' objects>, [('q', False), ('A', False), ('2', True)])
+# upper (<method 'isupper' of 'str' objects>, [('q', False), ('A', True)])
+
+## Final Solution ## 
+from collections import OrderedDict
+if __name__ == '__main__':
+    s = input()
+    str_methods = OrderedDict({
+        'alpha_num': (str.isalnum, []), 
+        'is_alpha': (str.isalpha, []),
+        'is_digit': (str.isdigit, []),
+        'is_lower': (str.isdigit, []),
+        'upper' : (str.isupper, [])
+    })
+    for key, value in str_methods.items():
+        for char in s:
+            if value[0](char) == True:
+                value[1].append((char, True))
+                break 
+            else:
+                value[1].append((char, False))
+                continue
+    for key, value in str_methods.items():
+        # Loop through the values lists (second item in tuple and print True if any char appended a true for the str method)
+        # value here is a tuple so we just want the list of True/False in the second tuple position of each str method key val
+        method_results = [x[1] for x in value[1]]
+        #print(method_results) # call any on list of captured True/False value which is in orderd w/OrderedDict for output format
+        print(any(method_results))
+
+## Output ## 
+# True
+# True
+# True
+# True
+# True
+
