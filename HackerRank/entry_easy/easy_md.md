@@ -25,6 +25,7 @@
     * Last Challenge for this growing file is the `text wrap`: We are slicing through a string to print a new line of characters for a particular width to the end of the string. Good use of mutating iterator values against stop indexes for the slice as well as use of `math.ceil` and `math.floor` for conditionally checking how long the loop should run prior to printing out the remaining characters of the string
         - Also converting list items to a multiline string for the requested output 
 * [**`Third Set`**](/HackerRank/entry_easy/third_set.py)
+    * `Designer Doormat` - This is a good custom output of a print statement with manipulation of a str pattern to a break point. Symmetrical type pattern building
 
 ---
 
