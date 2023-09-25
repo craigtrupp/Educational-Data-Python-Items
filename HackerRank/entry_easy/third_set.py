@@ -127,9 +127,18 @@ if __name__ == '__main__':
 # 17
 # >>> print('e-d-c-b-a-b-c-d-e'.center(17, '-'))
 # e-d-c-b-a-b-c-d-e
+
+### Second part after getting all string characters for first part
+# >>> s
+# 'aabbccdd'
+# >>> [s[i:i+1] for i in range(0, len(s))] # essentially here we're just taking the string, and indexing at each location through the loop
+# ['a', 'a', 'b', 'b', 'c', 'c', 'd', 'd'] # now with a list we can use a character to join with
+# >>> '-'.join([s[i:i+1] for i in range(0, len(s))])
+# 'a-a-b-b-c-c-d-d'
+
 from string import ascii_lowercase
 
-def print_rangoli(size):
+def print_rangoli(size): # input value is 5 here so e in the dictionary when offset accounted for
     # your code goes here
     alpha_dict = {v:k for k,v in enumerate(ascii_lowercase)}
     # print(alpha_dict) # {'a': 0, 'b': 1} ... and so on (https://stackoverflow.com/questions/63915659/ create-dictionary-with-alphabet-characters-mapping-to-numbers)
@@ -142,9 +151,44 @@ def print_rangoli(size):
             str_row_chars += [k for k, v in alpha_dict.items() if v == size_offset - l][0] # only ever one value so can just grab
         print(str_row_chars)
         strings.append(str_row_chars)
-    print(strings)
+    print(strings) # with 5 as input this returns : ['e', 'ed', 'edc', 'edcb', 'edcba']
             
         
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
+
+## print statement from outer look of print(str_row_chars)
+# e
+# ed
+# edc
+# edcb
+# edcba
+
+## So now that we have the strings for our rows, we need to add the padding in between (see below for that stage)
+from string import ascii_lowercase
+
+def print_rangoli(size):
+    # your code goes here
+    alpha_dict = {v:k for k,v in enumerate(ascii_lowercase)}
+    # print(alpha_dict) # {'a': 0, 'b': 1} ... and so on (https://stackoverflow.com/questions/63915659/ create-dictionary-with-alphabet-characters-mapping-to-numbers)
+    # Below Nested loop iterates for the amount of rows to center and dynamically gets the "left part of alpha for each row (see strings-print)"
+    strings = []
+    for i in range(1, size + 1):
+        str_row_chars = '' # default empty string to add representing a row
+        for l in range(0, i):
+            size_offset = size - 1 # to locate in dictionary more easily (recall we're getting the key and not the value so different indexing approach)
+            str_row_chars += [k for k, v in alpha_dict.items() if v == size_offset - l][0] # only ever one value so can just grab
+        strings.append(str_row_chars)
+    print(strings) # with 5 as input this returns : ['e', 'ed', 'edc', 'edcb', 'edcba']
+    # So now we need to the dash in between the strings with a len greater > 1  
+    for idx, string in enumerate(strings):
+        #print(string, idx)
+        if idx > 0:
+            char_list = [x for x in string] # ['e', 'ed'] ex
+            strings[idx] = '-'.join(char_list)
+    print(strings) # after mutating strings for character in between : ['e', 'e-d', 'e-d-c', 'e-d-c-b', 'e-d-c-b-a']
 
 if __name__ == '__main__':
     n = int(input())
