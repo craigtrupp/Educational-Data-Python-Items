@@ -26,6 +26,7 @@
         - Also converting list items to a multiline string for the requested output 
 * [**`Third Set`**](/HackerRank/entry_easy/third_set.py)
     * `Designer Doormat` - This is a good custom output of a print statement with manipulation of a str pattern to a break point. Symmetrical type pattern building
+    * `Strings - Alphabet Rangoli` - In motion here but good challenge for nested loop and fluctuating index values to grab "keys" in a sorted alphabet dictionary. 
 
 ---
 

@@ -113,3 +113,39 @@ if __name__ == '__main__':
 # ----e-d-c-d-e----
 # ------e-d-e------
 # --------e--------
+
+### Just a little terminal session for string formatting
+# >>> print(len('--------e--------'))
+# 17
+# >>> print(len('--------'))
+# 8
+# >>> print(len('----c----'))
+# 9
+# >>> print(len('c-b-a-b-c'))
+# 9
+# >>> print(len('e-d-c-b-a-b-c-d-e'))
+# 17
+# >>> print('e-d-c-b-a-b-c-d-e'.center(17, '-'))
+# e-d-c-b-a-b-c-d-e
+from string import ascii_lowercase
+
+def print_rangoli(size):
+    # your code goes here
+    alpha_dict = {v:k for k,v in enumerate(ascii_lowercase)}
+    # print(alpha_dict) # {'a': 0, 'b': 1} ... and so on (https://stackoverflow.com/questions/63915659/ create-dictionary-with-alphabet-characters-mapping-to-numbers)
+    # alright so no we want to see what our offset our maximum string is for center with m 
+    strings = []
+    for i in range(1, size + 1):
+        str_row_chars = '' # default empty string to add representing a row
+        for l in range(0, i):
+            size_offset = size - 1 # to locate in dictionary more easily (recall we're getting the key and not the value so different indexing approach)
+            str_row_chars += [k for k, v in alpha_dict.items() if v == size_offset - l][0] # only ever one value so can just grab
+        print(str_row_chars)
+        strings.append(str_row_chars)
+    print(strings)
+            
+        
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
