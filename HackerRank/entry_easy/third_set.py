@@ -193,3 +193,54 @@ def print_rangoli(size):
 if __name__ == '__main__':
     n = int(input())
     print_rangoli(n)
+
+
+
+## Next Step (String Formatting for creating a mirror image)
+
+# Here is our next step (aka reversing the string then selecting up until the last value )
+# >>> txt = 'hello'
+# >>> txt[::-1]
+# 'olleh'
+# >>> txt[::-1][:-1]
+# 'olle'
+# >>> txt = 'hello'
+# >>> txt = txt + txt[::-1][1:]
+# >>> txt
+# 'hellolleh'
+from string import ascii_lowercase
+
+def print_rangoli(size):
+    # your code goes here
+    alpha_dict = {v:k for k,v in enumerate(ascii_lowercase)}
+    # print(alpha_dict) # {'a': 0, 'b': 1} ... and so on (https://stackoverflow.com/questions/63915659/ create-dictionary-with-alphabet-characters-mapping-to-numbers)
+    # Below Nested loop iterates for the amount of rows to center and dynamically gets the "left part of alpha for each row (see strings-print)"
+    strings = []
+    for i in range(1, size + 1):
+        str_row_chars = '' # default empty string to add representing a row
+        for l in range(0, i):
+            size_offset = size - 1 # to locate in dictionary more easily (recall we're getting the key and not the value so different indexing approach)
+            str_row_chars += [k for k, v in alpha_dict.items() if v == size_offset - l][0] # only ever one value so can just grab
+        strings.append(str_row_chars)
+    print(strings) # with 5 as input this returns : ['e', 'ed', 'edc', 'edcb', 'edcba']
+    # So now we need to the dash in between the strings with a len greater > 1  
+    for idx, string in enumerate(strings):
+        #print(string, idx)
+        if idx > 0:
+            char_list = [x for x in string] # ['e', 'ed'] ex
+            strings[idx] = '-'.join(char_list)
+    print(strings) # after mutating strings for character in between : ['e', 'e-d', 'e-d-c', 'e-d-c-b', 'e-d-c-b-a']
+    # Now we need to do a little reverse and indexing for the string values to provide that mirror type image at the center
+    for idx, val in enumerate(strings):
+        if idx > 0:
+            strings[idx] = strings[idx] + strings[idx][::-1][1:]
+    print(strings)
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
+
+# Output at this stage
+# ['e', 'ed', 'edc', 'edcb', 'edcba']
+# ['e', 'e-d', 'e-d-c', 'e-d-c-b', 'e-d-c-b-a']
+# ['e', 'e-d-e', 'e-d-c-d-e', 'e-d-c-b-c-d-e', 'e-d-c-b-a-b-c-d-e']
