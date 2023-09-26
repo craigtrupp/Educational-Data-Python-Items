@@ -114,3 +114,24 @@ lex_order = sorted(k_permutations, key=lambda x: (x[0], x[1]))
 print(lex_order) # [('A', 'C'), ('A', 'H'), ('A', 'K'), ('C', 'A'), ('C', 'H'), ('C', 'K'), ('H', 'A'), ('H', 'C'), ('H', 'K'), ('K', 'A'), ('K', 'C'), ('K', 'H')]
 print([f'{x[0]}{x[1]}' for x in lex_order]) # ['AC', 'AH', 'AK', 'CA', 'CH', 'CK', 'HA', 'HC', 'HK', 'KA', 'KC', 'KH']
 print('''{}'''.format('\n'.join([f'{x[0]}{x[1]}' for x in lex_order])))
+
+
+### Ok ... now the key for which we sorting for didn't take all the test cases ... because drr
+## you need to dynamically acount for K which can be X characters that we want to make a permutation of 
+# So we need to figure out how long the tuple we pased to the key parameter is based on K (2, 3, etc)
+
+## So we need to kinda have a way to interpret a value to a tuple so we can then transform (not as straight forward as it would appear)
+from ast import literal_eval as make_tupe
+print(make_tupe("('x', 0)")) # ('x', 0)
+print(make_tupe('(x[0])')) # ValueError: malformed node or string on line 1: <ast.Subscript object at 0x7f9969f98f10>
+
+## ... ah man ... just looks liek the normal sort call on our list of tuples will work regardles of K 
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import permutations
+from ast import literal_eval as make_tupe
+input_val = input().split()
+S, k = input_val[0], int(input_val[1])
+k_permutations = list(permutations(S, k))
+k_permutations.sort() # super awesome sort method can dynamically sort in order of the permutation letter by tuple position so we don't need to use sorted with a key (which is ... I don't know how to create a tupe of indexes that was K length)
+str_joined_tuples= [''.join(map(str, x)) for x in k_permutations] # make each tuple a str and join the values in a tuple
+print('''{}'''.format('\n'.join(str_joined_tuples)))
