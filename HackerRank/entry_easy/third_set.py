@@ -362,3 +362,36 @@ if __name__ == '__main__':
     fptr.write(result + '\n')
 
     fptr.close()
+
+
+### I ... was dumb, a lot of test cases failed, need to use a regular expression for pattern capture
+
+
+# Test Cases : (Input : Expected Output)
+# hello   world  lol : Hello   World  Lol
+# 1 w 2 r 3g : 1 W 2 R 3g
+# 132 456 Wq  m e : 132 456 Wq  M E
+# q w e r t y u i o p a s d f g h j  k l z x c v b n m Q W E R T Y U I O P A S D F G H J  K L Z X C V B N M : Q W E R T Y U I O P A S D F G H J  K L Z X C V B N M Q W E R T Y U I O P A S D F G H J  K L Z X C V B N M
+# 1 2 2 3 4 5 6 7 8  9 : 1 2 2 3 4 5 6 7 8  9
+
+# Okay so it looks like essentially we want to keep the giant spaces and capitalize any start of alpha string when preceded with a space
+# Complete the solve function below.
+def solve(s):
+    # (\s+) = will split at non-whitespace characters (maintain string length of received arg)
+    str_vals = re.split(r'(\s+)', s) # returns list
+    # capitalize if captured value at non-whitespace character is alpha, else maintain value
+    str_titled = [x.title() if x[0].isalpha() else x for x in str_vals]
+    # Now just join for each group of whitespace, alpha or combo which maintains len of original string
+    return ''.join(str_titled)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = solve(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+

@@ -27,7 +27,7 @@
 * [**`Third Set`**](/HackerRank/entry_easy/third_set.py)
     * `Designer Doormat` - This is a good custom output of a print statement with manipulation of a str pattern to a break point. Symmetrical type pattern building
     * `Strings - Alphabet Rangoli` - In motion here but good challenge for nested loop and fluctuating index values to grab "keys" in a sorted alphabet dictionary. 
-    * `Strings - Capitalize` - Pretty simple one here ... or not, we need to preserve spaces so we can use a regular expression to capture groups with the space+ character
+    * `Strings - Capitalize` - Pretty simple one here ... or not, we need to preserve spaces so we can use a regular expression to split at non-whitespace characters
         ```python
         >>> tcase = 'Hello   World  Lol'
         >>> len(tcase)
@@ -40,6 +40,18 @@
         >>> import re
         >>> re.split(r'(\s+)', 'hello   world  lol')
         ['hello', '   ', 'world', '  ', 'lol']
+        >>> big_s = ['hello', '   ', 'world', '  ', 'lol']
+        >>> [x.title() if x[0].isalpha() else x for x in big_s]
+        ['Hello', '   ', 'World', '  ', 'Lol']
+        >>> title = [x.title() if x[0].isalpha() else x for x in big_s]
+        >>> len(title)
+        5
+        >>> title
+        ['Hello', '   ', 'World', '  ', 'Lol']
+        >>> len(''.join(title))
+        18
+        >>> ''.join(title)
+        'Hello   World  Lol'
         ```
 
 ---
