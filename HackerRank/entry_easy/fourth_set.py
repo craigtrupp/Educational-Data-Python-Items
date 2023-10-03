@@ -135,3 +135,23 @@ k_permutations = list(permutations(S, k))
 k_permutations.sort() # super awesome sort method can dynamically sort in order of the permutation letter by tuple position so we don't need to use sorted with a key (which is ... I don't know how to create a tupe of indexes that was K length)
 str_joined_tuples= [''.join(map(str, x)) for x in k_permutations] # make each tuple a str and join the values in a tuple
 print('''{}'''.format('\n'.join(str_joined_tuples)))
+
+
+
+
+#### **collections.Counter** ####
+# Task
+
+# Raghu is a shoe shop owner. His shop has N number of shoes.
+# He has a list containing the size of each shoe he has in his shop.
+# There are  number of customers who are willing to pay xi amount of money only if they get the shoe of their desired size.
+
+# Your task is to compute how much money Raghu earned.
+
+# Input Format
+
+# The first line contains X, the number of shoes.
+# The second line contains the space separated list of all the shoe sizes in the shop.
+# The third line contains N, the number of customers.
+# The next N lines contain the space separated values of the shoe size desired by the customer and xi, the price of the shoe.
+
