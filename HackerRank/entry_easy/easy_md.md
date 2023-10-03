@@ -74,7 +74,10 @@
         - The first line (outside the import), gets the total students and the tuple object uses the the 2ND line of input which has the columns/properties we create with the tuple
         - In the list comprehension, we can create a student tuple object with subsequent lines of then student data input which is in the order from the second input in terms of the properties which the tuple can correctly assign to the properties, it needs the values in a 'str' so we use a **`*`** to pass the lines of student input data to the tuple for as long as the len of student we get from the first input
             - Next in the list comprehension, we can then isolate properties of the tuple object and simply have to turn the assignet str value to an int to get a mathematical sum
-
+    * `Collections : Word Order` - You are given n words. Some words may repeat. For each word, output its number of occurrences. The output order should correspond with the input order of appearance of the word. See the sample input/output for clarification. 
+        - Note: Each input line ends with a "\n" character.
+        - Good Opportunity for an OrderedDict usage and then can use some of the methods with the object to get the output values. 
+        - See further defintion of break down of code in the file
 ---
 
 ### **Challenges Breakdown Selections** ⛰️

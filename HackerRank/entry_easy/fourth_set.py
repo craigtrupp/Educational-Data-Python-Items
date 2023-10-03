@@ -346,3 +346,67 @@ student_marks = [int(s.MARKS) for s in [student_tuple(*input().split()) for _ in
 print(sum(student_marks) / students)
 
 ## 78.00
+
+
+#### **Collections - Word Order** ####
+# You are given n words. Some words may repeat. For each word, output its number of occurrences. 
+# The output order should correspond with the input order of appearance of the word. See the sample input/output for clarification.
+
+# Note: Each input line ends with a "\n" character.
+
+# Input Format
+
+# The first line contains the integer, n.
+# The next n lines each contain a word.
+
+# Output Format
+
+# Output 2 lines.
+# On the first line, output the number of distinct words from the input.
+# On the second line, output the number of occurrences for each distinct word according to their appearance in the input.
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import OrderedDict
+word_repeat_ordered = OrderedDict()
+for _ in range(int(input())):
+    word = input()
+    if word in word_repeat_ordered:
+        word_repeat_ordered[word] += 1
+    else:
+        word_repeat_ordered[word] = 1
+print(word_repeat_ordered, len(word_repeat_ordered.keys()), word_repeat_ordered.values(), sep='\n')
+
+# Output
+# OrderedDict([('bcdef', 2), ('abcdefg', 1), ('bcde', 1)])
+# 3
+# odict_values([2, 1, 1])
+
+## This item has a lot of properties on it so we can use the keys here for unique (distinct words), than also use the values for the second output
+
+### **Solution** ## 
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import OrderedDict
+word_repeat_ordered = OrderedDict()
+for _ in range(int(input())):
+    word = input()
+    if word in word_repeat_ordered:
+        word_repeat_ordered[word] += 1
+    else:
+        word_repeat_ordered[word] = 1
+unique_keys = len(word_repeat_ordered.keys())
+word_counts = ' '.join([str(x) for x in word_repeat_ordered.values()])
+print(unique_keys, word_counts, sep='\n')
+# print(' '.join(list(word_repeat_ordered.values()))) # doesn't work for ints
+
+## Input
+# 4
+# bcdef
+# abcdefg
+# bcde
+# bcdef
+
+# ## Output - Passing Tests
+# 3
+# 2 1 1
+
