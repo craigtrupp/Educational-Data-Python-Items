@@ -326,3 +326,23 @@ for i in range(m):
 from collections import namedtuple
 total_students, student_tuple = int(input()), namedtuple('Student', ' '.join(input().split()))
 print(total_students, student_tuple, dir(student_tuple))
+# 5 <class '__main__.Student'> ['CLASS', 'ID', 'MARKS', 'NAME', '__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', ...]
+
+
+## This is important (* before the input)
+from collections import namedtuple
+students, student_tuple = int(input()), namedtuple('Student', ' '.join(input().split()))
+print(input().split(), *input().split())
+
+## Output 
+## ['1', '97', 'Raymond', '7'] 2 50 Steven 4
+## Input is a return of the str, if we use the * operator we can than unpack everyting from the contents in the list we create w/split
+
+## Solution
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import namedtuple
+students, student_tuple = int(input()), namedtuple('Student', ' '.join(input().split()))
+student_marks = [int(s.MARKS) for s in [student_tuple(*input().split()) for _ in range(students)]]
+print(sum(student_marks) / students)
+
+## 78.00

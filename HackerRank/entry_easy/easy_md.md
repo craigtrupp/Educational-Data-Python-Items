@@ -62,7 +62,18 @@
     There are N number of customers who are willing to pay  xi amount of money only if they get the shoe of their desired size.
     Your task is to compute how much money Raghu earned. Here is a fairly straight forward use to create a counter object for key/index count than can use a dctionary properties to decrement the keys as we receive input for customers if the size is available or not
     * `Default Dict - collections` - More input and print out for conditional checking of a default_dict and assigning a "index" value should the value of an input be equal to a seen letter for the amount of iterations as dicated by the number gathered from other input
-    * `Collections - Named Tuples`
+    * `Collections - Named Tuples`- This was a really good challenge and one they requested in 4/5 lines of code or less. The **named_tuple** takes positional assignment after creating the original prototype object so that once we iterate through the students, we can unpack the input in our list comprehension to create a `student_tuple` object with position assignment provided in the input of subsequent lines for the student's details. Including the code here below for reference
+    ```python
+        # Enter your code here. Read input from STDIN. Print output to STDOUT
+        from collections import namedtuple
+        students, student_tuple = int(input()), namedtuple('Student', ' '.join(input().split()))
+        student_marks = [int(s.MARKS) for s in [student_tuple(*input().split()) for _ in range(students)]]
+        print(sum(student_marks) / students)
+    ```
+    * Python Code Breakdown above
+        - The first line (outside the import), gets the total students and the tuple object uses the the 2ND line of input which has the columns/properties we create with the tuple
+        - In the list comprehension, we can create a student tuple object with subsequent lines of then student data input which is in the order from the second input in terms of the properties which the tuple can correctly assign to the properties, it needs the values in a 'str' so we use a **`*`** to pass the lines of student input data to the tuple for as long as the len of student we get from the first input
+            - Next in the list comprehension, we can then isolate properties of the tuple object and simply have to turn the assignet str value to an int to get a mathematical sum
 
 ---
 
