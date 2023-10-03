@@ -155,3 +155,129 @@ print('''{}'''.format('\n'.join(str_joined_tuples)))
 # The third line contains N, the number of customers.
 # The next N lines contain the space separated values of the shoe size desired by the customer and xi, the price of the shoe.
 
+
+### Sample Input - Problem
+# 10
+# 2 3 4 5 6 8 7 6 5 18
+# 6
+# 6 55
+# 6 45
+# 6 55
+# 4 40
+# 18 60
+# 10 50
+
+## Sample Output - $200
+# Explanation
+
+# Customer 1: Purchased size 6 shoe for $55.
+# Customer 2: Purchased size 6 shoe for $45.
+# Customer 3: Size 6 no longer available, so no purchase.
+# Customer 4: Purchased size 4 shoe for $40.
+# Customer 5: Purchased size 18 shoe for $60.
+# Customer 6: Size 10 not available, so no purchase.
+
+# Total money earned =  55 + 45  + 40 + 60 == 200
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter
+
+shoe_count = int(input()) # N shoe count
+shoe_size_counts = Counter(input().split()) # line str input mutated to array
+customer_count = int(input())
+dict_ssizes = dict(shoe_size_counts)
+total = 0
+for x in range(customer_count):
+    customer = input().split() #6 55
+    cust_size, cust_price = customer[0], customer[1]
+    if cust_size in dict_ssizes.keys():
+        if dict_ssizes[cust_size] >= 1:
+            total += int(cust_price)
+            dict_ssizes[cust_size] -= 1
+
+
+print(shoe_size_counts.keys(), shoe_size_counts.values(), dict(shoe_size_counts), total, sep='\n')
+# dict_keys(['2', '3', '4', '5', '6', '8', '7', '18'])
+# dict_values([1, 1, 1, 2, 2, 1, 1, 1])
+# {'2': 1, '3': 1, '4': 1, '5': 2, '6': 2, '8': 1, '7': 1, '18': 1}
+# 200
+
+
+
+
+
+#### **DefaultDict - Collections** ####
+# In this challenge, you will be given 2 integers, n and m. 
+# There are n words, which might repeat, in word group A. There are m words belonging to word group B. 
+# For each m words, check whether the word has appeared in group A or not. Print the indices of each occurrence of m in group A. 
+# If it does not appear, print .
+
+# Example
+
+# Group A contains 'a', 'b', 'a' Group B contains 'a', 'c'
+
+# For the first word in group B, 'a', it appears at positions 1 and 3 in group A. 
+# The second word, 'c', does not appear in group A, so print -1.
+
+# Expected output:
+
+# 1 3
+# -1
+
+# Input Format
+
+# The first line contains integers, n and m separated by a space.
+# The next n lines contains the words belonging to group A.
+# The next m lines contains the words belonging to group B.
+
+## Sample Test Case
+# Input
+# 5 2
+# a
+# a
+# b
+# a
+# b
+# a
+# b
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import defaultdict 
+
+n,m = map(int,input().split(" "))
+d = defaultdict(list)
+
+print(n, m, d, sep='\n')
+
+for i in range(n):
+    letter = str(input())
+    d[letter].append(str(i+1))
+    
+print(d)
+
+# 5
+# 2
+# defaultdict(<class 'list'>, {})
+# defaultdict(<class 'list'>, {'a': ['1', '2', '4'], 'b': ['3', '5']})
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import defaultdict 
+
+n,m = map(int,input().split(" ")) # Here simply setting the variable for our two loops (see print out above for the variables (249))
+d = defaultdict(list)
+
+
+for i in range(n):
+    letter = str(input())
+    d[letter].append(str(i+1))
+    
+for i in range(m):
+    letter = str(input()).lower()
+    if letter in d:
+        print(' '.join([x for x in d[letter]]))
+    else:
+        print('-1')
+    
+## Same Input as above was used, here's the output
+## Output
+# 1 2 4
+# 3 5

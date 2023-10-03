@@ -61,6 +61,7 @@
     He has a list containing the size of each shoe he has in his shop.
     There are N number of customers who are willing to pay  xi amount of money only if they get the shoe of their desired size.
     Your task is to compute how much money Raghu earned. Here is a fairly straight forward use to create a counter object for key/index count than can use a dctionary properties to decrement the keys as we receive input for customers if the size is available or not
+    * `Default Dict - collections` - More input and print out for conditional checking of a default_dict and assigning a "index" value should the value of an input be equal to a seen letter for the amount of iterations as dicated by the number gathered from other input
 
 ---
 
