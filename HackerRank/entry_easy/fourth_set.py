@@ -281,3 +281,48 @@ for i in range(m):
 ## Output
 # 1 2 4
 # 3 5
+
+
+
+
+#### **Collections Named Tuple** ####
+# >>> from collections import namedtuple
+# >>> Car = namedtuple('Car','Price Mileage Colour Class')
+# >>> xyz = Car(Price = 100000, Mileage = 30, Colour = 'Cyan', Class = 'Y')
+# >>> print xyz
+# Car(Price=100000, Mileage=30, Colour='Cyan', Class='Y')
+# >>> print xyz.Class
+# Y
+
+## -- Task -- ##
+
+# Dr. John Wesley has a spreadsheet containing a list of student's IDs, marks, class and name.
+
+# Your task is to help Dr. Wesley calculate the average marks of the students.
+
+# Input Format
+
+# The first line contains an integer N, the total number of students.
+# The second line contains the names of the columns in any order.
+# The next N lines contains the marks, ID, name and class, under their respective column names.
+
+# Output Format
+
+# Print the average marks of the list corrected to 2 decimal places.
+
+
+## Input 
+# 5
+# ID         MARKS      NAME       CLASS
+# 1          97         Raymond    7
+# 2          50         Steven     4
+# 3          91         Adrian     9
+# 4          72         Stewart    5
+# 5          80         Peter      6
+
+## Challenge here do to in 5 lines of code or less
+# - Wanna look at the object I'm making first
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import namedtuple
+total_students, student_tuple = int(input()), namedtuple('Student', ' '.join(input().split()))
+print(total_students, student_tuple, dir(student_tuple))
