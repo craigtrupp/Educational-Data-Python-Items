@@ -81,7 +81,8 @@
 
 * [**`Fifth Set`**](HackerRank/entry_easy/fifth_set.py)
     * `Intro : Sets` - This one was pretty straight forward. They just wanted an average of distinct values passed in from the main function. There is a decent map function on a list of strings that was a section of the input received from the challenge. Just recall map takes a function and applies it over the iterable or second argument in the call which you can then commonly chain and place the map's output into another list as this example does
-    * `Sets : Symmetric Difference` - 
+    * `Sets : Symmetric Difference` - Given 2 sets of integers, M and N, print their symmetric difference in ascending order. The term symmetric difference indicates those values that exist in either M or N but do not exist in both. (anti-join)
+    * `Sets : (Medium Difficulty) Happiness Index` - Setting of a index by checking of array values in two sets ... not sure why this was ranked as medium difficulty 
 ---
 
 ### **Challenges Breakdown Selections** ⛰️
