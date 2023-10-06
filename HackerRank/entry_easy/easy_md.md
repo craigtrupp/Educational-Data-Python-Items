@@ -78,6 +78,10 @@
         - Note: Each input line ends with a "\n" character.
         - Good Opportunity for an OrderedDict usage and then can use some of the methods with the object to get the output values. 
         - See further defintion of break down of code in the file
+
+* [**`Fifth Set`**](HackerRank/entry_easy/fifth_set.py)
+    * `Intro : Sets` - This one was pretty straight forward. They just wanted an average of distinct values passed in from the main function. There is a decent map function on a list of strings that was a section of the input received from the challenge. Just recall map takes a function and applies it over the iterable or second argument in the call which you can then commonly chain and place the map's output into another list as this example does
+    * `Sets : Symmetric Difference` - 
 ---
 
 ### **Challenges Breakdown Selections** ⛰️

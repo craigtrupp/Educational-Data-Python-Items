@@ -1,36 +1,46 @@
-#### **Math - Triangle Quest 2** ####
-# You are given a positive integer N.
-# Your task is to print a palindromic triangle of size N.
+#### **Sets : Intro to Sets** ####
+# A set is an unordered collection of elements without duplicate entries.
+# When printed, iterated or converted into a sequence, its elements will appear in an arbitrary order.
 
-# For example, a palindromic triangle of size 5 is:
-# 1
-# 121
-# 12321
-# 1234321
-# 123454321
+# Ms. Gabriel Williams is a botany professor at District College. One day, she asked her student 
+# Mickey to compute the average of all the plants with distinct heights in her greenhouse.
 
-# You can't take more than two lines. The first line (a for-statement) is already written 
-# for you.You have to complete the code using exactly one print statement.
+# Formula used: avg = sum_distinct_heights / total_distinct_heights
 
-# https://realpython.com/lessons/range-decrementing/
+# >>> list(map(int, '1 3 5 9 11 35'.split()))
+# [1, 3, 5, 9, 11, 35] - Quick reminder of some of the logc in the main function below
 
-## Input - 5
+def average(array):
+    # your code goes here
+    return sum(set(array)) / len(set(array))
 
-## output
-# 1
-# 121
-# 12321
-# 1234321
-# 123454321 
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
 
 
 
-for i in range(1, int(input()) + 1):
-    print(*[str(i) for i in range(1, i + 1)] + [str(i) for i in range(i - 1, 0, -1)])
+#### ** Sets: Symmetric Difference ** ####
+# Task
+# Given 2 sets of integers, M and N, print their symmetric difference in ascending order. 
+# The term symmetric difference indicates those values that exist in either M or N but do not exist in both. (anti-join)
 
-## Output - Unpacking the combined list gives right values .. wrong spacing
-# 1
-# 1 2 1
-# 1 2 3 2 1
-# 1 2 3 4 3 2 1
-# 1 2 3 4 5 4 3 2 1
+# Input Format
+
+# The first line of input contains an integer, M.
+# The second line contains M space-separated integers.
+# The third line contains an integer, N.
+# The fourth line contains N space-separated integers.
+
+# Output Format
+
+# Output the symmetric difference integers in ascending order, one per line.
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+M = int(input())
+a = set(map(int, input().split()))
+N = int(input())
+b = set(map(int, input().split()))
+sym_diff = a.symmetric_difference(b) 
+print(*sorted(list(sym_diff)), sep='\n')
