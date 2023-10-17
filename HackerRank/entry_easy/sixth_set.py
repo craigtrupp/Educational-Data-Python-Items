@@ -99,3 +99,85 @@ for _ in range(int(input())):
 # True
 # False
 
+
+
+
+#### **itertools.combinatinos** ####
+# itertools.combinations(iterable, r)
+# This tool returns the r length subsequences of elements from the input iterable.
+
+# Combinations are emitted in lexicographic sorted order. 
+# So, if the input iterable is sorted, the combination tuples will be produced in sorted order.
+
+# >>> from itertools import combinations
+# >>> 
+# >>> print list(combinations('12345',2))
+# [('1', '2'), ('1', '3'), ('1', '4'), ('1', '5'), ('2', '3'), ('2', '4'), ('2', '5'), ('3', '4'), ('3', '5'), ('4', '5')]
+# >>> 
+# >>> A = [1,1,3,3,3]
+# >>> print list(combinations(A,4))
+# [(1, 1, 3, 3), (1, 1, 3, 3), (1, 1, 3, 3), (1, 3, 3, 3), (1, 3, 3, 3)]
+
+# Task
+# You are given a string S.
+# Your task is to print all possible combinations, up to size k, of the string 
+# in lexicographic sorted order
+
+# Input Format
+# A single line containing the string S and integer value k separated by a space.
+
+# Output Format
+# Print the different combinations of string S on separate lines.
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+string, diff_combinations = input().split()
+diff_combinations = int(diff_combinations)
+total_combinations = list([combinations(string, i) for i in range(1, diff_combinations + 1)])
+print(total_combinations)
+for itertool_x in total_combinations:
+    iter_list = list(itertool_x)
+    print(iter_list)
+
+# First round of outputs  - Now need to sorted lexically and print out each item
+# [<itertools.combinations object at 0x7f0ab28b8720>, <itertools.combinations object at 0x7f0ab28b8b80>]
+# [('H',), ('A',), ('C',), ('K',)]
+# [('H', 'A'), ('H', 'C'), ('H', 'K'), ('A', 'C'), ('A', 'K'), ('C', 'K')]
+
+## ... We're gonna try and have a little fun with a sorting algo here
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+# string, diff_combinations = input().split() - for my fun
+string, diff_combinations = 'HACK', 3
+diff_combinations = int(diff_combinations) 
+total_combinations = list([combinations(string, i) for i in range(1, diff_combinations + 1)])
+combo_pairs_sorting = []
+# so we can look at maybe sorting the combinations longer than 1
+# only the combination of values (not their position) is unique so we shouldn't have any duplicates
+for combos in total_combinations:
+    # Here we can see if the length of the combos is greater than 1 and then use sorting logic
+    combo_list = list(combos)
+    len_check = all([True if len(i) == 1 else False for i in combo_list])
+    if len_check is True:
+        combo_pairs_sorting.append(sorted(combo_list))
+    else: 
+        # ... we're gonna try to get a bit crazy and sort ourselves
+        print(combo_list)
+        mutated_combo_list = [list(x) for x in combo_list]
+        ordered_pair_sets = []
+        for list_tup in mutated_combo_list:
+            for idx in range(len(list_tup) - 1):
+                if list_tup[idx] > list_tup[idx + 1]:
+                    tmp = list_tup[idx]
+                    list_tup[idx] = list_tup[idx + 1]
+                    list_tup[idx + 1] = tmp
+            ordered_pair_sets.append(tuple(list_tup))
+        print(ordered_pair_sets)
+        break
+         
+print(combo_pairs_sorting)
+    
+# Here's the Output - Got have a temp to store current value in sorting logic before changing
+# [('H', 'A'), ('H', 'C'), ('H', 'K'), ('A', 'C'), ('A', 'K'), ('C', 'K')]
+# [('A', 'H'), ('C', 'H'), ('H', 'K'), ('A', 'C'), ('A', 'K'), ('C', 'K')]
+# [[('A',), ('C',), ('H',), ('K',)]]

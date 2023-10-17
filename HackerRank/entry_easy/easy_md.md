@@ -89,6 +89,7 @@
     * `Calendar Module` - The calendar module allows you to output calendars and provides additional useful functions for them. You are given a date. Your task is to find what the day is on that date.
     * `Errors and Exceptions` - Some fairly straight forward try/except block for capturing value errors and zero division type errors when running an operation
     * `Incorrect Regex` - Given strings to find out whether S is a valid regex or not with a try/except block and using the **`re`** 
+    * `itertools.combinations` - You are given a string S. Your task is to print all possible combinations, up to size k, of the string in lexicographic sorted order.
 ---
 
 ### **Challenges Breakdown Selections** ⛰️
