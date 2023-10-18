@@ -161,7 +161,8 @@ for combos in total_combinations:
     if len_check is True:
         combo_pairs_sorting.append(sorted(combo_list))
     else: 
-        # ... we're gonna try to get a bit crazy and sort ourselves
+        # ... we're gonna try to get a bit crazy and sort ourselves, we need to change the type to 
+        # list for the tuple to change the index position for each collection
         print(combo_list)
         mutated_combo_list = [list(x) for x in combo_list]
         ordered_pair_sets = []
@@ -173,11 +174,27 @@ for combos in total_combinations:
                     list_tup[idx + 1] = tmp
             ordered_pair_sets.append(tuple(list_tup))
         print(ordered_pair_sets)
-        break
-         
-print(combo_pairs_sorting)
+        # Ok .. so we have now any collection pairs greater than one sorted in their own individual tuples
+        # now ... maybe a bit harder but we want to sort the tuple pairs lexically 
+        lexical_collections_ordered = ordered_pair_sets.copy()
+        for cur_ord_tup_idx in range(len(ordered_pair_sets) - 1):
+            for tup_val_idx in range(len(lexical_collections_ordered[cur_ord_tup_idx])):
+                if lexical_collections_ordered[cur_ord_tup_idx][tup_val_idx] > lexical_collections_ordered[cur_ord_tup_idx + 1][tup_val_idx]:
+                    tmp = lexical_collections_ordered[cur_ord_tup_idx]
+                    lexical_collections_ordered[cur_ord_tup_idx] = lexical_collections_ordered[cur_ord_tup_idx + 1]
+                    lexical_collections_ordered[cur_ord_tup_idx + 1] = tmp
+                # if this check worked we still need to see if the lookahead tup is correctly sorted for the index before the current check 
+                # which wouldn't check with the cur_ord_tup_index value, we want to break out of the inner loop and reset the cur_ord_tup_idx
+                cur_ord_tup_idx -= 1
+                break
+        print(lexical_collections_ordered)
+#print(combo_pairs_sorting)
     
-# Here's the Output - Got have a temp to store current value in sorting logic before changing
+# Here's the Output - Now for just the collection sets greater than two with the sorting of the individual collection set
+# Then the ordering of the entire tuples so that the tuples are then sorted (first layer sorting invididual .. second layer sort )
 # [('H', 'A'), ('H', 'C'), ('H', 'K'), ('A', 'C'), ('A', 'K'), ('C', 'K')]
 # [('A', 'H'), ('C', 'H'), ('H', 'K'), ('A', 'C'), ('A', 'K'), ('C', 'K')]
-# [[('A',), ('C',), ('H',), ('K',)]]
+# [('A', 'H'), ('C', 'H'), ('A', 'C'), ('A', 'K'), ('C', 'K'), ('H', 'K')]
+# [('H', 'A', 'C'), ('H', 'A', 'K'), ('H', 'C', 'K'), ('A', 'C', 'K')]
+# [('A', 'C', 'H'), ('A', 'H', 'K'), ('C', 'H', 'K'), ('A', 'C', 'K')] -- 2, we need to go back to 1
+# [('A', 'C', 'H'), ('A', 'H', 'K'), ('A', 'C', 'K'), ('C', 'H', 'K')]
