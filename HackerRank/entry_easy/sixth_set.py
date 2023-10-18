@@ -231,17 +231,88 @@ for combos in total_combinations:
 # Final set of ordered collections for tuples >= 2 : [('A', 'C', 'H'), ('A', 'C', 'K'), ('A', 'H', 'K'), ('C', 'H', 'K')]
 
 
-# Ok ... so I think for the logic of the secondary set (ordering the lexical collection) we want to use a while loop so we can dynamically 
-# change the index if there is a case where we need to swap tuple position (if is met)
-# This is what we're changing above 
-for i in range(len(ordered_pair_sets) - 1):
-    for tup_val_idx in range(len(lexical_collections_ordered[i])):
-        if lexical_collections_ordered[i][tup_val_idx] > lexical_collections_ordered[i + 1][tup_val_idx]:
-            tmp = lexical_collections_ordered[i]
-            lexical_collections_ordered[i] = lexical_collections_ordered[i + 1]
-            lexical_collections_ordered[i + 1] = tmp
-        # if this check worked we still need to see if the lookahead tup is correctly sorted for the index before the current check 
-        # which wouldn't check with the cur_ord_tup_index value, we want to break out of the inner loop and reset the i
-        i -= 1
-        break
-print(lexical_collections_ordered)
+
+## ** Final Output for My Challenge (Sort Algorithm of My Own)** 
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+# string, diff_combinations = input().split() - for my fun
+string, diff_combinations = 'HACK', 3
+diff_combinations = int(diff_combinations) 
+total_combinations = list([combinations(string, i) for i in range(1, diff_combinations + 1)])
+combo_pairs_sorting = []
+# so we can look at maybe sorting the combinations longer than 1
+# only the combination of values (not their position) is unique so we shouldn't have any duplicates
+for combos in total_combinations:
+    # Here we can see if the length of the combos is greater than 1 and then use sorting logic
+    combo_list = list(combos)
+    len_check = all([True if len(i) == 1 else False for i in combo_list])
+    if len_check is True:
+        combo_pairs_sorting.append(sorted(combo_list))
+    else: 
+        # ... we're gonna try to get a bit crazy and sort ourselves, we need to change the type to 
+        # list for the tuple to change the index position for each collection
+        #print(f'Original list of collections prior to tuple and root list of tuple ordering : {combo_list}')
+        mutated_combo_list = [list(x) for x in combo_list]
+        ordered_pair_sets = []
+        for list_tup in mutated_combo_list:
+            for idx in range(len(list_tup) - 1):
+                if list_tup[idx] > list_tup[idx + 1]:
+                    tmp = list_tup[idx]
+                    list_tup[idx] = list_tup[idx + 1]
+                    list_tup[idx + 1] = tmp
+            ordered_pair_sets.append(tuple(list_tup))
+        #print(f'Collection of tuples ordered within individual tuples : {ordered_pair_sets}')
+        lexical_collections_ordered = ordered_pair_sets.copy()
+        i = 0
+        while i < len(lexical_collections_ordered) - 1:
+            tuple_position_changed = False
+            for tup_val_idx in range(len(lexical_collections_ordered[i])):
+                # tied values, keep looping through subsequent tuple values against one another to see next character comparisons w/continue
+                if lexical_collections_ordered[i][tup_val_idx] == lexical_collections_ordered[i + 1][tup_val_idx]:
+                    continue 
+                # current value is less and thus no tuple sorting in root list needed, break from inner loop and continue search
+                elif lexical_collections_ordered[i][tup_val_idx] < lexical_collections_ordered[i + 1][tup_val_idx]:
+                    break
+                # look ahead value is less than current index being iterated through, make adjustment and check for i to reset unless at beginning of list
+                else:
+                    tuple_position_changed = True
+                    #print(f'Swap needed, order prior : {lexical_collections_ordered}')
+                    tmp = lexical_collections_ordered[i]
+                    lexical_collections_ordered[i] = lexical_collections_ordered[i + 1]
+                    lexical_collections_ordered[i + 1] = tmp
+                    #print(f'After change : {lexical_collections_ordered}')
+                    # if not at beginning of list, set i one back to check against previous item in root list
+                    if i >= 1:
+                        i -= 1
+                    break
+            # check if tuple_position changed, as breaks above will either have terminating effect for no swap needed or swap needed
+            if not tuple_position_changed:
+                i += 1
+        #print(f'Final set of ordered collections for tuples >= 2 : {lexical_collections_ordered}')
+        combo_pairs_sorting.append(lexical_collections_ordered)
+# Now we have all the combinations sorted for within the tuple and for within their list of collections, now we should be able to just iterate through
+# combo_pairs which holds all of our details
+print(combo_pairs_sorting)
+for combination_set in combo_pairs_sorting:
+    for ordered_tup_value in combination_set:
+        print(''.join(ordered_tup_value))
+
+## Output for character on each line 
+# [[('A',), ('C',), ('H',), ('K',)], 
+#  [('A', 'C'), ('A', 'H'), ('A', 'K'), ('C', 'H'), ('C', 'K'), ('H', 'K')], 
+#  [('A', 'C', 'H'), ('A', 'C', 'K'), ('A', 'H', 'K'), ('C', 'H', 'K')]
+# ]
+# A
+# C
+# H
+# K
+# AC
+# AH
+# AK
+# CH
+# CK
+# HK
+# ACH
+# ACK
+# AHK
+# CHK
