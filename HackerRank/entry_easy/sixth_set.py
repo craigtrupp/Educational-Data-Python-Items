@@ -316,3 +316,77 @@ for combination_set in combo_pairs_sorting:
 # ACK
 # AHK
 # CHK
+
+
+#### ** Resolve Needed : So ... As Expected some Test Cases Failed #####
+# The tuple set needed some reworking as a value like (B, C, A) in the above logic for the ordered_tup_set would only change to BAC and not ABC
+    # We needed a similar while loop with conditions to ensure that when ordering the tuple values we are similarly resetting a counter to see if tuples
+    # longer than 2 characters would require multiple sorts 
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+string, diff_combinations = input().split() 
+diff_combinations = int(diff_combinations) 
+total_combinations = list([combinations(string, i) for i in range(1, diff_combinations + 1)])
+combo_pairs_sorting = []
+# so we can look at maybe sorting the combinations longer than 1
+# only the combination of values (not their position) is unique so we shouldn't have any duplicates
+for combos in total_combinations:
+    # Here we can see if the length of the combos is greater than 1 and then use sorting logic
+    combo_list = list(combos)
+    len_check = all([True if len(i) == 1 else False for i in combo_list])
+    if len_check is True:
+        combo_pairs_sorting.append(sorted(combo_list))
+    else: 
+        # ... we're gonna try to get a bit crazy and sort ourselves, we need to change the type to 
+        # list for the tuple to change the index position for each collection
+        mutated_combo_list = [list(x) for x in combo_list]
+        ordered_tup_sets = []
+        for list_tup in mutated_combo_list:
+            j = 0
+            while j < len(list_tup) - 1:
+                if list_tup[j] > list_tup[j + 1]:
+                    tmp = list_tup[j]
+                    list_tup[j] = list_tup[j + 1]
+                    list_tup[j + 1] = tmp
+                    if j >= 1:
+                        j -= 1
+                        continue
+                    else:
+                        j += 1
+                else:
+                    j += 1 
+            ordered_tup_sets.append(list_tup)
+        #print(ordered_tup_sets)
+        ## Start of Check of Lexically Ordered Tuples (Slightly different logic to above as were doing lookahead within different indexes of same list)
+        ## Not just the same tuple as above 
+        lexical_collections_ordered = ordered_tup_sets.copy()
+        i = 0
+        while i < len(lexical_collections_ordered) - 1:
+            tuple_position_changed = False
+            for tup_val_idx in range(len(lexical_collections_ordered[i])):
+                # tied values, keep looping through subsequent tuple values against one another to see next character comparisons w/continue
+                if lexical_collections_ordered[i][tup_val_idx] == lexical_collections_ordered[i + 1][tup_val_idx]:
+                    continue 
+                # current value is less and thus no tuple sorting in root list needed, break from inner loop and continue search
+                elif lexical_collections_ordered[i][tup_val_idx] < lexical_collections_ordered[i + 1][tup_val_idx]:
+                    break
+                # look ahead value is less than current index being iterated through, make adjustment and check for i to reset unless at beginning of list
+                else:
+                    tuple_position_changed = True
+                    tmp = lexical_collections_ordered[i]
+                    lexical_collections_ordered[i] = lexical_collections_ordered[i + 1]
+                    lexical_collections_ordered[i + 1] = tmp
+                    # if not at beginning of list, set i one back to check against previous item in root list
+                    if i >= 1:
+                        i -= 1
+                    break
+            # check if tuple_position changed, as breaks above will either have terminating effect for no swap needed or swap needed
+            if not tuple_position_changed:
+                i += 1
+        combo_pairs_sorting.append(lexical_collections_ordered)
+    #print(combo_pairs_sorting)
+# Now all tuples and combinations are lexically ordered, simply iterate through each nested list and join tuple values
+for combination_set in combo_pairs_sorting:
+    for ordered_tup_value in combination_set:
+        print(''.join(ordered_tup_value))
