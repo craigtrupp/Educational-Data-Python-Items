@@ -144,7 +144,9 @@ for itertool_x in total_combinations:
 # [('H',), ('A',), ('C',), ('K',)]
 # [('H', 'A'), ('H', 'C'), ('H', 'K'), ('A', 'C'), ('A', 'K'), ('C', 'K')]
 
-## ... We're gonna try and have a little fun with a sorting algo here
+
+
+## ... We're gonna try and have a little fun with a sorting algo here for multiple layers with a slightly longer string
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 from itertools import combinations
 # string, diff_combinations = input().split() - for my fun
@@ -163,7 +165,7 @@ for combos in total_combinations:
     else: 
         # ... we're gonna try to get a bit crazy and sort ourselves, we need to change the type to 
         # list for the tuple to change the index position for each collection
-        print(combo_list)
+        print(f'Original list of collections prior to tuple and root list of tuple ordering : {combo_list}')
         mutated_combo_list = [list(x) for x in combo_list]
         ordered_pair_sets = []
         for list_tup in mutated_combo_list:
@@ -173,28 +175,73 @@ for combos in total_combinations:
                     list_tup[idx] = list_tup[idx + 1]
                     list_tup[idx + 1] = tmp
             ordered_pair_sets.append(tuple(list_tup))
-        print(ordered_pair_sets)
-        # Ok .. so we have now any collection pairs greater than one sorted in their own individual tuples
-        # now ... maybe a bit harder but we want to sort the tuple pairs lexically 
+        print(f'Collection of tuples ordered within individual tuples : {ordered_pair_sets}')
         lexical_collections_ordered = ordered_pair_sets.copy()
-        for cur_ord_tup_idx in range(len(ordered_pair_sets) - 1):
-            for tup_val_idx in range(len(lexical_collections_ordered[cur_ord_tup_idx])):
-                if lexical_collections_ordered[cur_ord_tup_idx][tup_val_idx] > lexical_collections_ordered[cur_ord_tup_idx + 1][tup_val_idx]:
-                    tmp = lexical_collections_ordered[cur_ord_tup_idx]
-                    lexical_collections_ordered[cur_ord_tup_idx] = lexical_collections_ordered[cur_ord_tup_idx + 1]
-                    lexical_collections_ordered[cur_ord_tup_idx + 1] = tmp
-                # if this check worked we still need to see if the lookahead tup is correctly sorted for the index before the current check 
-                # which wouldn't check with the cur_ord_tup_index value, we want to break out of the inner loop and reset the cur_ord_tup_idx
-                cur_ord_tup_idx -= 1
-                break
-        print(lexical_collections_ordered)
-#print(combo_pairs_sorting)
+        i = 0
+        while i < len(lexical_collections_ordered) - 1:
+            tuple_position_changed = False
+            for tup_val_idx in range(len(lexical_collections_ordered[i])):
+                # tied values, keep looping through subsequent tuple values against one another to see next character comparisons w/continue
+                if lexical_collections_ordered[i][tup_val_idx] == lexical_collections_ordered[i + 1][tup_val_idx]:
+                    continue 
+                # current value is less and thus no tuple sorting in root list needed, break from inner loop and continue search
+                elif lexical_collections_ordered[i][tup_val_idx] < lexical_collections_ordered[i + 1][tup_val_idx]:
+                    break
+                # look ahead value is less than current index being iterated through, make adjustment and check for i to reset unless at beginning of list
+                else:
+                    tuple_position_changed = True
+                    print(f'Swap needed, order prior : {lexical_collections_ordered}')
+                    tmp = lexical_collections_ordered[i]
+                    lexical_collections_ordered[i] = lexical_collections_ordered[i + 1]
+                    lexical_collections_ordered[i + 1] = tmp
+                    print(f'After change : {lexical_collections_ordered}')
+                    # if not at beginning of list, set i one back to check against previous item in root list
+                    if i >= 1:
+                        i -= 1
+                    break
+            # check if tuple_position changed, as breaks above will either have terminating effect for no swap needed or swap needed
+            if not tuple_position_changed:
+                i += 1
+        print(f'Final set of ordered collections for tuples >= 2 : {lexical_collections_ordered}')
     
 # Here's the Output - Now for just the collection sets greater than two with the sorting of the individual collection set
 # Then the ordering of the entire tuples so that the tuples are then sorted (first layer sorting invididual .. second layer sort )
-# [('H', 'A'), ('H', 'C'), ('H', 'K'), ('A', 'C'), ('A', 'K'), ('C', 'K')]
-# [('A', 'H'), ('C', 'H'), ('H', 'K'), ('A', 'C'), ('A', 'K'), ('C', 'K')]
-# [('A', 'H'), ('C', 'H'), ('A', 'C'), ('A', 'K'), ('C', 'K'), ('H', 'K')]
-# [('H', 'A', 'C'), ('H', 'A', 'K'), ('H', 'C', 'K'), ('A', 'C', 'K')]
-# [('A', 'C', 'H'), ('A', 'H', 'K'), ('C', 'H', 'K'), ('A', 'C', 'K')] -- 2, we need to go back to 1
-# [('A', 'C', 'H'), ('A', 'H', 'K'), ('A', 'C', 'K'), ('C', 'H', 'K')]
+# Original list of collections prior to tuple and root list of tuple ordering : [('H', 'A'), ('H', 'C'), ('H', 'K'), ('A', 'C'), ('A', 'K'), ('C', 'K')]
+# Collection of tuples ordered within individual tuples : [('A', 'H'), ('C', 'H'), ('H', 'K'), ('A', 'C'), ('A', 'K'), ('C', 'K')]
+# Swap needed, order prior : [('A', 'H'), ('C', 'H'), ('H', 'K'), ('A', 'C'), ('A', 'K'), ('C', 'K')]
+# After change : [('A', 'H'), ('C', 'H'), ('A', 'C'), ('H', 'K'), ('A', 'K'), ('C', 'K')]
+# Swap needed, order prior : [('A', 'H'), ('C', 'H'), ('A', 'C'), ('H', 'K'), ('A', 'K'), ('C', 'K')]
+# After change : [('A', 'H'), ('A', 'C'), ('C', 'H'), ('H', 'K'), ('A', 'K'), ('C', 'K')]
+# Swap needed, order prior : [('A', 'H'), ('A', 'C'), ('C', 'H'), ('H', 'K'), ('A', 'K'), ('C', 'K')]
+# After change : [('A', 'C'), ('A', 'H'), ('C', 'H'), ('H', 'K'), ('A', 'K'), ('C', 'K')]
+# Swap needed, order prior : [('A', 'C'), ('A', 'H'), ('C', 'H'), ('H', 'K'), ('A', 'K'), ('C', 'K')]
+# After change : [('A', 'C'), ('A', 'H'), ('C', 'H'), ('A', 'K'), ('H', 'K'), ('C', 'K')]
+# Swap needed, order prior : [('A', 'C'), ('A', 'H'), ('C', 'H'), ('A', 'K'), ('H', 'K'), ('C', 'K')]
+# After change : [('A', 'C'), ('A', 'H'), ('A', 'K'), ('C', 'H'), ('H', 'K'), ('C', 'K')]
+# Swap needed, order prior : [('A', 'C'), ('A', 'H'), ('A', 'K'), ('C', 'H'), ('H', 'K'), ('C', 'K')]
+# After change : [('A', 'C'), ('A', 'H'), ('A', 'K'), ('C', 'H'), ('C', 'K'), ('H', 'K')]
+# Final set of ordered collections for tuples >= 2 : [('A', 'C'), ('A', 'H'), ('A', 'K'), ('C', 'H'), ('C', 'K'), ('H', 'K')]
+
+# Original list of collections prior to tuple and root list of tuple ordering : [('H', 'A', 'C'), ('H', 'A', 'K'), ('H', 'C', 'K'), ('A', 'C', 'K')]
+# Collection of tuples ordered within individual tuples : [('A', 'C', 'H'), ('A', 'H', 'K'), ('C', 'H', 'K'), ('A', 'C', 'K')]
+# Swap needed, order prior : [('A', 'C', 'H'), ('A', 'H', 'K'), ('C', 'H', 'K'), ('A', 'C', 'K')]
+# After change : [('A', 'C', 'H'), ('A', 'H', 'K'), ('A', 'C', 'K'), ('C', 'H', 'K')]
+# Swap needed, order prior : [('A', 'C', 'H'), ('A', 'H', 'K'), ('A', 'C', 'K'), ('C', 'H', 'K')]
+# After change : [('A', 'C', 'H'), ('A', 'C', 'K'), ('A', 'H', 'K'), ('C', 'H', 'K')]
+# Final set of ordered collections for tuples >= 2 : [('A', 'C', 'H'), ('A', 'C', 'K'), ('A', 'H', 'K'), ('C', 'H', 'K')]
+
+
+# Ok ... so I think for the logic of the secondary set (ordering the lexical collection) we want to use a while loop so we can dynamically 
+# change the index if there is a case where we need to swap tuple position (if is met)
+# This is what we're changing above 
+for i in range(len(ordered_pair_sets) - 1):
+    for tup_val_idx in range(len(lexical_collections_ordered[i])):
+        if lexical_collections_ordered[i][tup_val_idx] > lexical_collections_ordered[i + 1][tup_val_idx]:
+            tmp = lexical_collections_ordered[i]
+            lexical_collections_ordered[i] = lexical_collections_ordered[i + 1]
+            lexical_collections_ordered[i + 1] = tmp
+        # if this check worked we still need to see if the lookahead tup is correctly sorted for the index before the current check 
+        # which wouldn't check with the cur_ord_tup_index value, we want to break out of the inner loop and reset the i
+        i -= 1
+        break
+print(lexical_collections_ordered)
