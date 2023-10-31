@@ -1,4 +1,4 @@
-## HackerRank 🧑‍💻 for Python 🐍
+## HackerRank 🧑‍💻 for Python First Diff Level (And a Few Medium Level Challenges) 🐍
 * So sometimes the challenges are gonna be good to write in a markdown file as the detail isn't going to be the easiest comment for a straight python file in some scenarios
 * Now ... to some challenges 
 * Am also noting some challenges here for greater understanding of how the code working not just in a python script (see below!)
@@ -83,13 +83,16 @@
     * `Intro : Sets` - This one was pretty straight forward. They just wanted an average of distinct values passed in from the main function. There is a decent map function on a list of strings that was a section of the input received from the challenge. Just recall map takes a function and applies it over the iterable or second argument in the call which you can then commonly chain and place the map's output into another list as this example does
     * `Sets : Symmetric Difference` - Given 2 sets of integers, M and N, print their symmetric difference in ascending order. The term symmetric difference indicates those values that exist in either M or N but do not exist in both. (anti-join)
     * `Sets : (Medium Difficulty) Happiness Index` - Setting of a index by checking of array values in two sets ... not sure why this was ranked as medium difficulty
-    * --- Add the other sets here as they come up
+    * `Sets : Set Add` - Rupal has a huge collection of country stamps. She decided to count the total number of distinct country stamps in her collection. She asked for your help. You pick the stamps one by one from a stack of N country stamps.
 
 * [**`Sixth Set`**](/HackerRank/entry_easy/sixth_set.py) 
     * `Calendar Module` - The calendar module allows you to output calendars and provides additional useful functions for them. You are given a date. Your task is to find what the day is on that date.
     * `Errors and Exceptions` - Some fairly straight forward try/except block for capturing value errors and zero division type errors when running an operation
     * `Incorrect Regex` - Given strings to find out whether S is a valid regex or not with a try/except block and using the **`re`** 
     * `itertools.combinations` - You are given a string S. Your task is to print all possible combinations, up to size k, of the string in lexicographic sorted order.
+
+* [**`Seventh Set`**](/HackerRank/entry_easy/se7th_set.py)
+
 ---
 
 ### **Challenges Breakdown Selections** ⛰️
