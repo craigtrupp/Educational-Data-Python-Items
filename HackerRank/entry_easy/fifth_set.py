@@ -321,3 +321,52 @@ b_french_subs = int(input())
 b_separated_roll_french_subs = set(map(int, input().split()))
 uniq_subs_frboth = n_separated_roll_english_subs.union(b_separated_roll_french_subs)
 print(len(uniq_subs_frboth))
+
+
+#### **Set .Intersection() Operation**
+# Task
+# The students of District College have subscriptions to English and French newspapers. Some students have subscribed only to English, some have subscribed only to French, and some have subscribed to both newspapers.
+
+# You are given two sets of student roll numbers. One set has subscribed to the English newspaper, one set has subscribed to the French newspaper. Your task is to find the total number of students who have subscribed to both newspapers.
+
+# Input Format
+
+# The first line contains n, the number of students who have subscribed to the English newspaper.
+# The second line contains n space separated roll numbers of those students.
+# The third line contains b, the number of students who have subscribed to the French newspaper.
+# The fourth line contains b space separated roll numbers of those students.
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n_eng_subs = int(input())
+n_eng_subs_set = set(map(int, input().split()))
+b_french_subs = int(input())
+b_french_subs_set = set(map(int, input().split()))
+print(len(n_eng_subs_set.intersection(b_french_subs_set)))
+
+
+#### **Set .Difference() Operation**
+# .difference()
+# The tool .difference() returns a set with all the elements from the set that are not in an iterable.
+# Sometimes the - operator is used in place of the .difference() tool, but it only operates on the set of elements in set.
+# Set is immutable to the .difference() operation (or the - operation).
+
+## Similar Input and Task
+## Task : You are given two sets of student roll numbers. One set has subscribed to the English newspaper, and one set has subscribed to the French newspaper. 
+# Your task is to find the total number of students who have subscribed to only English newspapers.
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+english_sub_count = int(input())
+english_sub_id_set = set(map(int, input().split()))
+french_sub_count = int(input())
+french_sub_id_set = set(map(int, input().split()))
+print(len(english_sub_id_set.difference(french_sub_id_set)))
+
+
+#### **Set .Symmetric_Difference Operation**
+# You are given two sets of student roll numbers. One set has subscribed to the English newspaper, and one set has subscribed to the French newspaper. 
+# Your task is to find the total number of students who have subscribed to either the English or the French newspaper but not both.
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+eng_sub_count, eng_sub_set = int(input()), set(map(int, input().split()))
+french_sub_count, french_sub_set = int(input()), set(map(int, input().split()))
+print(len(eng_sub_set.symmetric_difference(french_sub_set)))
+
+## Tightened it up a bit for quicker line assignments (this just prints the lenght of all unique subscribers of each set (outer-join))
