@@ -256,3 +256,68 @@ print(s)
             
     
 
+#### **Set Union Operations** ###
+# .union()
+
+# The .union() operator returns the union of a set and the set of elements in an iterable.
+# Sometimes, the | operator is used in place of .union() operator, but it operates only on the set of elements in set.
+# Set is immutable to the .union() operation (or | operation).
+# >>> s = set("Hacker")
+# >>> print s.union("Rank")
+# set(['a', 'R', 'c', 'r', 'e', 'H', 'k', 'n']) - unique values of each (no double a or k) (case-sensitive)
+
+# >>> print s.union(set(['R', 'a', 'n', 'k']))
+# set(['a', 'R', 'c', 'r', 'e', 'H', 'k', 'n'])
+
+# >>> print s.union(['R', 'a', 'n', 'k'])
+# set(['a', 'R', 'c', 'r', 'e', 'H', 'k', 'n'])
+
+# >>> print s.union(enumerate(['R', 'a', 'n', 'k']))
+# set(['a', 'c', 'r', 'e', (1, 'a'), (2, 'n'), 'H', 'k', (3, 'k'), (0, 'R')])
+
+# >>> print s.union({"Rank":1})
+# set(['a', 'c', 'r', 'e', 'H', 'k', 'Rank'])
+
+# >>> s | set("Rank")
+# set(['a', 'R', 'c', 'r', 'e', 'H', 'k', 'n'])
+
+# Task
+# The students of District College have subscriptions to English and French newspapers. Some students have subscribed only to English, some have subscribed to only French and some have subscribed to both newspapers.
+
+# You are given two sets of student roll numbers. One set has subscribed to the English newspaper, and the other set is subscribed to the French newspaper. The same student could be in both sets. Your task is to find 
+# the total number of students who have subscribed to at least one newspaper.
+
+# Input Format
+
+# The first line contains an integer, n, the number of students who have subscribed to the English newspaper.
+# The second line contains n space separated roll numbers of those students.
+# The third line contains b, the number of students who have subscribed to the French newspaper.
+# The fourth line contains b space separated roll numbers of those students.
+
+# Output Format
+
+# Output the total number of students who have at least one subscription.
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# First block below a way of parsing the input into the various variables data types (note the use of map to assign an int to the lines of subs_id once turned into an iterable (than to a set))
+n_english_subs = int(input()) 
+n_separated_roll_english_subs = set(map(int, input().split())) 
+b_french_subs = int(input())
+b_separated_roll_french_subs = set(map(int, input().split()))
+print(n_english_subs, n_separated_roll_english_subs, b_french_subs, b_separated_roll_french_subs, sep='\n')
+
+# Read out of types
+# 9
+# {1, 2, 3, 4, 5, 6, 7, 8, 9}
+# 9
+# {1, 2, 3, 6, 8, 10, 11, 21, 55}
+
+## Now the solution
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n_english_subs = int(input())
+n_separated_roll_english_subs = set(map(int, input().split()))
+b_french_subs = int(input())
+b_separated_roll_french_subs = set(map(int, input().split()))
+uniq_subs_frboth = n_separated_roll_english_subs.union(b_separated_roll_french_subs)
+print(len(uniq_subs_frboth))

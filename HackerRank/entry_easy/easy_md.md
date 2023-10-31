@@ -79,7 +79,7 @@
         - Good Opportunity for an OrderedDict usage and then can use some of the methods with the object to get the output values. 
         - See further defintion of break down of code in the file
 
-* [**`Fifth Set`**](HackerRank/entry_easy/fifth_set.py)
+* [**`Fifth Set ... Sets!`**](/HackerRank/entry_easy/fifth_set.py)
     * `Intro : Sets` - This one was pretty straight forward. They just wanted an average of distinct values passed in from the main function. There is a decent map function on a list of strings that was a section of the input received from the challenge. Just recall map takes a function and applies it over the iterable or second argument in the call which you can then commonly chain and place the map's output into another list as this example does
     * `Sets : Symmetric Difference` - Given 2 sets of integers, M and N, print their symmetric difference in ascending order. The term symmetric difference indicates those values that exist in either M or N but do not exist in both. (anti-join)
     * `Sets : (Medium Difficulty) Happiness Index` - Setting of a index by checking of array values in two sets ... not sure why this was ranked as medium difficulty
@@ -89,6 +89,8 @@
         - Take note of how the **`getattr`** method call is used to assign a method call from a passed string argument from an input can be appropriately applied to an instance of a set object.
         - Useful reminder of how if a string is passed to a function how it can be applied to it's object type
             -  [Call Function of Module by Using its Name as String](https://stackoverflow.com/questions/3061/calling-a-function-of-a-module-by-using-its-name-a-string?rq=1)
+    * `Sets : Union Operation` - The students of District College have subscriptions to English and French newspapers. Some students have subscribed only to English, some have subscribed to only French and some have subscribed to both newspapers. You are given two sets of student roll numbers. One set has subscribed to the English newspaper, and the other set is subscribed to the French newspaper. The same student could be in both sets. Your task is to find the total number of students who have subscribed to at least one newspaper.
+        - Fairly straight forward. Union operator similar to **`SQL`** will only select either unique items or matching items (only once .. **no dupes!!**)
 
 * [**`Sixth Set`**](/HackerRank/entry_easy/sixth_set.py) 
     * `Calendar Module` - The calendar module allows you to output calendars and provides additional useful functions for them. You are given a date. Your task is to find what the day is on that date.
