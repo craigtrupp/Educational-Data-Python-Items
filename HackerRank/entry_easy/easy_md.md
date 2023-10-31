@@ -83,7 +83,12 @@
     * `Intro : Sets` - This one was pretty straight forward. They just wanted an average of distinct values passed in from the main function. There is a decent map function on a list of strings that was a section of the input received from the challenge. Just recall map takes a function and applies it over the iterable or second argument in the call which you can then commonly chain and place the map's output into another list as this example does
     * `Sets : Symmetric Difference` - Given 2 sets of integers, M and N, print their symmetric difference in ascending order. The term symmetric difference indicates those values that exist in either M or N but do not exist in both. (anti-join)
     * `Sets : (Medium Difficulty) Happiness Index` - Setting of a index by checking of array values in two sets ... not sure why this was ranked as medium difficulty
-    * `Sets : Set Add` - Rupal has a huge collection of country stamps. She decided to count the total number of distinct country stamps in her collection. She asked for your help. You pick the stamps one by one from a stack of N country stamps.
+    * `Sets : Set Add` - Rupal has a huge collection of country stamps. She decided to count the total number of distinct country stamps in her collection. She asked for your help. You pick the stamps one by one from a stack of N country stamps. 
+        - Used Set comprehension as well as a for loop here for object method calling to accomplish the same result of adding input to a set
+    * `Sets : Set functions - discard(), remove(), & pop()` - You have a non-empty set s, and you have to execute N commands given in N lines. The commands will be pop, remove and discard.
+        - Take note of how the **`getattr`** method call is used to assign a method call from a passed string argument from an input can be appropriately applied to an instance of a set object.
+        - Useful reminder of how if a string is passed to a function how it can be applied to it's object type
+            -  [Call Function of Module by Using its Name as String](https://stackoverflow.com/questions/3061/calling-a-function-of-a-module-by-using-its-name-a-string?rq=1)
 
 * [**`Sixth Set`**](/HackerRank/entry_easy/sixth_set.py) 
     * `Calendar Module` - The calendar module allows you to output calendars and provides additional useful functions for them. You are given a date. Your task is to find what the day is on that date.
