@@ -171,3 +171,29 @@ for _ in range(test_cases):
 # True
 # False
 # False
+
+
+#### **Check Strict SuperSet** #### 
+# You are given a set A and n other sets.
+# Your job is to find whether set A is a strict superset of each of the N sets.
+
+# Print True, if A is a strict superset of each of the N sets. Otherwise, print False.
+
+# A strict superset has at least one element that does not exist in its subset.
+
+# Example
+# Set ([1,3,4]) is a strict superset of set ([1,3]).
+# Set ([1,3,4]) is not a strict superset of set ([1,3,4]).
+# Set ([1,3,4]) is not a strict superset of set ([1,3,5]).
+
+## Appears A (parent) set must have all matching values of set B and one not in the subset
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+set_a = set(map(int, input().split())) # not all set A was an int (have to type cast to be sure)
+test_cases = int(input())
+count_strict = 0
+for _ in range(test_cases):
+    test_set = set(map(int, input().split()))
+    interesect_count = len(set_a.intersection(test_set))
+    if interesect_count == len(test_set) and len(set_a) > interesect_count:
+        count_strict += 1
+print([True if count_strict == test_cases else False][0])
