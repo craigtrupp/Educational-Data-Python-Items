@@ -97,6 +97,11 @@
         - This is more of an **anti-join** type for one set against another and will return from the left-side set what isn't in the method call
     * `Sets : Symmetric Difference` - You are given two sets of student roll numbers. One set has subscribed to the English newspaper, and one set has subscribed to the French newspaper. Your task is to find the total number of students who have subscribed to either the English or the French newspaper but not both.
         - Unique values in set a or b. Not overlapping values in a venn-diagram
+    * [**`Final Set Operations`**](/HackerRank/entry_easy/fifth_stcnt_set.py) - File was growing pretty large above so will start a new file for a few more challenges to round out the set operation challenges
+        - `Sets : Mutations` - Here we are similary using the **`gtattr`** to take input from a set number of lines to perform a passed set operation on the input of another operation. We are just mutating a single list with various set values from an iteration of **N** new sets in a loop. We assign the set operation provided from the input onto the master/chief set and mutate the initial set in place based on our received input for a set operation
+        - `Sets : The Captain's Room` - Unsure of why a set is needed here. Essentially we are looking for an occurrence of size of guests in a room that has a `count` of K times in a provided list. The only value that isn't the size of `K` is the captain's room which is unique to all the other guests who have K room at their party size
+        - `Sets : Check Subset` - See the input details as that's most pertinent for the challenge. Here we are looking two sets with K amount of values for each provided in an input. Our task here is to determine if all values of set A (first input in test case) are of element set B (second set input). Print `True` of `False` if A is a subset of B (B must maintain all values of A)
+            - Would appear a simple interesection and count will give us what we need
 
 * [**`Sixth Set`**](/HackerRank/entry_easy/sixth_set.py) 
     * `Calendar Module` - The calendar module allows you to output calendars and provides additional useful functions for them. You are given a date. Your task is to find what the day is on that date.

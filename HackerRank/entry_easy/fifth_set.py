@@ -370,3 +370,4 @@ french_sub_count, french_sub_set = int(input()), set(map(int, input().split()))
 print(len(eng_sub_set.symmetric_difference(french_sub_set)))
 
 ## Tightened it up a bit for quicker line assignments (this just prints the lenght of all unique subscribers of each set (outer-join))
+
